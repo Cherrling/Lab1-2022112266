@@ -1,0 +1,25 @@
+digraph TextGraph {
+    rankdir=LR;
+    node [shape=box];
+    "and" [style=filled, fillcolor=orange, penwidth=2];
+    "explore" [style=filled, fillcolor=lightblue];
+    "life" [style=filled, fillcolor=orange];
+    "new" [style=filled, fillcolor=orange];
+    "out" [style=filled, fillcolor=orange];
+    "seek" [style=filled, fillcolor=orange, penwidth=2];
+    "strange" [style=filled, fillcolor=lightblue];
+    "to" [style=filled, fillcolor=lightblue];
+    "worlds" [style=filled, fillcolor=lightblue];
+    "and" -> "new" [label="1", color=darkblue];
+    "explore" -> "strange" [label="1", color=darkblue];
+    "life" -> "and" [label="1", color=red, penwidth=2];
+    "new" -> "worlds" [label="1", color=darkblue];
+    "new" -> "life" [label="1", color=red, penwidth=2];
+    "new" -> "civilizations" [label="1", color=darkblue];
+    "out" -> "new" [label="1", color=red, penwidth=2];
+    "seek" -> "out" [label="1", color=red, penwidth=2];
+    "strange" -> "new" [label="1", color=darkblue];
+    "to" -> "explore" [label="1", color=darkblue];
+    "to" -> "seek" [label="1", color=darkblue];
+    "worlds" -> "to" [label="1", color=darkblue];
+}
