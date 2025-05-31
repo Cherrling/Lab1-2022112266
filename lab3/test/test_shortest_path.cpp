@@ -49,11 +49,7 @@ protected:
 // 测试两个存在路径的节点之间的最短路径
 TEST_F(ShortestPathTest, ExistingPath) {
 
-
-    std::string word1 = "a";
-    std::string word2 = "c";
-
-    PathInfo result = graph->findShortestPath(word1, word2);
+    PathInfo result = graph->findShortestPath("a", "c");
     graph->printGraph(); // 打印图结构以便调试    
     EXPECT_NE(INT_MAX, result.distance);
     EXPECT_EQ(2, result.distance); // a->b->c 的距离应该是2

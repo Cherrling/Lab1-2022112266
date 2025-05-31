@@ -52,6 +52,7 @@ public:
         }
         // 边不存在，创建新边
         adjacencyList[from].push_back(Edge(to, 1));
+        adjacencyList[to]; // 确保目标节点也存在于图中
     }
 
     // 优化CLI界面展示
@@ -252,12 +253,6 @@ public:
         // 检查开始和结束单词是否在图中
         if (adjacencyList.find(start) == adjacencyList.end() || 
             adjacencyList.find(end) == adjacencyList.end()) {
-                // print map
-            std::cerr << "起始或终止单词不在图中。" << std::endl;
-            std::cerr << "当前图中的单词有：" << std::endl;
-            for (const auto& node : adjacencyList) {
-                std::cout << node.first << " ";
-            }
                 return PathInfo(); // 返回无效路径
         }
         
