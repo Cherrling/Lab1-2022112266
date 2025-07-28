@@ -32,17 +32,17 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">19</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntry">26</td>
           </tr>
                   <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -259,7 +259,7 @@
 <span id="L197"><span class="lineNum">     197</span>              : #if __cplusplus &lt; 201103L</span>
 <span id="L198"><span class="lineNum">     198</span>              :       map() : _M_t() { }</span>
 <span id="L199"><span class="lineNum">     199</span>              : #else</span>
-<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">          34 :       map() = default;</span></span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">         131 :       map() = default;</span></span>
 <span id="L201"><span class="lineNum">     201</span>              : #endif</span>
 <span id="L202"><span class="lineNum">     202</span>              : </span>
 <span id="L203"><span class="lineNum">     203</span>              :       /**</span>
@@ -396,7 +396,7 @@
 <span id="L334"><span class="lineNum">     334</span>              :        *  themselves are pointers, the pointed-to memory is not touched in any</span>
 <span id="L335"><span class="lineNum">     335</span>              :        *  way.  Managing the pointer is the user's responsibility.</span>
 <span id="L336"><span class="lineNum">     336</span>              :        */</span>
-<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">          34 :       ~map() = default;</span></span>
+<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">         131 :       ~map() = default;</span></span>
 <span id="L338"><span class="lineNum">     338</span>              : #endif</span>
 <span id="L339"><span class="lineNum">     339</span>              : </span>
 <span id="L340"><span class="lineNum">     340</span>              :       /**</span>
@@ -450,8 +450,8 @@
 <span id="L388"><span class="lineNum">     388</span>              :        *  Iteration is done in ascending order according to the keys.</span>
 <span id="L389"><span class="lineNum">     389</span>              :        */</span>
 <span id="L390"><span class="lineNum">     390</span>              :       iterator</span>
-<span id="L391"><span class="lineNum">     391</span>              :       begin() _GLIBCXX_NOEXCEPT</span>
-<span id="L392"><span class="lineNum">     392</span>              :       { return _M_t.begin(); }</span>
+<span id="L391"><span class="lineNum">     391</span> <span class="tlaGNC">          63 :       begin() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">          63 :       { return _M_t.begin(); }</span></span>
 <span id="L393"><span class="lineNum">     393</span>              : </span>
 <span id="L394"><span class="lineNum">     394</span>              :       /**</span>
 <span id="L395"><span class="lineNum">     395</span>              :        *  Returns a read-only (constant) iterator that points to the first pair</span>
@@ -468,8 +468,8 @@
 <span id="L406"><span class="lineNum">     406</span>              :        *  according to the keys.</span>
 <span id="L407"><span class="lineNum">     407</span>              :        */</span>
 <span id="L408"><span class="lineNum">     408</span>              :       iterator</span>
-<span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">         273 :       end() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L410"><span class="lineNum">     410</span> <span class="tlaGNC">         273 :       { return _M_t.end(); }</span></span>
+<span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">        2796 :       end() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L410"><span class="lineNum">     410</span> <span class="tlaGNC">        2796 :       { return _M_t.end(); }</span></span>
 <span id="L411"><span class="lineNum">     411</span>              : </span>
 <span id="L412"><span class="lineNum">     412</span>              :       /**</span>
 <span id="L413"><span class="lineNum">     413</span>              :        *  Returns a read-only (constant) iterator that points one past the last</span>
@@ -586,22 +586,22 @@
 <span id="L524"><span class="lineNum">     524</span>              :        *  Lookup requires logarithmic time.</span>
 <span id="L525"><span class="lineNum">     525</span>              :        */</span>
 <span id="L526"><span class="lineNum">     526</span>              :       mapped_type&amp;</span>
-<span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">         252 :       operator[](const key_type&amp; __k)</span></span>
+<span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">        2652 :       operator[](const key_type&amp; __k)</span></span>
 <span id="L528"><span class="lineNum">     528</span>              :       {</span>
 <span id="L529"><span class="lineNum">     529</span>              :         // concept requirements</span>
 <span id="L530"><span class="lineNum">     530</span>              :         __glibcxx_function_requires(_DefaultConstructibleConcept&lt;mapped_type&gt;)</span>
 <span id="L531"><span class="lineNum">     531</span>              : </span>
-<span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">         252 :         iterator __i = lower_bound(__k);</span></span>
+<span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">        2652 :         iterator __i = lower_bound(__k);</span></span>
 <span id="L533"><span class="lineNum">     533</span>              :         // __i-&gt;first is greater than or equivalent to __k.</span>
-<span id="L534"><span class="lineNum">     534</span> <span class="tlaGNC">         252 :         if (__i == end() || key_comp()(__k, (*__i).first))</span></span>
+<span id="L534"><span class="lineNum">     534</span> <span class="tlaGNC">        2652 :         if (__i == end() || key_comp()(__k, (*__i).first))</span></span>
 <span id="L535"><span class="lineNum">     535</span>              : #if __cplusplus &gt;= 201103L</span>
-<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">         104 :           __i = _M_t._M_emplace_hint_unique(__i, std::piecewise_construct,</span></span>
-<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">         104 :                                             std::tuple&lt;const key_type&amp;&gt;(__k),</span></span>
-<span id="L538"><span class="lineNum">     538</span> <span class="tlaGNC">         104 :                                             std::tuple&lt;&gt;());</span></span>
+<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">         696 :           __i = _M_t._M_emplace_hint_unique(__i, std::piecewise_construct,</span></span>
+<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">         696 :                                             std::tuple&lt;const key_type&amp;&gt;(__k),</span></span>
+<span id="L538"><span class="lineNum">     538</span> <span class="tlaGNC">         696 :                                             std::tuple&lt;&gt;());</span></span>
 <span id="L539"><span class="lineNum">     539</span>              : #else</span>
 <span id="L540"><span class="lineNum">     540</span>              :           __i = insert(__i, value_type(__k, mapped_type()));</span>
 <span id="L541"><span class="lineNum">     541</span>              : #endif</span>
-<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">         504 :         return (*__i).second;</span></span>
+<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">        5304 :         return (*__i).second;</span></span>
 <span id="L543"><span class="lineNum">     543</span>              :       }</span>
 <span id="L544"><span class="lineNum">     544</span>              : </span>
 <span id="L545"><span class="lineNum">     545</span>              : #if __cplusplus &gt;= 201103L</span>
@@ -1291,8 +1291,8 @@
 <span id="L1229"><span class="lineNum">    1229</span>              :        *  constructed.</span>
 <span id="L1230"><span class="lineNum">    1230</span>              :        */</span>
 <span id="L1231"><span class="lineNum">    1231</span>              :       key_compare</span>
-<span id="L1232"><span class="lineNum">    1232</span> <span class="tlaGNC">         174 :       key_comp() const</span></span>
-<span id="L1233"><span class="lineNum">    1233</span> <span class="tlaGNC">         174 :       { return _M_t.key_comp(); }</span></span>
+<span id="L1232"><span class="lineNum">    1232</span> <span class="tlaGNC">        2048 :       key_comp() const</span></span>
+<span id="L1233"><span class="lineNum">    1233</span> <span class="tlaGNC">        2048 :       { return _M_t.key_comp(); }</span></span>
 <span id="L1234"><span class="lineNum">    1234</span>              : </span>
 <span id="L1235"><span class="lineNum">    1235</span>              :       /**</span>
 <span id="L1236"><span class="lineNum">    1236</span>              :        *  Returns a value comparison object, built from the key comparison</span>
@@ -1318,8 +1318,8 @@
 <span id="L1256"><span class="lineNum">    1256</span>              :        */</span>
 <span id="L1257"><span class="lineNum">    1257</span>              : </span>
 <span id="L1258"><span class="lineNum">    1258</span>              :       iterator</span>
-<span id="L1259"><span class="lineNum">    1259</span> <span class="tlaGNC">          21 :       find(const key_type&amp; __x)</span></span>
-<span id="L1260"><span class="lineNum">    1260</span> <span class="tlaGNC">          21 :       { return _M_t.find(__x); }</span></span>
+<span id="L1259"><span class="lineNum">    1259</span> <span class="tlaGNC">          81 :       find(const key_type&amp; __x)</span></span>
+<span id="L1260"><span class="lineNum">    1260</span> <span class="tlaGNC">          81 :       { return _M_t.find(__x); }</span></span>
 <span id="L1261"><span class="lineNum">    1261</span>              : </span>
 <span id="L1262"><span class="lineNum">    1262</span>              : #if __cplusplus &gt; 201103L</span>
 <span id="L1263"><span class="lineNum">    1263</span>              :       template&lt;typename _Kt&gt;</span>
@@ -1407,8 +1407,8 @@
 <span id="L1345"><span class="lineNum">    1345</span>              :        *  or end() if no such element exists.</span>
 <span id="L1346"><span class="lineNum">    1346</span>              :        */</span>
 <span id="L1347"><span class="lineNum">    1347</span>              :       iterator</span>
-<span id="L1348"><span class="lineNum">    1348</span> <span class="tlaGNC">         252 :       lower_bound(const key_type&amp; __x)</span></span>
-<span id="L1349"><span class="lineNum">    1349</span> <span class="tlaGNC">         252 :       { return _M_t.lower_bound(__x); }</span></span>
+<span id="L1348"><span class="lineNum">    1348</span> <span class="tlaGNC">        2652 :       lower_bound(const key_type&amp; __x)</span></span>
+<span id="L1349"><span class="lineNum">    1349</span> <span class="tlaGNC">        2652 :       { return _M_t.lower_bound(__x); }</span></span>
 <span id="L1350"><span class="lineNum">    1350</span>              : </span>
 <span id="L1351"><span class="lineNum">    1351</span>              : #if __cplusplus &gt; 201103L</span>
 <span id="L1352"><span class="lineNum">    1352</span>              :       template&lt;typename _Kt&gt;</span>

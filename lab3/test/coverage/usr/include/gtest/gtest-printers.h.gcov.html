@@ -32,16 +32,16 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
-            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntry">55</td>
             <td class="headerCovTableEntry">0</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
-            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntry">49</td>
             <td class="headerCovTableEntry">0</td>
           </tr>
                   <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -227,30 +227,30 @@
 <span id="L165"><span class="lineNum">     165</span>              :                 ((sizeof(IsContainerTest&lt;T&gt;(0)) == sizeof(IsContainer)) &amp;&amp;</span>
 <span id="L166"><span class="lineNum">     166</span>              :                  !IsRecursiveContainer&lt;T&gt;::value) ||</span>
 <span id="L167"><span class="lineNum">     167</span>              :                 IsStdSpan&lt;T&gt;::value&gt;::type&gt;</span>
-<span id="L168"><span class="lineNum">     168</span>              :   static void PrintValue(const T&amp; container, std::ostream* os) {</span>
-<span id="L169"><span class="lineNum">     169</span>              :     const size_t kMaxCount = 32;  // The maximum number of elements to print.</span>
-<span id="L170"><span class="lineNum">     170</span>              :     *os &lt;&lt; '{';</span>
-<span id="L171"><span class="lineNum">     171</span>              :     size_t count = 0;</span>
-<span id="L172"><span class="lineNum">     172</span>              :     for (auto&amp;&amp; elem : container) {</span>
-<span id="L173"><span class="lineNum">     173</span>              :       if (count &gt; 0) {</span>
-<span id="L174"><span class="lineNum">     174</span>              :         *os &lt;&lt; ',';</span>
-<span id="L175"><span class="lineNum">     175</span>              :         if (count == kMaxCount) {  // Enough has been printed.</span>
-<span id="L176"><span class="lineNum">     176</span>              :           *os &lt;&lt; &quot; ...&quot;;</span>
-<span id="L177"><span class="lineNum">     177</span>              :           break;</span>
+<span id="L168"><span class="lineNum">     168</span> <span class="tlaUNC">           0 :   static void PrintValue(const T&amp; container, std::ostream* os) {</span></span>
+<span id="L169"><span class="lineNum">     169</span> <span class="tlaUNC">           0 :     const size_t kMaxCount = 32;  // The maximum number of elements to print.</span></span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaUNC">           0 :     *os &lt;&lt; '{';</span></span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaUNC">           0 :     size_t count = 0;</span></span>
+<span id="L172"><span class="lineNum">     172</span> <span class="tlaUNC">           0 :     for (auto&amp;&amp; elem : container) {</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaUNC">           0 :       if (count &gt; 0) {</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaUNC">           0 :         *os &lt;&lt; ',';</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaUNC">           0 :         if (count == kMaxCount) {  // Enough has been printed.</span></span>
+<span id="L176"><span class="lineNum">     176</span> <span class="tlaUNC">           0 :           *os &lt;&lt; &quot; ...&quot;;</span></span>
+<span id="L177"><span class="lineNum">     177</span> <span class="tlaUNC">           0 :           break;</span></span>
 <span id="L178"><span class="lineNum">     178</span>              :         }</span>
 <span id="L179"><span class="lineNum">     179</span>              :       }</span>
-<span id="L180"><span class="lineNum">     180</span>              :       *os &lt;&lt; ' ';</span>
+<span id="L180"><span class="lineNum">     180</span> <span class="tlaUNC">           0 :       *os &lt;&lt; ' ';</span></span>
 <span id="L181"><span class="lineNum">     181</span>              :       // We cannot call PrintTo(elem, os) here as PrintTo() doesn't</span>
 <span id="L182"><span class="lineNum">     182</span>              :       // handle `elem` being a native array.</span>
-<span id="L183"><span class="lineNum">     183</span>              :       internal::UniversalPrint(elem, os);</span>
-<span id="L184"><span class="lineNum">     184</span>              :       ++count;</span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaUNC">           0 :       internal::UniversalPrint(elem, os);</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaUNC">           0 :       ++count;</span></span>
 <span id="L185"><span class="lineNum">     185</span>              :     }</span>
 <span id="L186"><span class="lineNum">     186</span>              : </span>
-<span id="L187"><span class="lineNum">     187</span>              :     if (count &gt; 0) {</span>
-<span id="L188"><span class="lineNum">     188</span>              :       *os &lt;&lt; ' ';</span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaUNC">           0 :     if (count &gt; 0) {</span></span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaUNC">           0 :       *os &lt;&lt; ' ';</span></span>
 <span id="L189"><span class="lineNum">     189</span>              :     }</span>
-<span id="L190"><span class="lineNum">     190</span>              :     *os &lt;&lt; '}';</span>
-<span id="L191"><span class="lineNum">     191</span>              :   }</span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaUNC">           0 :     *os &lt;&lt; '}';</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaUNC">           0 :   }</span></span>
 <span id="L192"><span class="lineNum">     192</span>              : };</span>
 <span id="L193"><span class="lineNum">     193</span>              : </span>
 <span id="L194"><span class="lineNum">     194</span>              : // Used to print a pointer that is neither a char pointer nor a member</span>

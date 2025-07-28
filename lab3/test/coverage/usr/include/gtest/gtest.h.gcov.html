@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryLo">40.0&nbsp;%</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryLo">33.3&nbsp;%</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry">7</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
+            <td class="headerCovTableEntryLo">56.2&nbsp;%</td>
+            <td class="headerCovTableEntry">32</td>
             <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntry">9</td>
           </tr>
                   <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -1450,11 +1450,11 @@
 <span id="L1388"><span class="lineNum">    1388</span>              : </span>
 <span id="L1389"><span class="lineNum">    1389</span>              : // The helper function for {ASSERT|EXPECT}_EQ.</span>
 <span id="L1390"><span class="lineNum">    1390</span>              : template &lt;typename T1, typename T2&gt;</span>
-<span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">           6 : AssertionResult CmpHelperEQ(const char* lhs_expression,</span></span>
+<span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">          54 : AssertionResult CmpHelperEQ(const char* lhs_expression,</span></span>
 <span id="L1392"><span class="lineNum">    1392</span>              :                             const char* rhs_expression, const T1&amp; lhs,</span>
 <span id="L1393"><span class="lineNum">    1393</span>              :                             const T2&amp; rhs) {</span>
-<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">           6 :   if (lhs == rhs) {</span></span>
-<span id="L1395"><span class="lineNum">    1395</span> <span class="tlaGNC">           6 :     return AssertionSuccess();</span></span>
+<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">          54 :   if (lhs == rhs) {</span></span>
+<span id="L1395"><span class="lineNum">    1395</span> <span class="tlaGNC">          54 :     return AssertionSuccess();</span></span>
 <span id="L1396"><span class="lineNum">    1396</span>              :   }</span>
 <span id="L1397"><span class="lineNum">    1397</span>              : </span>
 <span id="L1398"><span class="lineNum">    1398</span> <span class="tlaUNC">           0 :   return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);</span></span>
@@ -1469,10 +1469,10 @@
 <span id="L1407"><span class="lineNum">    1407</span>              :       // and the other is the null pointer constant.</span>
 <span id="L1408"><span class="lineNum">    1408</span>              :       typename std::enable_if&lt;!std::is_integral&lt;T1&gt;::value ||</span>
 <span id="L1409"><span class="lineNum">    1409</span>              :                               !std::is_pointer&lt;T2&gt;::value&gt;::type* = nullptr&gt;</span>
-<span id="L1410"><span class="lineNum">    1410</span> <span class="tlaGNC">           6 :   static AssertionResult Compare(const char* lhs_expression,</span></span>
+<span id="L1410"><span class="lineNum">    1410</span> <span class="tlaGNC">          54 :   static AssertionResult Compare(const char* lhs_expression,</span></span>
 <span id="L1411"><span class="lineNum">    1411</span>              :                                  const char* rhs_expression, const T1&amp; lhs,</span>
 <span id="L1412"><span class="lineNum">    1412</span>              :                                  const T2&amp; rhs) {</span>
-<span id="L1413"><span class="lineNum">    1413</span> <span class="tlaGNC">           6 :     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);</span></span>
+<span id="L1413"><span class="lineNum">    1413</span> <span class="tlaGNC">          54 :     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);</span></span>
 <span id="L1414"><span class="lineNum">    1414</span>              :   }</span>
 <span id="L1415"><span class="lineNum">    1415</span>              : </span>
 <span id="L1416"><span class="lineNum">    1416</span>              :   // With this overloaded version, we allow anonymous enums to be used</span>
@@ -1502,13 +1502,13 @@
 <span id="L1440"><span class="lineNum">    1440</span>              : // frame size of CmpHelperOP. This helps reduce the overhead of some sanitizers</span>
 <span id="L1441"><span class="lineNum">    1441</span>              : // when calling EXPECT_OP in a tight loop.</span>
 <span id="L1442"><span class="lineNum">    1442</span>              : template &lt;typename T1, typename T2&gt;</span>
-<span id="L1443"><span class="lineNum">    1443</span>              : AssertionResult CmpHelperOpFailure(const char* expr1, const char* expr2,</span>
+<span id="L1443"><span class="lineNum">    1443</span> <span class="tlaUNC">           0 : AssertionResult CmpHelperOpFailure(const char* expr1, const char* expr2,</span></span>
 <span id="L1444"><span class="lineNum">    1444</span>              :                                    const T1&amp; val1, const T2&amp; val2,</span>
 <span id="L1445"><span class="lineNum">    1445</span>              :                                    const char* op) {</span>
-<span id="L1446"><span class="lineNum">    1446</span>              :   return AssertionFailure()</span>
-<span id="L1447"><span class="lineNum">    1447</span>              :          &lt;&lt; &quot;Expected: (&quot; &lt;&lt; expr1 &lt;&lt; &quot;) &quot; &lt;&lt; op &lt;&lt; &quot; (&quot; &lt;&lt; expr2</span>
-<span id="L1448"><span class="lineNum">    1448</span>              :          &lt;&lt; &quot;), actual: &quot; &lt;&lt; FormatForComparisonFailureMessage(val1, val2)</span>
-<span id="L1449"><span class="lineNum">    1449</span>              :          &lt;&lt; &quot; vs &quot; &lt;&lt; FormatForComparisonFailureMessage(val2, val1);</span>
+<span id="L1446"><span class="lineNum">    1446</span> <span class="tlaUNC">           0 :   return AssertionFailure()</span></span>
+<span id="L1447"><span class="lineNum">    1447</span> <span class="tlaUNC">           0 :          &lt;&lt; &quot;Expected: (&quot; &lt;&lt; expr1 &lt;&lt; &quot;) &quot; &lt;&lt; op &lt;&lt; &quot; (&quot; &lt;&lt; expr2</span></span>
+<span id="L1448"><span class="lineNum">    1448</span> <span class="tlaUNC">           0 :          &lt;&lt; &quot;), actual: &quot; &lt;&lt; FormatForComparisonFailureMessage(val1, val2)</span></span>
+<span id="L1449"><span class="lineNum">    1449</span> <span class="tlaUNC">           0 :          &lt;&lt; &quot; vs &quot; &lt;&lt; FormatForComparisonFailureMessage(val2, val1);</span></span>
 <span id="L1450"><span class="lineNum">    1450</span>              : }</span>
 <span id="L1451"><span class="lineNum">    1451</span>              : </span>
 <span id="L1452"><span class="lineNum">    1452</span>              : // A macro for implementing the helper functions needed to implement</span>
@@ -1531,7 +1531,7 @@
 <span id="L1469"><span class="lineNum">    1469</span>              : // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.</span>
 <span id="L1470"><span class="lineNum">    1470</span>              : </span>
 <span id="L1471"><span class="lineNum">    1471</span>              : // Implements the helper function for {ASSERT|EXPECT}_NE</span>
-<span id="L1472"><span class="lineNum">    1472</span>              : GTEST_IMPL_CMP_HELPER_(NE, !=)</span>
+<span id="L1472"><span class="lineNum">    1472</span> <span class="tlaGNC">           9 : GTEST_IMPL_CMP_HELPER_(NE, !=)</span></span>
 <span id="L1473"><span class="lineNum">    1473</span>              : // Implements the helper function for {ASSERT|EXPECT}_LE</span>
 <span id="L1474"><span class="lineNum">    1474</span>              : GTEST_IMPL_CMP_HELPER_(LE, &lt;=)</span>
 <span id="L1475"><span class="lineNum">    1475</span>              : // Implements the helper function for {ASSERT|EXPECT}_LT</span>
@@ -2393,7 +2393,7 @@
 <span id="L2331"><span class="lineNum">    2331</span>              : // namespace and has an all-caps name.</span>
 <span id="L2332"><span class="lineNum">    2332</span>              : [[nodiscard]] int RUN_ALL_TESTS();</span>
 <span id="L2333"><span class="lineNum">    2333</span>              : </span>
-<span id="L2334"><span class="lineNum">    2334</span> <span class="tlaGNC">           1 : inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()-&gt;Run(); }</span></span>
+<span id="L2334"><span class="lineNum">    2334</span> <span class="tlaGNC">           5 : inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()-&gt;Run(); }</span></span>
 <span id="L2335"><span class="lineNum">    2335</span>              : </span>
 <span id="L2336"><span class="lineNum">    2336</span>              : GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4251</span>
 <span id="L2337"><span class="lineNum">    2337</span>              : </span>

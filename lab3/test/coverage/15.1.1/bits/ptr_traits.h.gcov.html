@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -193,8 +193,8 @@
 <span id="L131"><span class="lineNum">     131</span>              :        *  @return `addressof(__r)`</span>
 <span id="L132"><span class="lineNum">     132</span>              :       */</span>
 <span id="L133"><span class="lineNum">     133</span>              :       static _GLIBCXX20_CONSTEXPR pointer</span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">        1586 :       pointer_to(element_type&amp; __r) noexcept</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">        1586 :       { return std::addressof(__r); }</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">        8306 :       pointer_to(element_type&amp; __r) noexcept</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">        8306 :       { return std::addressof(__r); }</span></span>
 <span id="L136"><span class="lineNum">     136</span>              :     };</span>
 <span id="L137"><span class="lineNum">     137</span>              : </span>
 <span id="L138"><span class="lineNum">     138</span>              :   template&lt;typename _Ptr, typename _Elt&gt;</span>
@@ -270,7 +270,7 @@
 <span id="L208"><span class="lineNum">     208</span>              :     {</span>
 <span id="L209"><span class="lineNum">     209</span>              :       static_assert(!std::is_function&lt;_Tp&gt;::value, &quot;std::to_address argument &quot;</span>
 <span id="L210"><span class="lineNum">     210</span>              :                     &quot;must not be a function pointer&quot;);</span>
-<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">         123 :       return __ptr;</span></span>
+<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">         450 :       return __ptr;</span></span>
 <span id="L212"><span class="lineNum">     212</span>              :     }</span>
 <span id="L213"><span class="lineNum">     213</span>              : </span>
 <span id="L214"><span class="lineNum">     214</span>              :   // This should only be used for pointer-like types (e.g. allocator pointers)</span>

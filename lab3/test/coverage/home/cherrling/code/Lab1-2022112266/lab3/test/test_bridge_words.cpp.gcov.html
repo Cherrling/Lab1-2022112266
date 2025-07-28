@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -78,10 +78,10 @@
 <span id="L16"><span class="lineNum">      16</span>              :     // 环形图，包含循环引用</span>
 <span id="L17"><span class="lineNum">      17</span>              :     DirectedGraph cyclicGraph;</span>
 <span id="L18"><span class="lineNum">      18</span>              :     </span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">           7 :     void SetUp() override {</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">          14 :     void SetUp() override {</span></span>
 <span id="L20"><span class="lineNum">      20</span>              :         // 设置简单图: word1 -&gt; word2 -&gt; word3</span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          28 :         simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          28 :         simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          56 :         simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          56 :         simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
 <span id="L23"><span class="lineNum">      23</span>              :         </span>
 <span id="L24"><span class="lineNum">      24</span>              :         </span>
 <span id="L25"><span class="lineNum">      25</span>              :         // 设置复杂图:</span>
@@ -89,139 +89,139 @@
 <span id="L27"><span class="lineNum">      27</span>              :         // |    |    ^</span>
 <span id="L28"><span class="lineNum">      28</span>              :         // v    v    |</span>
 <span id="L29"><span class="lineNum">      29</span>              :         // D -&gt; E ---+</span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">          28 :         complexGraph.addEdge(&quot;a&quot;, &quot;b&quot;);</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">          28 :         complexGraph.addEdge(&quot;a&quot;, &quot;d&quot;);</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          28 :         complexGraph.addEdge(&quot;b&quot;, &quot;c&quot;);</span></span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          28 :         complexGraph.addEdge(&quot;b&quot;, &quot;e&quot;);</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          28 :         complexGraph.addEdge(&quot;d&quot;, &quot;e&quot;);</span></span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          28 :         complexGraph.addEdge(&quot;e&quot;, &quot;c&quot;);</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">          56 :         complexGraph.addEdge(&quot;a&quot;, &quot;b&quot;);</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">          56 :         complexGraph.addEdge(&quot;a&quot;, &quot;d&quot;);</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          56 :         complexGraph.addEdge(&quot;b&quot;, &quot;c&quot;);</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          56 :         complexGraph.addEdge(&quot;b&quot;, &quot;e&quot;);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          56 :         complexGraph.addEdge(&quot;d&quot;, &quot;e&quot;);</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          56 :         complexGraph.addEdge(&quot;e&quot;, &quot;c&quot;);</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :         </span>
 <span id="L37"><span class="lineNum">      37</span>              :         // 设置环形图:</span>
 <span id="L38"><span class="lineNum">      38</span>              :         // X -&gt; Y -&gt; Z</span>
 <span id="L39"><span class="lineNum">      39</span>              :         // ^         |</span>
 <span id="L40"><span class="lineNum">      40</span>              :         // |         v</span>
 <span id="L41"><span class="lineNum">      41</span>              :         // W &lt;- V &lt;- U</span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">          28 :         cyclicGraph.addEdge(&quot;x&quot;, &quot;y&quot;);</span></span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          28 :         cyclicGraph.addEdge(&quot;y&quot;, &quot;z&quot;);</span></span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">          28 :         cyclicGraph.addEdge(&quot;z&quot;, &quot;u&quot;);</span></span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">          28 :         cyclicGraph.addEdge(&quot;u&quot;, &quot;v&quot;);</span></span>
-<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          28 :         cyclicGraph.addEdge(&quot;v&quot;, &quot;w&quot;);</span></span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          28 :         cyclicGraph.addEdge(&quot;w&quot;, &quot;x&quot;);</span></span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           7 :     }</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">          56 :         cyclicGraph.addEdge(&quot;x&quot;, &quot;y&quot;);</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          56 :         cyclicGraph.addEdge(&quot;y&quot;, &quot;z&quot;);</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">          56 :         cyclicGraph.addEdge(&quot;z&quot;, &quot;u&quot;);</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">          56 :         cyclicGraph.addEdge(&quot;u&quot;, &quot;v&quot;);</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          56 :         cyclicGraph.addEdge(&quot;v&quot;, &quot;w&quot;);</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          56 :         cyclicGraph.addEdge(&quot;w&quot;, &quot;x&quot;);</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">          14 :     }</span></span>
 <span id="L49"><span class="lineNum">      49</span>              : };</span>
 <span id="L50"><span class="lineNum">      50</span>              : </span>
 <span id="L51"><span class="lineNum">      51</span>              : </span>
 <span id="L52"><span class="lineNum">      52</span>              : </span>
 <span id="L53"><span class="lineNum">      53</span>              : </span>
 <span id="L54"><span class="lineNum">      54</span>              : // 测试用例1: 在空图中查找桥接词</span>
-<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, EmptyGraph) {</span></span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">           4 :     std::vector&lt;std::string&gt; result = emptyGraph.findBridgeWords(&quot;any&quot;, &quot;word&quot;);</span></span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">           1 :     EXPECT_TRUE(result.empty()) &lt;&lt; &quot;空图中不应该有桥接词&quot;;</span></span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, EmptyGraph) {</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">           8 :     std::vector&lt;std::string&gt; result = emptyGraph.findBridgeWords(&quot;any&quot;, &quot;word&quot;);</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">           2 :     EXPECT_TRUE(result.empty()) &lt;&lt; &quot;空图中不应该有桥接词&quot;;</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L59"><span class="lineNum">      59</span>              : </span>
 <span id="L60"><span class="lineNum">      60</span>              : // 测试用例2: 在简单图中查找存在的桥接词</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, SimpleGraphExistingBridge) {</span></span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           1 :     DirectedGraph simpleGraph;</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, SimpleGraphExistingBridge) {</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           2 :     DirectedGraph simpleGraph;</span></span>
 <span id="L63"><span class="lineNum">      63</span>              : </span>
 <span id="L64"><span class="lineNum">      64</span>              :     // 设置简单图: word1 -&gt; word2 -&gt; word3</span>
-<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">           4 :     simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
-<span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">           4 :     simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
-<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">           4 :     simpleGraph.addEdge(&quot;word3&quot;, &quot;word4&quot;);</span></span>
-<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">           2 :     std::string word1 = &quot;word1&quot;;</span></span>
-<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">           1 :     std::string word2 = &quot;word3&quot;;</span></span>
-<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">           1 :     std::vector&lt;std::string&gt; result = simpleGraph.findBridgeWords(word1, word2);</span></span>
-<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">           1 :     EXPECT_EQ(result.size(), 1) &lt;&lt; &quot;应该找到一个桥接词&quot;;</span></span>
-<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">           1 :     if (!result.empty()) {</span></span>
-<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">           1 :         EXPECT_EQ(result[0], &quot;word2&quot;) &lt;&lt; &quot;桥接词应该是word2&quot;;</span></span>
+<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">           8 :     simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
+<span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">           8 :     simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">           8 :     simpleGraph.addEdge(&quot;word3&quot;, &quot;word4&quot;);</span></span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">           4 :     std::string word1 = &quot;word1&quot;;</span></span>
+<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">           2 :     std::string word2 = &quot;word3&quot;;</span></span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">           2 :     std::vector&lt;std::string&gt; result = simpleGraph.findBridgeWords(word1, word2);</span></span>
+<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">           2 :     EXPECT_EQ(result.size(), 1) &lt;&lt; &quot;应该找到一个桥接词&quot;;</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">           2 :     if (!result.empty()) {</span></span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">           2 :         EXPECT_EQ(result[0], &quot;word2&quot;) &lt;&lt; &quot;桥接词应该是word2&quot;;</span></span>
 <span id="L74"><span class="lineNum">      74</span>              :     }</span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L76"><span class="lineNum">      76</span>              : </span>
 <span id="L77"><span class="lineNum">      77</span>              : // 测试用例3: 在简单图中查找不存在的桥接词</span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, SimpleGraphNonExistingBridge) {</span></span>
-<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">           1 :     DirectedGraph simpleGraph;</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, SimpleGraphNonExistingBridge) {</span></span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">           2 :     DirectedGraph simpleGraph;</span></span>
 <span id="L80"><span class="lineNum">      80</span>              : </span>
 <span id="L81"><span class="lineNum">      81</span>              :             // 设置简单图: word1 -&gt; word2 -&gt; word3</span>
-<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">           4 :         simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">           4 :         simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
-<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">           3 :     std::vector&lt;std::string&gt; result = simpleGraph.findBridgeWords(&quot;word1&quot;, &quot;word1&quot;);</span></span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">           1 :     EXPECT_TRUE(result.empty()) &lt;&lt; &quot;word1和word1之间不应该有桥接词&quot;;</span></span>
-<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">           8 :         simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">           8 :         simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
+<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">           6 :     std::vector&lt;std::string&gt; result = simpleGraph.findBridgeWords(&quot;word1&quot;, &quot;word1&quot;);</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">           2 :     EXPECT_TRUE(result.empty()) &lt;&lt; &quot;word1和word1之间不应该有桥接词&quot;;</span></span>
+<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L87"><span class="lineNum">      87</span>              : </span>
 <span id="L88"><span class="lineNum">      88</span>              : // 测试用例4: 查找词本身不在图中的情况</span>
-<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, WordNotInGraph) {</span></span>
-<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">           1 :     DirectedGraph simpleGraph;</span></span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, WordNotInGraph) {</span></span>
+<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">           2 :     DirectedGraph simpleGraph;</span></span>
 <span id="L91"><span class="lineNum">      91</span>              : </span>
 <span id="L92"><span class="lineNum">      92</span>              :             // 设置简单图: word1 -&gt; word2 -&gt; word3</span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">           4 :         simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">           4 :         simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">           8 :         simpleGraph.addEdge(&quot;word1&quot;, &quot;word2&quot;);</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">           8 :         simpleGraph.addEdge(&quot;word2&quot;, &quot;word3&quot;);</span></span>
 <span id="L95"><span class="lineNum">      95</span>              :     // 第一个词不在图中</span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">           3 :     std::vector&lt;std::string&gt; result1 = simpleGraph.findBridgeWords(&quot;unknown&quot;, &quot;word2&quot;);</span></span>
-<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">           1 :     EXPECT_TRUE(result1.empty()) &lt;&lt; &quot;第一个词不在图中时不应该有桥接词&quot;;</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">           6 :     std::vector&lt;std::string&gt; result1 = simpleGraph.findBridgeWords(&quot;unknown&quot;, &quot;word2&quot;);</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">           2 :     EXPECT_TRUE(result1.empty()) &lt;&lt; &quot;第一个词不在图中时不应该有桥接词&quot;;</span></span>
 <span id="L98"><span class="lineNum">      98</span>              :     </span>
 <span id="L99"><span class="lineNum">      99</span>              :     // 第二个词不在图中</span>
-<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">           4 :     std::vector&lt;std::string&gt; result2 = simpleGraph.findBridgeWords(&quot;word1&quot;, &quot;unknown&quot;);</span></span>
-<span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">           1 :     EXPECT_TRUE(result2.empty()) &lt;&lt; &quot;第二个词不在图中时不应该有桥接词&quot;;</span></span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">           8 :     std::vector&lt;std::string&gt; result2 = simpleGraph.findBridgeWords(&quot;word1&quot;, &quot;unknown&quot;);</span></span>
+<span id="L101"><span class="lineNum">     101</span> <span class="tlaGNC">           2 :     EXPECT_TRUE(result2.empty()) &lt;&lt; &quot;第二个词不在图中时不应该有桥接词&quot;;</span></span>
 <span id="L102"><span class="lineNum">     102</span>              :     </span>
 <span id="L103"><span class="lineNum">     103</span>              :     // 两个词都不在图中</span>
-<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">           4 :     std::vector&lt;std::string&gt; result3 = simpleGraph.findBridgeWords(&quot;unknown1&quot;, &quot;unknown2&quot;);</span></span>
-<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">           1 :     EXPECT_TRUE(result3.empty()) &lt;&lt; &quot;两个词都不在图中时不应该有桥接词&quot;;</span></span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">           8 :     std::vector&lt;std::string&gt; result3 = simpleGraph.findBridgeWords(&quot;unknown1&quot;, &quot;unknown2&quot;);</span></span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">           2 :     EXPECT_TRUE(result3.empty()) &lt;&lt; &quot;两个词都不在图中时不应该有桥接词&quot;;</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L107"><span class="lineNum">     107</span>              : </span>
 <span id="L108"><span class="lineNum">     108</span>              : // 测试用例7: 环形图中的桥接词</span>
-<span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, CyclicGraphBridges) {</span></span>
-<span id="L110"><span class="lineNum">     110</span> <span class="tlaGNC">           1 :     DirectedGraph cyclicGraph;</span></span>
-<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">           4 :             cyclicGraph.addEdge(&quot;x&quot;, &quot;y&quot;);</span></span>
-<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">           4 :         cyclicGraph.addEdge(&quot;y&quot;, &quot;z&quot;);</span></span>
-<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">           4 :         cyclicGraph.addEdge(&quot;z&quot;, &quot;u&quot;);</span></span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">           4 :         cyclicGraph.addEdge(&quot;u&quot;, &quot;v&quot;);</span></span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">           4 :         cyclicGraph.addEdge(&quot;v&quot;, &quot;w&quot;);</span></span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           4 :         cyclicGraph.addEdge(&quot;w&quot;, &quot;x&quot;);</span></span>
+<span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, CyclicGraphBridges) {</span></span>
+<span id="L110"><span class="lineNum">     110</span> <span class="tlaGNC">           2 :     DirectedGraph cyclicGraph;</span></span>
+<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">           8 :             cyclicGraph.addEdge(&quot;x&quot;, &quot;y&quot;);</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">           8 :         cyclicGraph.addEdge(&quot;y&quot;, &quot;z&quot;);</span></span>
+<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">           8 :         cyclicGraph.addEdge(&quot;z&quot;, &quot;u&quot;);</span></span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">           8 :         cyclicGraph.addEdge(&quot;u&quot;, &quot;v&quot;);</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">           8 :         cyclicGraph.addEdge(&quot;v&quot;, &quot;w&quot;);</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           8 :         cyclicGraph.addEdge(&quot;w&quot;, &quot;x&quot;);</span></span>
 <span id="L117"><span class="lineNum">     117</span>              :     // 测试在环形结构中是否可以找到正确的桥接词</span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">           3 :     std::vector&lt;std::string&gt; result = cyclicGraph.findBridgeWords(&quot;x&quot;, &quot;z&quot;);</span></span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">           1 :     EXPECT_EQ(result.size(), 1) &lt;&lt; &quot;环形图中x到z的桥接词应该只有y&quot;;</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">           1 :     if (!result.empty()) {</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">           1 :         EXPECT_EQ(result[0], &quot;y&quot;) &lt;&lt; &quot;环形图中x到z的桥接词应该是y&quot;;</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">           6 :     std::vector&lt;std::string&gt; result = cyclicGraph.findBridgeWords(&quot;x&quot;, &quot;z&quot;);</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">           2 :     EXPECT_EQ(result.size(), 1) &lt;&lt; &quot;环形图中x到z的桥接词应该只有y&quot;;</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">           2 :     if (!result.empty()) {</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">           2 :         EXPECT_EQ(result[0], &quot;y&quot;) &lt;&lt; &quot;环形图中x到z的桥接词应该是y&quot;;</span></span>
 <span id="L122"><span class="lineNum">     122</span>              :     }</span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L124"><span class="lineNum">     124</span>              : </span>
 <span id="L125"><span class="lineNum">     125</span>              : // 测试用例8: 测试相同单词的桥接词查询</span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, SameWordNoDirectLoop) {</span></span>
-<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">           1 :     DirectedGraph complexGraph;</span></span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">           4 :             complexGraph.addEdge(&quot;a&quot;, &quot;b&quot;);</span></span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">           4 :         complexGraph.addEdge(&quot;a&quot;, &quot;d&quot;);</span></span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">           4 :         complexGraph.addEdge(&quot;b&quot;, &quot;c&quot;);</span></span>
-<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           4 :         complexGraph.addEdge(&quot;b&quot;, &quot;e&quot;);</span></span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">           4 :         complexGraph.addEdge(&quot;d&quot;, &quot;e&quot;);</span></span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           4 :         complexGraph.addEdge(&quot;e&quot;, &quot;c&quot;);</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, SameWordNoDirectLoop) {</span></span>
+<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">           2 :     DirectedGraph complexGraph;</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">           8 :             complexGraph.addEdge(&quot;a&quot;, &quot;b&quot;);</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">           8 :         complexGraph.addEdge(&quot;a&quot;, &quot;d&quot;);</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">           8 :         complexGraph.addEdge(&quot;b&quot;, &quot;c&quot;);</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">           8 :         complexGraph.addEdge(&quot;b&quot;, &quot;e&quot;);</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">           8 :         complexGraph.addEdge(&quot;d&quot;, &quot;e&quot;);</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           8 :         complexGraph.addEdge(&quot;e&quot;, &quot;c&quot;);</span></span>
 <span id="L134"><span class="lineNum">     134</span>              :     // 对于没有直接自循环的单词</span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">           3 :     std::vector&lt;std::string&gt; result = complexGraph.findBridgeWords(&quot;a&quot;, &quot;a&quot;);</span></span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">           1 :     EXPECT_TRUE(result.empty()) &lt;&lt; &quot;没有直接自循环的单词不应该有桥接词&quot;;</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">           6 :     std::vector&lt;std::string&gt; result = complexGraph.findBridgeWords(&quot;a&quot;, &quot;a&quot;);</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">           2 :     EXPECT_TRUE(result.empty()) &lt;&lt; &quot;没有直接自循环的单词不应该有桥接词&quot;;</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L138"><span class="lineNum">     138</span>              : </span>
 <span id="L139"><span class="lineNum">     139</span>              : // 测试用例9: 测试权重对桥接词查找的影响</span>
-<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">           4 : TEST_F(BridgeWordsTest, EdgeWeightImpact) {</span></span>
+<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">           8 : TEST_F(BridgeWordsTest, EdgeWeightImpact) {</span></span>
 <span id="L141"><span class="lineNum">     141</span>              :     // 创建一个有权重的图</span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">           1 :     DirectedGraph weightedGraph;</span></span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">           4 :     weightedGraph.addEdge(&quot;start&quot;, &quot;middle&quot;);  // 权重为1</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">           4 :     weightedGraph.addEdge(&quot;middle&quot;, &quot;end&quot;);    // 权重为1</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">           2 :     DirectedGraph weightedGraph;</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">           8 :     weightedGraph.addEdge(&quot;start&quot;, &quot;middle&quot;);  // 权重为1</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">           8 :     weightedGraph.addEdge(&quot;middle&quot;, &quot;end&quot;);    // 权重为1</span></span>
 <span id="L145"><span class="lineNum">     145</span>              :     </span>
 <span id="L146"><span class="lineNum">     146</span>              :     // 增加同一条边的权重</span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">           4 :     weightedGraph.addEdge(&quot;start&quot;, &quot;middle&quot;);  // 权重增加到2</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">           8 :     weightedGraph.addEdge(&quot;start&quot;, &quot;middle&quot;);  // 权重增加到2</span></span>
 <span id="L148"><span class="lineNum">     148</span>              :     </span>
 <span id="L149"><span class="lineNum">     149</span>              :     // 查找桥接词</span>
-<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">           4 :     weightedGraph.addEdge(&quot;end&quot;,&quot;test&quot;);</span></span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">           3 :     std::vector&lt;std::string&gt; result = weightedGraph.findBridgeWords(&quot;start&quot;, &quot;end&quot;);</span></span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">           1 :     EXPECT_EQ(result.size(), 1) &lt;&lt; &quot;增加边权重不应该改变桥接词的存在&quot;;</span></span>
-<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">           1 :     if (!result.empty()) {</span></span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">           1 :         EXPECT_EQ(result[0], &quot;middle&quot;) &lt;&lt; &quot;桥接词应该是middle&quot;;</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">           8 :     weightedGraph.addEdge(&quot;end&quot;,&quot;test&quot;);</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">           6 :     std::vector&lt;std::string&gt; result = weightedGraph.findBridgeWords(&quot;start&quot;, &quot;end&quot;);</span></span>
+<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">           2 :     EXPECT_EQ(result.size(), 1) &lt;&lt; &quot;增加边权重不应该改变桥接词的存在&quot;;</span></span>
+<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">           2 :     if (!result.empty()) {</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">           2 :         EXPECT_EQ(result[0], &quot;middle&quot;) &lt;&lt; &quot;桥接词应该是middle&quot;;</span></span>
 <span id="L155"><span class="lineNum">     155</span>              :     }</span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L157"><span class="lineNum">     157</span>              : </span>
 <span id="L158"><span class="lineNum">     158</span>              : </span>
 <span id="L159"><span class="lineNum">     159</span>              : // 主函数</span>
-<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">           1 : int main(int argc, char **argv) {</span></span>
-<span id="L161"><span class="lineNum">     161</span> <span class="tlaGNC">           1 :     ::testing::InitGoogleTest(&amp;argc, argv);</span></span>
-<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">           1 :     return RUN_ALL_TESTS();</span></span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">           2 : int main(int argc, char **argv) {</span></span>
+<span id="L161"><span class="lineNum">     161</span> <span class="tlaGNC">           2 :     ::testing::InitGoogleTest(&amp;argc, argv);</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">           2 :     return RUN_ALL_TESTS();</span></span>
 <span id="L163"><span class="lineNum">     163</span>              : }</span>
         </pre>
               </td>

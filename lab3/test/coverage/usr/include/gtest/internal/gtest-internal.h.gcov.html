@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntryHi">93.3&nbsp;%</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntryHi">95.8&nbsp;%</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">23</td>
           </tr>
                   <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -469,12 +469,12 @@
 <span id="L407"><span class="lineNum">     407</span>              : // returned for different types.  Calling the function twice with the</span>
 <span id="L408"><span class="lineNum">     408</span>              : // same type argument is guaranteed to return the same ID.</span>
 <span id="L409"><span class="lineNum">     409</span>              : template &lt;typename T&gt;</span>
-<span id="L410"><span class="lineNum">     410</span> <span class="tlaGNC">           7 : TypeId GetTypeId() {</span></span>
+<span id="L410"><span class="lineNum">     410</span> <span class="tlaGNC">          32 : TypeId GetTypeId() {</span></span>
 <span id="L411"><span class="lineNum">     411</span>              :   // The compiler is required to allocate a different</span>
 <span id="L412"><span class="lineNum">     412</span>              :   // TypeIdHelper&lt;T&gt;::dummy_ variable for each T used to instantiate</span>
 <span id="L413"><span class="lineNum">     413</span>              :   // the template.  Therefore, the address of dummy_ is guaranteed to</span>
 <span id="L414"><span class="lineNum">     414</span>              :   // be unique.</span>
-<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">           7 :   return &amp;(TypeIdHelper&lt;T&gt;::dummy_);</span></span>
+<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">          32 :   return &amp;(TypeIdHelper&lt;T&gt;::dummy_);</span></span>
 <span id="L416"><span class="lineNum">     416</span>              : }</span>
 <span id="L417"><span class="lineNum">     417</span>              : </span>
 <span id="L418"><span class="lineNum">     418</span>              : // Returns the type ID of ::testing::Test.  Always call this instead</span>
@@ -488,14 +488,14 @@
 <span id="L426"><span class="lineNum">     426</span>              : // of a Test object.</span>
 <span id="L427"><span class="lineNum">     427</span>              : class TestFactoryBase {</span>
 <span id="L428"><span class="lineNum">     428</span>              :  public:</span>
-<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">           7 :   virtual ~TestFactoryBase() = default;</span></span>
+<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">          32 :   virtual ~TestFactoryBase() = default;</span></span>
 <span id="L430"><span class="lineNum">     430</span>              : </span>
 <span id="L431"><span class="lineNum">     431</span>              :   // Creates a test instance to run. The instance is both created and destroyed</span>
 <span id="L432"><span class="lineNum">     432</span>              :   // within TestInfoImpl::Run()</span>
 <span id="L433"><span class="lineNum">     433</span>              :   virtual Test* CreateTest() = 0;</span>
 <span id="L434"><span class="lineNum">     434</span>              : </span>
 <span id="L435"><span class="lineNum">     435</span>              :  protected:</span>
-<span id="L436"><span class="lineNum">     436</span> <span class="tlaGNC">           7 :   TestFactoryBase() {}</span></span>
+<span id="L436"><span class="lineNum">     436</span> <span class="tlaGNC">          32 :   TestFactoryBase() {}</span></span>
 <span id="L437"><span class="lineNum">     437</span>              : </span>
 <span id="L438"><span class="lineNum">     438</span>              :  private:</span>
 <span id="L439"><span class="lineNum">     439</span>              :   TestFactoryBase(const TestFactoryBase&amp;) = delete;</span>
@@ -507,7 +507,7 @@
 <span id="L445"><span class="lineNum">     445</span>              : template &lt;class TestClass&gt;</span>
 <span id="L446"><span class="lineNum">     446</span>              : class TestFactoryImpl : public TestFactoryBase {</span>
 <span id="L447"><span class="lineNum">     447</span>              :  public:</span>
-<span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">          14 :   Test* CreateTest() override { return new TestClass; }</span></span>
+<span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">          64 :   Test* CreateTest() override { return new TestClass; }</span></span>
 <span id="L449"><span class="lineNum">     449</span>              : };</span>
 <span id="L450"><span class="lineNum">     450</span>              : </span>
 <span id="L451"><span class="lineNum">     451</span>              : #ifdef GTEST_OS_WINDOWS</span>
@@ -528,8 +528,8 @@
 <span id="L466"><span class="lineNum">     466</span>              : using TearDownTestSuiteFunc = void (*)();</span>
 <span id="L467"><span class="lineNum">     467</span>              : </span>
 <span id="L468"><span class="lineNum">     468</span>              : struct CodeLocation {</span>
-<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">           7 :   CodeLocation(std::string a_file, int a_line)</span></span>
-<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">          14 :       : file(std::move(a_file)), line(a_line) {}</span></span>
+<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">          32 :   CodeLocation(std::string a_file, int a_line)</span></span>
+<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">          64 :       : file(std::move(a_file)), line(a_line) {}</span></span>
 <span id="L471"><span class="lineNum">     471</span>              : </span>
 <span id="L472"><span class="lineNum">     472</span>              :   std::string file;</span>
 <span id="L473"><span class="lineNum">     473</span>              :   int line;</span>
@@ -541,9 +541,9 @@
 <span id="L479"><span class="lineNum">     479</span>              : // Utility functions to help SuiteApiResolver</span>
 <span id="L480"><span class="lineNum">     480</span>              : using SetUpTearDownSuiteFuncType = void (*)();</span>
 <span id="L481"><span class="lineNum">     481</span>              : </span>
-<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">          28 : inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(</span></span>
+<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">         128 : inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(</span></span>
 <span id="L483"><span class="lineNum">     483</span>              :     SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {</span>
-<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          28 :   return a == def ? nullptr : a;</span></span>
+<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">         128 :   return a == def ? nullptr : a;</span></span>
 <span id="L485"><span class="lineNum">     485</span>              : }</span>
 <span id="L486"><span class="lineNum">     486</span>              : </span>
 <span id="L487"><span class="lineNum">     487</span>              : template &lt;typename T&gt;</span>
@@ -556,20 +556,20 @@
 <span id="L494"><span class="lineNum">     494</span>              :   using Test =</span>
 <span id="L495"><span class="lineNum">     495</span>              :       typename std::conditional&lt;sizeof(T) != 0, ::testing::Test, void&gt;::type;</span>
 <span id="L496"><span class="lineNum">     496</span>              : </span>
-<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">           7 :   static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,</span></span>
+<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">          32 :   static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,</span></span>
 <span id="L498"><span class="lineNum">     498</span>              :                                                         int line_num) {</span>
 <span id="L499"><span class="lineNum">     499</span>              : #ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_</span>
 <span id="L500"><span class="lineNum">     500</span>              :     SetUpTearDownSuiteFuncType test_case_fp =</span>
-<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">           7 :         GetNotDefaultOrNull(&amp;T::SetUpTestCase, &amp;Test::SetUpTestCase);</span></span>
+<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">          32 :         GetNotDefaultOrNull(&amp;T::SetUpTestCase, &amp;Test::SetUpTestCase);</span></span>
 <span id="L502"><span class="lineNum">     502</span>              :     SetUpTearDownSuiteFuncType test_suite_fp =</span>
-<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">           7 :         GetNotDefaultOrNull(&amp;T::SetUpTestSuite, &amp;Test::SetUpTestSuite);</span></span>
+<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">          32 :         GetNotDefaultOrNull(&amp;T::SetUpTestSuite, &amp;Test::SetUpTestSuite);</span></span>
 <span id="L504"><span class="lineNum">     504</span>              : </span>
-<span id="L505"><span class="lineNum">     505</span> <span class="tlaGNC">           7 :     GTEST_CHECK_(!test_case_fp || !test_suite_fp)</span></span>
+<span id="L505"><span class="lineNum">     505</span> <span class="tlaGNC">          32 :     GTEST_CHECK_(!test_case_fp || !test_suite_fp)</span></span>
 <span id="L506"><span class="lineNum">     506</span>              :         &lt;&lt; &quot;Test can not provide both SetUpTestSuite and SetUpTestCase, please &quot;</span>
 <span id="L507"><span class="lineNum">     507</span>              :            &quot;make sure there is only one present at &quot;</span>
 <span id="L508"><span class="lineNum">     508</span> <span class="tlaUNC">           0 :         &lt;&lt; filename &lt;&lt; &quot;:&quot; &lt;&lt; line_num;</span></span>
 <span id="L509"><span class="lineNum">     509</span>              : </span>
-<span id="L510"><span class="lineNum">     510</span> <span class="tlaGNC">           7 :     return test_case_fp != nullptr ? test_case_fp : test_suite_fp;</span></span>
+<span id="L510"><span class="lineNum">     510</span> <span class="tlaGNC">          32 :     return test_case_fp != nullptr ? test_case_fp : test_suite_fp;</span></span>
 <span id="L511"><span class="lineNum">     511</span>              : #else</span>
 <span id="L512"><span class="lineNum">     512</span>              :     (void)(filename);</span>
 <span id="L513"><span class="lineNum">     513</span>              :     (void)(line_num);</span>
@@ -577,20 +577,20 @@
 <span id="L515"><span class="lineNum">     515</span>              : #endif</span>
 <span id="L516"><span class="lineNum">     516</span>              :   }</span>
 <span id="L517"><span class="lineNum">     517</span>              : </span>
-<span id="L518"><span class="lineNum">     518</span> <span class="tlaGNC">           7 :   static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,</span></span>
+<span id="L518"><span class="lineNum">     518</span> <span class="tlaGNC">          32 :   static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,</span></span>
 <span id="L519"><span class="lineNum">     519</span>              :                                                            int line_num) {</span>
 <span id="L520"><span class="lineNum">     520</span>              : #ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_</span>
 <span id="L521"><span class="lineNum">     521</span>              :     SetUpTearDownSuiteFuncType test_case_fp =</span>
-<span id="L522"><span class="lineNum">     522</span> <span class="tlaGNC">           7 :         GetNotDefaultOrNull(&amp;T::TearDownTestCase, &amp;Test::TearDownTestCase);</span></span>
+<span id="L522"><span class="lineNum">     522</span> <span class="tlaGNC">          32 :         GetNotDefaultOrNull(&amp;T::TearDownTestCase, &amp;Test::TearDownTestCase);</span></span>
 <span id="L523"><span class="lineNum">     523</span>              :     SetUpTearDownSuiteFuncType test_suite_fp =</span>
-<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">           7 :         GetNotDefaultOrNull(&amp;T::TearDownTestSuite, &amp;Test::TearDownTestSuite);</span></span>
+<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">          32 :         GetNotDefaultOrNull(&amp;T::TearDownTestSuite, &amp;Test::TearDownTestSuite);</span></span>
 <span id="L525"><span class="lineNum">     525</span>              : </span>
-<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">           7 :     GTEST_CHECK_(!test_case_fp || !test_suite_fp)</span></span>
+<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">          32 :     GTEST_CHECK_(!test_case_fp || !test_suite_fp)</span></span>
 <span id="L527"><span class="lineNum">     527</span>              :         &lt;&lt; &quot;Test can not provide both TearDownTestSuite and TearDownTestCase,&quot;</span>
 <span id="L528"><span class="lineNum">     528</span>              :            &quot; please make sure there is only one present at&quot;</span>
 <span id="L529"><span class="lineNum">     529</span> <span class="tlaUNC">           0 :         &lt;&lt; filename &lt;&lt; &quot;:&quot; &lt;&lt; line_num;</span></span>
 <span id="L530"><span class="lineNum">     530</span>              : </span>
-<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">           7 :     return test_case_fp != nullptr ? test_case_fp : test_suite_fp;</span></span>
+<span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">          32 :     return test_case_fp != nullptr ? test_case_fp : test_suite_fp;</span></span>
 <span id="L532"><span class="lineNum">     532</span>              : #else</span>
 <span id="L533"><span class="lineNum">     533</span>              :     (void)(filename);</span>
 <span id="L534"><span class="lineNum">     534</span>              :     (void)(line_num);</span>

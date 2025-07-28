@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryMed">86.4&nbsp;%</td>
+            <td class="headerCovTableEntryMed">87.9&nbsp;%</td>
             <td class="headerCovTableEntry">199</td>
-            <td class="headerCovTableEntry">172</td>
+            <td class="headerCovTableEntry">175</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntryHi">98.1&nbsp;%</td>
-            <td class="headerCovTableEntry">53</td>
-            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntryHi">96.4&nbsp;%</td>
+            <td class="headerCovTableEntry">194</td>
+            <td class="headerCovTableEntry">187</td>
           </tr>
                   <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -193,8 +193,8 @@
 <span id="L131"><span class="lineNum">     131</span>              :     // by std::_Rb_tree::_M_end() where the pointer is used to initialize a</span>
 <span id="L132"><span class="lineNum">     132</span>              :     // const_iterator and so constness is restored.</span>
 <span id="L133"><span class="lineNum">     133</span>              :     _Base_ptr</span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         892 :     _M_base_ptr() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         892 :     { return const_cast&lt;_Rb_tree_node_base*&gt;(this); }</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">        7747 :     _M_base_ptr() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">        7747 :     { return const_cast&lt;_Rb_tree_node_base*&gt;(this); }</span></span>
 <span id="L136"><span class="lineNum">     136</span>              :   };</span>
 <span id="L137"><span class="lineNum">     137</span>              : </span>
 <span id="L138"><span class="lineNum">     138</span>              :   // Helper type offering value initialization guarantee on the compare functor.</span>
@@ -203,11 +203,11 @@
 <span id="L141"><span class="lineNum">     141</span>              :     {</span>
 <span id="L142"><span class="lineNum">     142</span>              :       _Key_compare              _M_key_compare;</span>
 <span id="L143"><span class="lineNum">     143</span>              : </span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          34 :       _Rb_tree_key_compare()</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">         131 :       _Rb_tree_key_compare()</span></span>
 <span id="L145"><span class="lineNum">     145</span>              :       _GLIBCXX_NOEXCEPT_IF(</span>
 <span id="L146"><span class="lineNum">     146</span>              :         is_nothrow_default_constructible&lt;_Key_compare&gt;::value)</span>
 <span id="L147"><span class="lineNum">     147</span>              :       : _M_key_compare()</span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">          34 :       { }</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         131 :       { }</span></span>
 <span id="L149"><span class="lineNum">     149</span>              : </span>
 <span id="L150"><span class="lineNum">     150</span>              :       _Rb_tree_key_compare(const _Key_compare&amp; __comp)</span>
 <span id="L151"><span class="lineNum">     151</span>              :       : _M_key_compare(__comp)</span>
@@ -230,11 +230,11 @@
 <span id="L168"><span class="lineNum">     168</span>              :     _Rb_tree_node_base  _M_header;</span>
 <span id="L169"><span class="lineNum">     169</span>              :     size_t              _M_node_count; // Keeps track of size of tree.</span>
 <span id="L170"><span class="lineNum">     170</span>              : </span>
-<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">          34 :     _Rb_tree_header() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">          34 :     {</span></span>
-<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">          34 :       _M_header._M_color = _S_red;</span></span>
-<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">          34 :       _M_reset();</span></span>
-<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">          34 :     }</span></span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         131 :     _Rb_tree_header() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">         131 :     {</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         131 :       _M_header._M_color = _S_red;</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         131 :       _M_reset();</span></span>
+<span id="L175"><span class="lineNum">     175</span> <span class="tlaGNC">         131 :     }</span></span>
 <span id="L176"><span class="lineNum">     176</span>              : </span>
 <span id="L177"><span class="lineNum">     177</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L178"><span class="lineNum">     178</span>              :     _Rb_tree_header(_Rb_tree_header&amp;&amp; __x) noexcept</span>
@@ -263,13 +263,13 @@
 <span id="L201"><span class="lineNum">     201</span>              :     }</span>
 <span id="L202"><span class="lineNum">     202</span>              : </span>
 <span id="L203"><span class="lineNum">     203</span>              :     void</span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          34 :     _M_reset()</span></span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">         131 :     _M_reset()</span></span>
 <span id="L205"><span class="lineNum">     205</span>              :     {</span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          34 :       _M_header._M_parent = 0;</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          34 :       _M_header._M_left = &amp;_M_header;</span></span>
-<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          34 :       _M_header._M_right = &amp;_M_header;</span></span>
-<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">          34 :       _M_node_count = 0;</span></span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          34 :     }</span></span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         131 :       _M_header._M_parent = 0;</span></span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">         131 :       _M_header._M_left = &amp;_M_header;</span></span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">         131 :       _M_header._M_right = &amp;_M_header;</span></span>
+<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">         131 :       _M_node_count = 0;</span></span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">         131 :     }</span></span>
 <span id="L211"><span class="lineNum">     211</span>              :   };</span>
 <span id="L212"><span class="lineNum">     212</span>              : </span>
 <span id="L213"><span class="lineNum">     213</span>              :   template&lt;typename _Val&gt;</span>
@@ -289,17 +289,17 @@
 <span id="L227"><span class="lineNum">     227</span>              :       __gnu_cxx::__aligned_membuf&lt;_Val&gt; _M_storage;</span>
 <span id="L228"><span class="lineNum">     228</span>              : </span>
 <span id="L229"><span class="lineNum">     229</span>              :       _Val*</span>
-<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">         634 :       _M_valptr()</span></span>
-<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">         634 :       { return _M_storage._M_ptr(); }</span></span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">        6641 :       _M_valptr()</span></span>
+<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">        6641 :       { return _M_storage._M_ptr(); }</span></span>
 <span id="L232"><span class="lineNum">     232</span>              : </span>
 <span id="L233"><span class="lineNum">     233</span>              :       const _Val*</span>
-<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">         810 :       _M_valptr() const</span></span>
-<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">         810 :       { return _M_storage._M_ptr(); }</span></span>
+<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">        9996 :       _M_valptr() const</span></span>
+<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">        9996 :       { return _M_storage._M_ptr(); }</span></span>
 <span id="L236"><span class="lineNum">     236</span>              : #endif</span>
 <span id="L237"><span class="lineNum">     237</span>              : </span>
 <span id="L238"><span class="lineNum">     238</span>              :       _Rb_tree_node*</span>
-<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         104 :       _M_node_ptr() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">         104 :       { return this; }</span></span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">         696 :       _M_node_ptr() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">         696 :       { return this; }</span></span>
 <span id="L241"><span class="lineNum">     241</span>              :     };</span>
 <span id="L242"><span class="lineNum">     242</span>              : </span>
 <span id="L243"><span class="lineNum">     243</span>              : #if _GLIBCXX_USE_ALLOC_PTR_FOR_RB_TREE</span>
@@ -447,22 +447,22 @@
 <span id="L385"><span class="lineNum">     385</span>              :       : _M_node() { }</span>
 <span id="L386"><span class="lineNum">     386</span>              : </span>
 <span id="L387"><span class="lineNum">     387</span>              :       explicit</span>
-<span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">         755 :       _Rb_tree_iterator(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
-<span id="L389"><span class="lineNum">     389</span> <span class="tlaGNC">         755 :       : _M_node(__x) { }</span></span>
+<span id="L388"><span class="lineNum">     388</span> <span class="tlaGNC">        6697 :       _Rb_tree_iterator(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L389"><span class="lineNum">     389</span> <span class="tlaGNC">        6697 :       : _M_node(__x) { }</span></span>
 <span id="L390"><span class="lineNum">     390</span>              : </span>
 <span id="L391"><span class="lineNum">     391</span>              :       reference</span>
-<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">         426 :       operator*() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">         426 :       { return *static_cast&lt;_Node_ptr&gt;(_M_node)-&gt;_M_valptr(); }</span></span>
+<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">        5249 :       operator*() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">        5249 :       { return *static_cast&lt;_Node_ptr&gt;(_M_node)-&gt;_M_valptr(); }</span></span>
 <span id="L394"><span class="lineNum">     394</span>              : </span>
 <span id="L395"><span class="lineNum">     395</span>              :       pointer</span>
 <span id="L396"><span class="lineNum">     396</span>              :       operator-&gt;() const _GLIBCXX_NOEXCEPT</span>
 <span id="L397"><span class="lineNum">     397</span>              :       { return static_cast&lt;_Node_ptr&gt;(_M_node)-&gt;_M_valptr(); }</span>
 <span id="L398"><span class="lineNum">     398</span>              : </span>
 <span id="L399"><span class="lineNum">     399</span>              :       _Rb_tree_iterator&amp;</span>
-<span id="L400"><span class="lineNum">     400</span> <span class="tlaUNC">           0 :       operator++() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L400"><span class="lineNum">     400</span> <span class="tlaGNC">         549 :       operator++() _GLIBCXX_NOEXCEPT</span></span>
 <span id="L401"><span class="lineNum">     401</span>              :       {</span>
-<span id="L402"><span class="lineNum">     402</span> <span class="tlaUNC">           0 :         _M_node = _Rb_tree_increment(_M_node);</span></span>
-<span id="L403"><span class="lineNum">     403</span> <span class="tlaUNC">           0 :         return *this;</span></span>
+<span id="L402"><span class="lineNum">     402</span> <span class="tlaGNC">         549 :         _M_node = _Rb_tree_increment(_M_node);</span></span>
+<span id="L403"><span class="lineNum">     403</span> <span class="tlaGNC">         549 :         return *this;</span></span>
 <span id="L404"><span class="lineNum">     404</span>              :       }</span>
 <span id="L405"><span class="lineNum">     405</span>              : </span>
 <span id="L406"><span class="lineNum">     406</span>              :       _Rb_tree_iterator</span>
@@ -474,10 +474,10 @@
 <span id="L412"><span class="lineNum">     412</span>              :       }</span>
 <span id="L413"><span class="lineNum">     413</span>              : </span>
 <span id="L414"><span class="lineNum">     414</span>              :       _Rb_tree_iterator&amp;</span>
-<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">          16 :       operator--() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L415"><span class="lineNum">     415</span> <span class="tlaGNC">          72 :       operator--() _GLIBCXX_NOEXCEPT</span></span>
 <span id="L416"><span class="lineNum">     416</span>              :       {</span>
-<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">          16 :         _M_node = _Rb_tree_decrement(_M_node);</span></span>
-<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">          16 :         return *this;</span></span>
+<span id="L417"><span class="lineNum">     417</span> <span class="tlaGNC">          72 :         _M_node = _Rb_tree_decrement(_M_node);</span></span>
+<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">          72 :         return *this;</span></span>
 <span id="L419"><span class="lineNum">     419</span>              :       }</span>
 <span id="L420"><span class="lineNum">     420</span>              : </span>
 <span id="L421"><span class="lineNum">     421</span>              :       _Rb_tree_iterator</span>
@@ -489,15 +489,15 @@
 <span id="L427"><span class="lineNum">     427</span>              :       }</span>
 <span id="L428"><span class="lineNum">     428</span>              : </span>
 <span id="L429"><span class="lineNum">     429</span>              :       friend bool</span>
-<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">         315 :       operator==(const _Rb_tree_iterator&amp; __x,</span></span>
+<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">        2913 :       operator==(const _Rb_tree_iterator&amp; __x,</span></span>
 <span id="L431"><span class="lineNum">     431</span>              :                  const _Rb_tree_iterator&amp; __y) _GLIBCXX_NOEXCEPT</span>
-<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">         315 :       { return __x._M_node == __y._M_node; }</span></span>
+<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">        2913 :       { return __x._M_node == __y._M_node; }</span></span>
 <span id="L433"><span class="lineNum">     433</span>              : </span>
 <span id="L434"><span class="lineNum">     434</span>              : #if ! __cpp_lib_three_way_comparison</span>
 <span id="L435"><span class="lineNum">     435</span>              :       friend bool</span>
-<span id="L436"><span class="lineNum">     436</span> <span class="tlaGNC">           6 :       operator!=(const _Rb_tree_iterator&amp; __x,</span></span>
+<span id="L436"><span class="lineNum">     436</span> <span class="tlaGNC">         624 :       operator!=(const _Rb_tree_iterator&amp; __x,</span></span>
 <span id="L437"><span class="lineNum">     437</span>              :                  const _Rb_tree_iterator&amp; __y) _GLIBCXX_NOEXCEPT</span>
-<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">           6 :       { return __x._M_node != __y._M_node; }</span></span>
+<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">         624 :       { return __x._M_node != __y._M_node; }</span></span>
 <span id="L439"><span class="lineNum">     439</span>              : #endif</span>
 <span id="L440"><span class="lineNum">     440</span>              : </span>
 <span id="L441"><span class="lineNum">     441</span>              :       _Base_ptr _M_node;</span>
@@ -525,8 +525,8 @@
 <span id="L463"><span class="lineNum">     463</span>              :       _Rb_tree_const_iterator(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span>
 <span id="L464"><span class="lineNum">     464</span>              :       : _M_node(__x) { }</span>
 <span id="L465"><span class="lineNum">     465</span>              : </span>
-<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">         104 :       _Rb_tree_const_iterator(const iterator&amp; __it) _GLIBCXX_NOEXCEPT</span></span>
-<span id="L467"><span class="lineNum">     467</span> <span class="tlaGNC">         104 :       : _M_node(__it._M_node) { }</span></span>
+<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">         696 :       _Rb_tree_const_iterator(const iterator&amp; __it) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L467"><span class="lineNum">     467</span> <span class="tlaGNC">         696 :       : _M_node(__it._M_node) { }</span></span>
 <span id="L468"><span class="lineNum">     468</span>              : </span>
 <span id="L469"><span class="lineNum">     469</span>              :       reference</span>
 <span id="L470"><span class="lineNum">     470</span>              :       operator*() const _GLIBCXX_NOEXCEPT</span>
@@ -748,11 +748,11 @@
 <span id="L686"><span class="lineNum">     686</span>              : </span>
 <span id="L687"><span class="lineNum">     687</span>              :       __attribute__((__nonnull__))</span>
 <span id="L688"><span class="lineNum">     688</span>              :       static void</span>
-<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         104 :       _S_insert_and_rebalance(const bool __insert_left,</span></span>
+<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">         696 :       _S_insert_and_rebalance(const bool __insert_left,</span></span>
 <span id="L690"><span class="lineNum">     690</span>              :                               _Node_base* __x, _Node_base* __p,</span>
 <span id="L691"><span class="lineNum">     691</span>              :                               _Node_base&amp; __header) _GLIBCXX_USE_NOEXCEPT</span>
 <span id="L692"><span class="lineNum">     692</span>              :       {</span>
-<span id="L693"><span class="lineNum">     693</span> <span class="tlaGNC">         104 :         return _Rb_tree_insert_and_rebalance(__insert_left, __x, __p, __header);</span></span>
+<span id="L693"><span class="lineNum">     693</span> <span class="tlaGNC">         696 :         return _Rb_tree_insert_and_rebalance(__insert_left, __x, __p, __header);</span></span>
 <span id="L694"><span class="lineNum">     694</span>              :       }</span>
 <span id="L695"><span class="lineNum">     695</span>              : </span>
 <span id="L696"><span class="lineNum">     696</span>              :       __attribute__((__nonnull__,__returns_nonnull__))</span>
@@ -1213,8 +1213,8 @@
 <span id="L1151"><span class="lineNum">    1151</span>              :       typedef _Alloc                            allocator_type;</span>
 <span id="L1152"><span class="lineNum">    1152</span>              : </span>
 <span id="L1153"><span class="lineNum">    1153</span>              :       _Node_allocator&amp;</span>
-<span id="L1154"><span class="lineNum">    1154</span> <span class="tlaGNC">         416 :       _M_get_Node_allocator() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1155"><span class="lineNum">    1155</span> <span class="tlaGNC">         416 :       { return this-&gt;_M_impl; }</span></span>
+<span id="L1154"><span class="lineNum">    1154</span> <span class="tlaGNC">        2784 :       _M_get_Node_allocator() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1155"><span class="lineNum">    1155</span> <span class="tlaGNC">        2784 :       { return this-&gt;_M_impl; }</span></span>
 <span id="L1156"><span class="lineNum">    1156</span>              : </span>
 <span id="L1157"><span class="lineNum">    1157</span>              :       const _Node_allocator&amp;</span>
 <span id="L1158"><span class="lineNum">    1158</span>              :       _M_get_Node_allocator() const _GLIBCXX_NOEXCEPT</span>
@@ -1226,10 +1226,10 @@
 <span id="L1164"><span class="lineNum">    1164</span>              : </span>
 <span id="L1165"><span class="lineNum">    1165</span>              :     protected:</span>
 <span id="L1166"><span class="lineNum">    1166</span>              :       _Node_ptr</span>
-<span id="L1167"><span class="lineNum">    1167</span> <span class="tlaGNC">         104 :       _M_get_node()</span></span>
+<span id="L1167"><span class="lineNum">    1167</span> <span class="tlaGNC">         696 :       _M_get_node()</span></span>
 <span id="L1168"><span class="lineNum">    1168</span>              :       {</span>
 <span id="L1169"><span class="lineNum">    1169</span>              : #if __cplusplus &lt; 201102L || _GLIBCXX_USE_ALLOC_PTR_FOR_RB_TREE</span>
-<span id="L1170"><span class="lineNum">    1170</span> <span class="tlaGNC">         208 :         return _Node_alloc_traits::allocate(_M_get_Node_allocator(), 1);</span></span>
+<span id="L1170"><span class="lineNum">    1170</span> <span class="tlaGNC">        1392 :         return _Node_alloc_traits::allocate(_M_get_Node_allocator(), 1);</span></span>
 <span id="L1171"><span class="lineNum">    1171</span>              : #else</span>
 <span id="L1172"><span class="lineNum">    1172</span>              : #pragma GCC diagnostic push</span>
 <span id="L1173"><span class="lineNum">    1173</span>              : #pragma GCC diagnostic ignored &quot;-Wc++17-extensions&quot; // if constexpr</span>
@@ -1247,10 +1247,10 @@
 <span id="L1185"><span class="lineNum">    1185</span>              :       }</span>
 <span id="L1186"><span class="lineNum">    1186</span>              : </span>
 <span id="L1187"><span class="lineNum">    1187</span>              :       void</span>
-<span id="L1188"><span class="lineNum">    1188</span> <span class="tlaGNC">         104 :       _M_put_node(_Node_ptr __p) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1188"><span class="lineNum">    1188</span> <span class="tlaGNC">         696 :       _M_put_node(_Node_ptr __p) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1189"><span class="lineNum">    1189</span>              :       {</span>
 <span id="L1190"><span class="lineNum">    1190</span>              : #if __cplusplus &lt; 201102L || _GLIBCXX_USE_ALLOC_PTR_FOR_RB_TREE</span>
-<span id="L1191"><span class="lineNum">    1191</span> <span class="tlaGNC">         104 :         _Node_alloc_traits::deallocate(_M_get_Node_allocator(), __p, 1);</span></span>
+<span id="L1191"><span class="lineNum">    1191</span> <span class="tlaGNC">         696 :         _Node_alloc_traits::deallocate(_M_get_Node_allocator(), __p, 1);</span></span>
 <span id="L1192"><span class="lineNum">    1192</span>              : #else</span>
 <span id="L1193"><span class="lineNum">    1193</span>              : #pragma GCC diagnostic push</span>
 <span id="L1194"><span class="lineNum">    1194</span>              : #pragma GCC diagnostic ignored &quot;-Wc++17-extensions&quot; // if constexpr</span>
@@ -1266,7 +1266,7 @@
 <span id="L1204"><span class="lineNum">    1204</span>              :           }</span>
 <span id="L1205"><span class="lineNum">    1205</span>              : #pragma GCC diagnostic pop</span>
 <span id="L1206"><span class="lineNum">    1206</span>              : #endif</span>
-<span id="L1207"><span class="lineNum">    1207</span> <span class="tlaGNC">         104 :       }</span></span>
+<span id="L1207"><span class="lineNum">    1207</span> <span class="tlaGNC">         696 :       }</span></span>
 <span id="L1208"><span class="lineNum">    1208</span>              : </span>
 <span id="L1209"><span class="lineNum">    1209</span>              : #if __cplusplus &lt; 201103L</span>
 <span id="L1210"><span class="lineNum">    1210</span>              :       void</span>
@@ -1291,12 +1291,12 @@
 <span id="L1229"><span class="lineNum">    1229</span>              : #else</span>
 <span id="L1230"><span class="lineNum">    1230</span>              :       template&lt;typename... _Args&gt;</span>
 <span id="L1231"><span class="lineNum">    1231</span>              :         void</span>
-<span id="L1232"><span class="lineNum">    1232</span> <span class="tlaGNC">         104 :         _M_construct_node(_Node_ptr __node, _Args&amp;&amp;... __args)</span></span>
+<span id="L1232"><span class="lineNum">    1232</span> <span class="tlaGNC">         696 :         _M_construct_node(_Node_ptr __node, _Args&amp;&amp;... __args)</span></span>
 <span id="L1233"><span class="lineNum">    1233</span>              :         {</span>
 <span id="L1234"><span class="lineNum">    1234</span>              :           __try</span>
 <span id="L1235"><span class="lineNum">    1235</span>              :             {</span>
-<span id="L1236"><span class="lineNum">    1236</span> <span class="tlaGNC">         104 :               ::new(std::addressof(*__node)) _Node;</span></span>
-<span id="L1237"><span class="lineNum">    1237</span> <span class="tlaGNC">         312 :               _Node_alloc_traits::construct(_M_get_Node_allocator(),</span></span>
+<span id="L1236"><span class="lineNum">    1236</span> <span class="tlaGNC">         696 :               ::new(std::addressof(*__node)) _Node;</span></span>
+<span id="L1237"><span class="lineNum">    1237</span> <span class="tlaGNC">        2088 :               _Node_alloc_traits::construct(_M_get_Node_allocator(),</span></span>
 <span id="L1238"><span class="lineNum">    1238</span>              :                                             __node-&gt;_M_valptr(),</span>
 <span id="L1239"><span class="lineNum">    1239</span>              :                                             std::forward&lt;_Args&gt;(__args)...);</span>
 <span id="L1240"><span class="lineNum">    1240</span>              :             }</span>
@@ -1306,35 +1306,35 @@
 <span id="L1244"><span class="lineNum">    1244</span> <span class="tlaUNC">           0 :               _M_put_node(__node);</span></span>
 <span id="L1245"><span class="lineNum">    1245</span> <span class="tlaUNC">           0 :               __throw_exception_again;</span></span>
 <span id="L1246"><span class="lineNum">    1246</span>              :             }</span>
-<span id="L1247"><span class="lineNum">    1247</span> <span class="tlaGNC">         104 :         }</span></span>
+<span id="L1247"><span class="lineNum">    1247</span> <span class="tlaGNC">         696 :         }</span></span>
 <span id="L1248"><span class="lineNum">    1248</span>              : </span>
 <span id="L1249"><span class="lineNum">    1249</span>              :       template&lt;typename... _Args&gt;</span>
 <span id="L1250"><span class="lineNum">    1250</span>              :         _Node_ptr</span>
-<span id="L1251"><span class="lineNum">    1251</span> <span class="tlaGNC">         104 :         _M_create_node(_Args&amp;&amp;... __args)</span></span>
+<span id="L1251"><span class="lineNum">    1251</span> <span class="tlaGNC">         696 :         _M_create_node(_Args&amp;&amp;... __args)</span></span>
 <span id="L1252"><span class="lineNum">    1252</span>              :         {</span>
-<span id="L1253"><span class="lineNum">    1253</span> <span class="tlaGNC">         104 :           _Node_ptr __tmp = _M_get_node();</span></span>
-<span id="L1254"><span class="lineNum">    1254</span> <span class="tlaGNC">         312 :           _M_construct_node(__tmp, std::forward&lt;_Args&gt;(__args)...);</span></span>
-<span id="L1255"><span class="lineNum">    1255</span> <span class="tlaGNC">         104 :           return __tmp;</span></span>
+<span id="L1253"><span class="lineNum">    1253</span> <span class="tlaGNC">         696 :           _Node_ptr __tmp = _M_get_node();</span></span>
+<span id="L1254"><span class="lineNum">    1254</span> <span class="tlaGNC">        2088 :           _M_construct_node(__tmp, std::forward&lt;_Args&gt;(__args)...);</span></span>
+<span id="L1255"><span class="lineNum">    1255</span> <span class="tlaGNC">         696 :           return __tmp;</span></span>
 <span id="L1256"><span class="lineNum">    1256</span>              :         }</span>
 <span id="L1257"><span class="lineNum">    1257</span>              : #endif</span>
 <span id="L1258"><span class="lineNum">    1258</span>              : </span>
 <span id="L1259"><span class="lineNum">    1259</span>              :       void</span>
-<span id="L1260"><span class="lineNum">    1260</span> <span class="tlaGNC">         104 :       _M_destroy_node(_Node_ptr __p) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1260"><span class="lineNum">    1260</span> <span class="tlaGNC">         696 :       _M_destroy_node(_Node_ptr __p) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1261"><span class="lineNum">    1261</span>              :       {</span>
 <span id="L1262"><span class="lineNum">    1262</span>              : #if __cplusplus &lt; 201103L</span>
 <span id="L1263"><span class="lineNum">    1263</span>              :         get_allocator().destroy(__p-&gt;_M_valptr());</span>
 <span id="L1264"><span class="lineNum">    1264</span>              : #else</span>
-<span id="L1265"><span class="lineNum">    1265</span> <span class="tlaGNC">         104 :         _Node_alloc_traits::destroy(_M_get_Node_allocator(), __p-&gt;_M_valptr());</span></span>
-<span id="L1266"><span class="lineNum">    1266</span> <span class="tlaGNC">         104 :         __p-&gt;~_Node();</span></span>
+<span id="L1265"><span class="lineNum">    1265</span> <span class="tlaGNC">         696 :         _Node_alloc_traits::destroy(_M_get_Node_allocator(), __p-&gt;_M_valptr());</span></span>
+<span id="L1266"><span class="lineNum">    1266</span> <span class="tlaGNC">         696 :         __p-&gt;~_Node();</span></span>
 <span id="L1267"><span class="lineNum">    1267</span>              : #endif</span>
-<span id="L1268"><span class="lineNum">    1268</span> <span class="tlaGNC">         104 :       }</span></span>
+<span id="L1268"><span class="lineNum">    1268</span> <span class="tlaGNC">         696 :       }</span></span>
 <span id="L1269"><span class="lineNum">    1269</span>              : </span>
 <span id="L1270"><span class="lineNum">    1270</span>              :       void</span>
-<span id="L1271"><span class="lineNum">    1271</span> <span class="tlaGNC">         104 :       _M_drop_node(_Node_ptr __p) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1271"><span class="lineNum">    1271</span> <span class="tlaGNC">         696 :       _M_drop_node(_Node_ptr __p) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1272"><span class="lineNum">    1272</span>              :       {</span>
-<span id="L1273"><span class="lineNum">    1273</span> <span class="tlaGNC">         104 :         _M_destroy_node(__p);</span></span>
-<span id="L1274"><span class="lineNum">    1274</span> <span class="tlaGNC">         104 :         _M_put_node(__p);</span></span>
-<span id="L1275"><span class="lineNum">    1275</span> <span class="tlaGNC">         104 :       }</span></span>
+<span id="L1273"><span class="lineNum">    1273</span> <span class="tlaGNC">         696 :         _M_destroy_node(__p);</span></span>
+<span id="L1274"><span class="lineNum">    1274</span> <span class="tlaGNC">         696 :         _M_put_node(__p);</span></span>
+<span id="L1275"><span class="lineNum">    1275</span> <span class="tlaGNC">         696 :       }</span></span>
 <span id="L1276"><span class="lineNum">    1276</span>              : </span>
 <span id="L1277"><span class="lineNum">    1277</span>              :       template&lt;bool _MoveValue, typename _NodeGen&gt;</span>
 <span id="L1278"><span class="lineNum">    1278</span>              :         _Node_ptr</span>
@@ -1369,12 +1369,12 @@
 <span id="L1307"><span class="lineNum">    1307</span>              :         {</span>
 <span id="L1308"><span class="lineNum">    1308</span>              :           typedef _Rb_tree_key_compare&lt;_Key_compare&gt; _Base_key_compare;</span>
 <span id="L1309"><span class="lineNum">    1309</span>              : </span>
-<span id="L1310"><span class="lineNum">    1310</span> <span class="tlaGNC">          34 :           _Rb_tree_impl()</span></span>
+<span id="L1310"><span class="lineNum">    1310</span> <span class="tlaGNC">         131 :           _Rb_tree_impl()</span></span>
 <span id="L1311"><span class="lineNum">    1311</span>              :             _GLIBCXX_NOEXCEPT_IF(</span>
 <span id="L1312"><span class="lineNum">    1312</span>              :                 is_nothrow_default_constructible&lt;_Node_allocator&gt;::value</span>
 <span id="L1313"><span class="lineNum">    1313</span>              :                 &amp;&amp; is_nothrow_default_constructible&lt;_Base_key_compare&gt;::value )</span>
-<span id="L1314"><span class="lineNum">    1314</span> <span class="tlaGNC">          34 :           : _Node_allocator()</span></span>
-<span id="L1315"><span class="lineNum">    1315</span> <span class="tlaGNC">          34 :           { }</span></span>
+<span id="L1314"><span class="lineNum">    1314</span> <span class="tlaGNC">         131 :           : _Node_allocator()</span></span>
+<span id="L1315"><span class="lineNum">    1315</span> <span class="tlaGNC">         131 :           { }</span></span>
 <span id="L1316"><span class="lineNum">    1316</span>              : </span>
 <span id="L1317"><span class="lineNum">    1317</span>              :           _Rb_tree_impl(const _Rb_tree_impl&amp; __x)</span>
 <span id="L1318"><span class="lineNum">    1318</span>              :           : _Node_allocator(_Node_alloc_traits::_S_select_on_copy(__x))</span>
@@ -1420,40 +1420,40 @@
 <span id="L1358"><span class="lineNum">    1358</span>              :       { return this-&gt;_M_impl._M_header._M_parent; }</span>
 <span id="L1359"><span class="lineNum">    1359</span>              : </span>
 <span id="L1360"><span class="lineNum">    1360</span>              :       _Base_ptr&amp;</span>
-<span id="L1361"><span class="lineNum">    1361</span> <span class="tlaGNC">          46 :       _M_leftmost() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1362"><span class="lineNum">    1362</span> <span class="tlaGNC">          46 :       { return this-&gt;_M_impl._M_header._M_left; }</span></span>
+<span id="L1361"><span class="lineNum">    1361</span> <span class="tlaGNC">         132 :       _M_leftmost() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1362"><span class="lineNum">    1362</span> <span class="tlaGNC">         132 :       { return this-&gt;_M_impl._M_header._M_left; }</span></span>
 <span id="L1363"><span class="lineNum">    1363</span>              : </span>
 <span id="L1364"><span class="lineNum">    1364</span>              :       _Base_ptr</span>
 <span id="L1365"><span class="lineNum">    1365</span>              :       _M_leftmost() const _GLIBCXX_NOEXCEPT</span>
 <span id="L1366"><span class="lineNum">    1366</span>              :       { return this-&gt;_M_impl._M_header._M_left; }</span>
 <span id="L1367"><span class="lineNum">    1367</span>              : </span>
 <span id="L1368"><span class="lineNum">    1368</span>              :       _Base_ptr&amp;</span>
-<span id="L1369"><span class="lineNum">    1369</span> <span class="tlaGNC">         102 :       _M_rightmost() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1370"><span class="lineNum">    1370</span> <span class="tlaGNC">         102 :       { return this-&gt;_M_impl._M_header._M_right; }</span></span>
+<span id="L1369"><span class="lineNum">    1369</span> <span class="tlaGNC">         986 :       _M_rightmost() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1370"><span class="lineNum">    1370</span> <span class="tlaGNC">         986 :       { return this-&gt;_M_impl._M_header._M_right; }</span></span>
 <span id="L1371"><span class="lineNum">    1371</span>              : </span>
 <span id="L1372"><span class="lineNum">    1372</span>              :       _Base_ptr</span>
 <span id="L1373"><span class="lineNum">    1373</span>              :       _M_rightmost() const _GLIBCXX_NOEXCEPT</span>
 <span id="L1374"><span class="lineNum">    1374</span>              :       { return this-&gt;_M_impl._M_header._M_right; }</span>
 <span id="L1375"><span class="lineNum">    1375</span>              : </span>
 <span id="L1376"><span class="lineNum">    1376</span>              :       _Base_ptr</span>
-<span id="L1377"><span class="lineNum">    1377</span> <span class="tlaGNC">         300 :       _M_begin() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1378"><span class="lineNum">    1378</span> <span class="tlaGNC">         300 :       { return this-&gt;_M_impl._M_header._M_parent; }</span></span>
+<span id="L1377"><span class="lineNum">    1377</span> <span class="tlaGNC">        2844 :       _M_begin() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1378"><span class="lineNum">    1378</span> <span class="tlaGNC">        2844 :       { return this-&gt;_M_impl._M_header._M_parent; }</span></span>
 <span id="L1379"><span class="lineNum">    1379</span>              : </span>
 <span id="L1380"><span class="lineNum">    1380</span>              :       _Node_ptr</span>
-<span id="L1381"><span class="lineNum">    1381</span> <span class="tlaGNC">          34 :       _M_begin_node() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1381"><span class="lineNum">    1381</span> <span class="tlaGNC">         131 :       _M_begin_node() const _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1382"><span class="lineNum">    1382</span>              :       {</span>
-<span id="L1383"><span class="lineNum">    1383</span> <span class="tlaGNC">          34 :         _Base_ptr __begin = this-&gt;_M_impl._M_header._M_parent;</span></span>
+<span id="L1383"><span class="lineNum">    1383</span> <span class="tlaGNC">         131 :         _Base_ptr __begin = this-&gt;_M_impl._M_header._M_parent;</span></span>
 <span id="L1384"><span class="lineNum">    1384</span>              :         return __begin</span>
-<span id="L1385"><span class="lineNum">    1385</span> <span class="tlaGNC">          34 :           ? static_cast&lt;_Node&amp;&gt;(*__begin)._M_node_ptr()</span></span>
-<span id="L1386"><span class="lineNum">    1386</span> <span class="tlaGNC">           7 :           : _Node_ptr();</span></span>
+<span id="L1385"><span class="lineNum">    1385</span> <span class="tlaGNC">         131 :           ? static_cast&lt;_Node&amp;&gt;(*__begin)._M_node_ptr()</span></span>
+<span id="L1386"><span class="lineNum">    1386</span> <span class="tlaGNC">          20 :           : _Node_ptr();</span></span>
 <span id="L1387"><span class="lineNum">    1387</span>              :       }</span>
 <span id="L1388"><span class="lineNum">    1388</span>              : </span>
 <span id="L1389"><span class="lineNum">    1389</span>              :       _Base_ptr</span>
-<span id="L1390"><span class="lineNum">    1390</span> <span class="tlaGNC">         788 :       _M_end() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">         788 :       { return this-&gt;_M_impl._M_header._M_base_ptr(); }</span></span>
+<span id="L1390"><span class="lineNum">    1390</span> <span class="tlaGNC">        7051 :       _M_end() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1391"><span class="lineNum">    1391</span> <span class="tlaGNC">        7051 :       { return this-&gt;_M_impl._M_header._M_base_ptr(); }</span></span>
 <span id="L1392"><span class="lineNum">    1392</span>              : </span>
 <span id="L1393"><span class="lineNum">    1393</span>              :       static const _Key&amp;</span>
-<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">         810 :       _S_key(const _Node&amp; __node)</span></span>
+<span id="L1394"><span class="lineNum">    1394</span> <span class="tlaGNC">        9996 :       _S_key(const _Node&amp; __node)</span></span>
 <span id="L1395"><span class="lineNum">    1395</span>              :       {</span>
 <span id="L1396"><span class="lineNum">    1396</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L1397"><span class="lineNum">    1397</span>              :         // If we're asking for the key we're presumably using the comparison</span>
@@ -1471,39 +1471,39 @@
 <span id="L1409"><span class="lineNum">    1409</span>              : # endif // C++17</span>
 <span id="L1410"><span class="lineNum">    1410</span>              : #endif // C++11</span>
 <span id="L1411"><span class="lineNum">    1411</span>              : </span>
-<span id="L1412"><span class="lineNum">    1412</span> <span class="tlaGNC">         810 :         return _KeyOfValue()(*__node._M_valptr());</span></span>
+<span id="L1412"><span class="lineNum">    1412</span> <span class="tlaGNC">        9996 :         return _KeyOfValue()(*__node._M_valptr());</span></span>
 <span id="L1413"><span class="lineNum">    1413</span>              :       }</span>
 <span id="L1414"><span class="lineNum">    1414</span>              : </span>
 <span id="L1415"><span class="lineNum">    1415</span>              :       static const _Key&amp;</span>
-<span id="L1416"><span class="lineNum">    1416</span> <span class="tlaGNC">         647 :       _S_key(_Base_ptr __x)</span></span>
-<span id="L1417"><span class="lineNum">    1417</span> <span class="tlaGNC">         647 :       { return _S_key(static_cast&lt;const _Node&amp;&gt;(*__x)); }</span></span>
+<span id="L1416"><span class="lineNum">    1416</span> <span class="tlaGNC">        8791 :       _S_key(_Base_ptr __x)</span></span>
+<span id="L1417"><span class="lineNum">    1417</span> <span class="tlaGNC">        8791 :       { return _S_key(static_cast&lt;const _Node&amp;&gt;(*__x)); }</span></span>
 <span id="L1418"><span class="lineNum">    1418</span>              : </span>
 <span id="L1419"><span class="lineNum">    1419</span>              :       static const _Key&amp;</span>
-<span id="L1420"><span class="lineNum">    1420</span> <span class="tlaGNC">         163 :       _S_key(_Node_ptr __x)</span></span>
-<span id="L1421"><span class="lineNum">    1421</span> <span class="tlaGNC">         163 :       { return _S_key(*__x); }</span></span>
+<span id="L1420"><span class="lineNum">    1420</span> <span class="tlaGNC">        1205 :       _S_key(_Node_ptr __x)</span></span>
+<span id="L1421"><span class="lineNum">    1421</span> <span class="tlaGNC">        1205 :       { return _S_key(*__x); }</span></span>
 <span id="L1422"><span class="lineNum">    1422</span>              : </span>
 <span id="L1423"><span class="lineNum">    1423</span>              :       static _Base_ptr</span>
-<span id="L1424"><span class="lineNum">    1424</span> <span class="tlaGNC">         269 :       _S_left(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1425"><span class="lineNum">    1425</span> <span class="tlaGNC">         269 :       { return __x-&gt;_M_left; }</span></span>
+<span id="L1424"><span class="lineNum">    1424</span> <span class="tlaGNC">        3127 :       _S_left(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1425"><span class="lineNum">    1425</span> <span class="tlaGNC">        3127 :       { return __x-&gt;_M_left; }</span></span>
 <span id="L1426"><span class="lineNum">    1426</span>              : </span>
 <span id="L1427"><span class="lineNum">    1427</span>              :       static _Node_ptr</span>
-<span id="L1428"><span class="lineNum">    1428</span> <span class="tlaGNC">         104 :       _S_left(_Node_ptr __x)</span></span>
+<span id="L1428"><span class="lineNum">    1428</span> <span class="tlaGNC">         696 :       _S_left(_Node_ptr __x)</span></span>
 <span id="L1429"><span class="lineNum">    1429</span>              :       {</span>
-<span id="L1430"><span class="lineNum">    1430</span> <span class="tlaGNC">         104 :         return __x-&gt;_M_left</span></span>
-<span id="L1431"><span class="lineNum">    1431</span> <span class="tlaGNC">         104 :           ? static_cast&lt;_Node&amp;&gt;(*__x-&gt;_M_left)._M_node_ptr()</span></span>
-<span id="L1432"><span class="lineNum">    1432</span> <span class="tlaGNC">          70 :           : _Node_ptr();</span></span>
+<span id="L1430"><span class="lineNum">    1430</span> <span class="tlaGNC">         696 :         return __x-&gt;_M_left</span></span>
+<span id="L1431"><span class="lineNum">    1431</span> <span class="tlaGNC">         696 :           ? static_cast&lt;_Node&amp;&gt;(*__x-&gt;_M_left)._M_node_ptr()</span></span>
+<span id="L1432"><span class="lineNum">    1432</span> <span class="tlaGNC">         417 :           : _Node_ptr();</span></span>
 <span id="L1433"><span class="lineNum">    1433</span>              :       }</span>
 <span id="L1434"><span class="lineNum">    1434</span>              : </span>
 <span id="L1435"><span class="lineNum">    1435</span>              :       static _Base_ptr</span>
-<span id="L1436"><span class="lineNum">    1436</span> <span class="tlaGNC">         222 :       _S_right(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1437"><span class="lineNum">    1437</span> <span class="tlaGNC">         222 :       { return __x-&gt;_M_right; }</span></span>
+<span id="L1436"><span class="lineNum">    1436</span> <span class="tlaGNC">        4497 :       _S_right(_Base_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1437"><span class="lineNum">    1437</span> <span class="tlaGNC">        4497 :       { return __x-&gt;_M_right; }</span></span>
 <span id="L1438"><span class="lineNum">    1438</span>              : </span>
 <span id="L1439"><span class="lineNum">    1439</span>              :       static _Node_ptr</span>
-<span id="L1440"><span class="lineNum">    1440</span> <span class="tlaGNC">         104 :       _S_right(_Node_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1440"><span class="lineNum">    1440</span> <span class="tlaGNC">         696 :       _S_right(_Node_ptr __x) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1441"><span class="lineNum">    1441</span>              :       {</span>
-<span id="L1442"><span class="lineNum">    1442</span> <span class="tlaGNC">         104 :         return __x-&gt;_M_right</span></span>
-<span id="L1443"><span class="lineNum">    1443</span> <span class="tlaGNC">         104 :           ? static_cast&lt;_Node&amp;&gt;(*__x-&gt;_M_right)._M_node_ptr()</span></span>
-<span id="L1444"><span class="lineNum">    1444</span> <span class="tlaGNC">          61 :           : _Node_ptr();</span></span>
+<span id="L1442"><span class="lineNum">    1442</span> <span class="tlaGNC">         696 :         return __x-&gt;_M_right</span></span>
+<span id="L1443"><span class="lineNum">    1443</span> <span class="tlaGNC">         696 :           ? static_cast&lt;_Node&amp;&gt;(*__x-&gt;_M_right)._M_node_ptr()</span></span>
+<span id="L1444"><span class="lineNum">    1444</span> <span class="tlaGNC">         390 :           : _Node_ptr();</span></span>
 <span id="L1445"><span class="lineNum">    1445</span>              :       }</span>
 <span id="L1446"><span class="lineNum">    1446</span>              : </span>
 <span id="L1447"><span class="lineNum">    1447</span>              :     public:</span>
@@ -1612,7 +1612,7 @@
 <span id="L1550"><span class="lineNum">    1550</span>              : #if __cplusplus &lt; 201103L</span>
 <span id="L1551"><span class="lineNum">    1551</span>              :       _Rb_tree() { }</span>
 <span id="L1552"><span class="lineNum">    1552</span>              : #else</span>
-<span id="L1553"><span class="lineNum">    1553</span> <span class="tlaGNC">          34 :       _Rb_tree() = default;</span></span>
+<span id="L1553"><span class="lineNum">    1553</span> <span class="tlaGNC">         131 :       _Rb_tree() = default;</span></span>
 <span id="L1554"><span class="lineNum">    1554</span>              : #endif</span>
 <span id="L1555"><span class="lineNum">    1555</span>              : </span>
 <span id="L1556"><span class="lineNum">    1556</span>              :       _Rb_tree(const _Compare&amp; __comp,</span>
@@ -1667,28 +1667,28 @@
 <span id="L1605"><span class="lineNum">    1605</span>              :       { }</span>
 <span id="L1606"><span class="lineNum">    1606</span>              : #endif</span>
 <span id="L1607"><span class="lineNum">    1607</span>              : </span>
-<span id="L1608"><span class="lineNum">    1608</span> <span class="tlaGNC">          34 :       ~_Rb_tree() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1609"><span class="lineNum">    1609</span> <span class="tlaGNC">          34 :       { _M_erase(_M_begin_node()); }</span></span>
+<span id="L1608"><span class="lineNum">    1608</span> <span class="tlaGNC">         131 :       ~_Rb_tree() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1609"><span class="lineNum">    1609</span> <span class="tlaGNC">         131 :       { _M_erase(_M_begin_node()); }</span></span>
 <span id="L1610"><span class="lineNum">    1610</span>              : </span>
 <span id="L1611"><span class="lineNum">    1611</span>              :       _Rb_tree&amp;</span>
 <span id="L1612"><span class="lineNum">    1612</span>              :       operator=(const _Rb_tree&amp; __x);</span>
 <span id="L1613"><span class="lineNum">    1613</span>              : </span>
 <span id="L1614"><span class="lineNum">    1614</span>              :       // Accessors.</span>
 <span id="L1615"><span class="lineNum">    1615</span>              :       _Compare</span>
-<span id="L1616"><span class="lineNum">    1616</span> <span class="tlaGNC">         174 :       key_comp() const</span></span>
-<span id="L1617"><span class="lineNum">    1617</span> <span class="tlaGNC">         174 :       { return _M_impl._M_key_compare; }</span></span>
+<span id="L1616"><span class="lineNum">    1616</span> <span class="tlaGNC">        2048 :       key_comp() const</span></span>
+<span id="L1617"><span class="lineNum">    1617</span> <span class="tlaGNC">        2048 :       { return _M_impl._M_key_compare; }</span></span>
 <span id="L1618"><span class="lineNum">    1618</span>              : </span>
 <span id="L1619"><span class="lineNum">    1619</span>              :       iterator</span>
-<span id="L1620"><span class="lineNum">    1620</span> <span class="tlaGNC">          27 :       begin() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1621"><span class="lineNum">    1621</span> <span class="tlaGNC">          27 :       { return iterator(this-&gt;_M_impl._M_header._M_left); }</span></span>
+<span id="L1620"><span class="lineNum">    1620</span> <span class="tlaGNC">         174 :       begin() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1621"><span class="lineNum">    1621</span> <span class="tlaGNC">         174 :       { return iterator(this-&gt;_M_impl._M_header._M_left); }</span></span>
 <span id="L1622"><span class="lineNum">    1622</span>              : </span>
 <span id="L1623"><span class="lineNum">    1623</span>              :       const_iterator</span>
 <span id="L1624"><span class="lineNum">    1624</span>              :       begin() const _GLIBCXX_NOEXCEPT</span>
 <span id="L1625"><span class="lineNum">    1625</span>              :       { return const_iterator(this-&gt;_M_impl._M_header._M_left); }</span>
 <span id="L1626"><span class="lineNum">    1626</span>              : </span>
 <span id="L1627"><span class="lineNum">    1627</span>              :       iterator</span>
-<span id="L1628"><span class="lineNum">    1628</span> <span class="tlaGNC">         298 :       end() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1629"><span class="lineNum">    1629</span> <span class="tlaGNC">         298 :       { return iterator(_M_end()); }</span></span>
+<span id="L1628"><span class="lineNum">    1628</span> <span class="tlaGNC">        2891 :       end() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1629"><span class="lineNum">    1629</span> <span class="tlaGNC">        2891 :       { return iterator(_M_end()); }</span></span>
 <span id="L1630"><span class="lineNum">    1630</span>              : </span>
 <span id="L1631"><span class="lineNum">    1631</span>              :       const_iterator</span>
 <span id="L1632"><span class="lineNum">    1632</span>              :       end() const _GLIBCXX_NOEXCEPT</span>
@@ -1715,8 +1715,8 @@
 <span id="L1653"><span class="lineNum">    1653</span>              :       { return _M_impl._M_node_count == 0; }</span>
 <span id="L1654"><span class="lineNum">    1654</span>              : </span>
 <span id="L1655"><span class="lineNum">    1655</span>              :       size_type</span>
-<span id="L1656"><span class="lineNum">    1656</span> <span class="tlaGNC">          78 :       size() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1657"><span class="lineNum">    1657</span> <span class="tlaGNC">          78 :       { return _M_impl._M_node_count; }</span></span>
+<span id="L1656"><span class="lineNum">    1656</span> <span class="tlaGNC">         604 :       size() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1657"><span class="lineNum">    1657</span> <span class="tlaGNC">         604 :       { return _M_impl._M_node_count; }</span></span>
 <span id="L1658"><span class="lineNum">    1658</span>              : </span>
 <span id="L1659"><span class="lineNum">    1659</span>              :       size_type</span>
 <span id="L1660"><span class="lineNum">    1660</span>              :       max_size() const _GLIBCXX_NOEXCEPT</span>
@@ -1952,8 +1952,8 @@
 <span id="L1890"><span class="lineNum">    1890</span>              :       count(const key_type&amp; __k) const;</span>
 <span id="L1891"><span class="lineNum">    1891</span>              : </span>
 <span id="L1892"><span class="lineNum">    1892</span>              :       iterator</span>
-<span id="L1893"><span class="lineNum">    1893</span> <span class="tlaGNC">         252 :       lower_bound(const key_type&amp; __k)</span></span>
-<span id="L1894"><span class="lineNum">    1894</span> <span class="tlaGNC">         252 :       { return iterator(_M_lower_bound(_M_begin(), _M_end(), __k)); }</span></span>
+<span id="L1893"><span class="lineNum">    1893</span> <span class="tlaGNC">        2652 :       lower_bound(const key_type&amp; __k)</span></span>
+<span id="L1894"><span class="lineNum">    1894</span> <span class="tlaGNC">        2652 :       { return iterator(_M_lower_bound(_M_begin(), _M_end(), __k)); }</span></span>
 <span id="L1895"><span class="lineNum">    1895</span>              : </span>
 <span id="L1896"><span class="lineNum">    1896</span>              :       const_iterator</span>
 <span id="L1897"><span class="lineNum">    1897</span>              :       lower_bound(const key_type&amp; __k) const</span>
@@ -2342,31 +2342,31 @@
 <span id="L2280"><span class="lineNum">    2280</span>              :       struct _Auto_node</span>
 <span id="L2281"><span class="lineNum">    2281</span>              :       {</span>
 <span id="L2282"><span class="lineNum">    2282</span>              :         template&lt;typename... _Args&gt;</span>
-<span id="L2283"><span class="lineNum">    2283</span> <span class="tlaGNC">         104 :           _Auto_node(_Rb_tree&amp; __t, _Args&amp;&amp;... __args)</span></span>
-<span id="L2284"><span class="lineNum">    2284</span> <span class="tlaGNC">         104 :           : _M_t(__t),</span></span>
-<span id="L2285"><span class="lineNum">    2285</span> <span class="tlaGNC">         312 :             _M_node(__t._M_create_node(std::forward&lt;_Args&gt;(__args)...))</span></span>
-<span id="L2286"><span class="lineNum">    2286</span> <span class="tlaGNC">         104 :           { }</span></span>
+<span id="L2283"><span class="lineNum">    2283</span> <span class="tlaGNC">         696 :           _Auto_node(_Rb_tree&amp; __t, _Args&amp;&amp;... __args)</span></span>
+<span id="L2284"><span class="lineNum">    2284</span> <span class="tlaGNC">         696 :           : _M_t(__t),</span></span>
+<span id="L2285"><span class="lineNum">    2285</span> <span class="tlaGNC">        2088 :             _M_node(__t._M_create_node(std::forward&lt;_Args&gt;(__args)...))</span></span>
+<span id="L2286"><span class="lineNum">    2286</span> <span class="tlaGNC">         696 :           { }</span></span>
 <span id="L2287"><span class="lineNum">    2287</span>              : </span>
-<span id="L2288"><span class="lineNum">    2288</span> <span class="tlaGNC">         104 :         ~_Auto_node()</span></span>
+<span id="L2288"><span class="lineNum">    2288</span> <span class="tlaGNC">         696 :         ~_Auto_node()</span></span>
 <span id="L2289"><span class="lineNum">    2289</span>              :         {</span>
-<span id="L2290"><span class="lineNum">    2290</span> <span class="tlaGNC">         104 :           if (_M_node)</span></span>
+<span id="L2290"><span class="lineNum">    2290</span> <span class="tlaGNC">         696 :           if (_M_node)</span></span>
 <span id="L2291"><span class="lineNum">    2291</span> <span class="tlaUNC">           0 :             _M_t._M_drop_node(_M_node);</span></span>
-<span id="L2292"><span class="lineNum">    2292</span> <span class="tlaGNC">         104 :         }</span></span>
+<span id="L2292"><span class="lineNum">    2292</span> <span class="tlaGNC">         696 :         }</span></span>
 <span id="L2293"><span class="lineNum">    2293</span>              : </span>
 <span id="L2294"><span class="lineNum">    2294</span>              :         _Auto_node(_Auto_node&amp;&amp; __n)</span>
 <span id="L2295"><span class="lineNum">    2295</span>              :         : _M_t(__n._M_t), _M_node(__n._M_node)</span>
 <span id="L2296"><span class="lineNum">    2296</span>              :         { __n._M_node = nullptr; }</span>
 <span id="L2297"><span class="lineNum">    2297</span>              : </span>
 <span id="L2298"><span class="lineNum">    2298</span>              :         const _Key&amp;</span>
-<span id="L2299"><span class="lineNum">    2299</span> <span class="tlaGNC">         104 :         _M_key() const</span></span>
-<span id="L2300"><span class="lineNum">    2300</span> <span class="tlaGNC">         104 :         { return _S_key(_M_node); }</span></span>
+<span id="L2299"><span class="lineNum">    2299</span> <span class="tlaGNC">         696 :         _M_key() const</span></span>
+<span id="L2300"><span class="lineNum">    2300</span> <span class="tlaGNC">         696 :         { return _S_key(_M_node); }</span></span>
 <span id="L2301"><span class="lineNum">    2301</span>              : </span>
 <span id="L2302"><span class="lineNum">    2302</span>              :         iterator</span>
-<span id="L2303"><span class="lineNum">    2303</span> <span class="tlaGNC">         104 :         _M_insert(pair&lt;_Base_ptr, _Base_ptr&gt; __p)</span></span>
+<span id="L2303"><span class="lineNum">    2303</span> <span class="tlaGNC">         696 :         _M_insert(pair&lt;_Base_ptr, _Base_ptr&gt; __p)</span></span>
 <span id="L2304"><span class="lineNum">    2304</span>              :         {</span>
-<span id="L2305"><span class="lineNum">    2305</span> <span class="tlaGNC">         104 :           auto __it = _M_t._M_insert_node(__p.first, __p.second, _M_node);</span></span>
-<span id="L2306"><span class="lineNum">    2306</span> <span class="tlaGNC">         104 :           _M_node = nullptr;</span></span>
-<span id="L2307"><span class="lineNum">    2307</span> <span class="tlaGNC">         104 :           return __it;</span></span>
+<span id="L2305"><span class="lineNum">    2305</span> <span class="tlaGNC">         696 :           auto __it = _M_t._M_insert_node(__p.first, __p.second, _M_node);</span></span>
+<span id="L2306"><span class="lineNum">    2306</span> <span class="tlaGNC">         696 :           _M_node = nullptr;</span></span>
+<span id="L2307"><span class="lineNum">    2307</span> <span class="tlaGNC">         696 :           return __it;</span></span>
 <span id="L2308"><span class="lineNum">    2308</span>              :         }</span>
 <span id="L2309"><span class="lineNum">    2309</span>              : </span>
 <span id="L2310"><span class="lineNum">    2310</span>              :         iterator</span>
@@ -2641,33 +2641,33 @@
 <span id="L2579"><span class="lineNum">    2579</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>
 <span id="L2580"><span class="lineNum">    2580</span>              :            typename _Compare, typename _Alloc&gt;</span>
 <span id="L2581"><span class="lineNum">    2581</span>              :     void</span>
-<span id="L2582"><span class="lineNum">    2582</span> <span class="tlaGNC">         138 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L2582"><span class="lineNum">    2582</span> <span class="tlaGNC">         827 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L2583"><span class="lineNum">    2583</span>              :     _M_erase(_Node_ptr __x)</span>
 <span id="L2584"><span class="lineNum">    2584</span>              :     {</span>
 <span id="L2585"><span class="lineNum">    2585</span>              :       // Erase without rebalancing.</span>
-<span id="L2586"><span class="lineNum">    2586</span> <span class="tlaGNC">         242 :       while (__x)</span></span>
+<span id="L2586"><span class="lineNum">    2586</span> <span class="tlaGNC">        1523 :       while (__x)</span></span>
 <span id="L2587"><span class="lineNum">    2587</span>              :         {</span>
-<span id="L2588"><span class="lineNum">    2588</span> <span class="tlaGNC">         104 :           _M_erase(_S_right(__x));</span></span>
-<span id="L2589"><span class="lineNum">    2589</span> <span class="tlaGNC">         104 :           _Node_ptr __y = _S_left(__x);</span></span>
-<span id="L2590"><span class="lineNum">    2590</span> <span class="tlaGNC">         104 :           _M_drop_node(__x);</span></span>
-<span id="L2591"><span class="lineNum">    2591</span> <span class="tlaGNC">         104 :           __x = __y;</span></span>
+<span id="L2588"><span class="lineNum">    2588</span> <span class="tlaGNC">         696 :           _M_erase(_S_right(__x));</span></span>
+<span id="L2589"><span class="lineNum">    2589</span> <span class="tlaGNC">         696 :           _Node_ptr __y = _S_left(__x);</span></span>
+<span id="L2590"><span class="lineNum">    2590</span> <span class="tlaGNC">         696 :           _M_drop_node(__x);</span></span>
+<span id="L2591"><span class="lineNum">    2591</span> <span class="tlaGNC">         696 :           __x = __y;</span></span>
 <span id="L2592"><span class="lineNum">    2592</span>              :         }</span>
-<span id="L2593"><span class="lineNum">    2593</span> <span class="tlaGNC">         138 :     }</span></span>
+<span id="L2593"><span class="lineNum">    2593</span> <span class="tlaGNC">         827 :     }</span></span>
 <span id="L2594"><span class="lineNum">    2594</span>              : </span>
 <span id="L2595"><span class="lineNum">    2595</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>
 <span id="L2596"><span class="lineNum">    2596</span>              :            typename _Compare, typename _Alloc&gt;</span>
 <span id="L2597"><span class="lineNum">    2597</span>              :     typename _Rb_tree&lt;_Key, _Val, _KeyOfValue,</span>
 <span id="L2598"><span class="lineNum">    2598</span>              :                       _Compare, _Alloc&gt;::_Base_ptr</span>
-<span id="L2599"><span class="lineNum">    2599</span> <span class="tlaGNC">         273 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L2599"><span class="lineNum">    2599</span> <span class="tlaGNC">        2733 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L2600"><span class="lineNum">    2600</span>              :     _M_lower_bound(_Base_ptr __x, _Base_ptr __y,</span>
 <span id="L2601"><span class="lineNum">    2601</span>              :                    const _Key&amp; __k) const</span>
 <span id="L2602"><span class="lineNum">    2602</span>              :     {</span>
-<span id="L2603"><span class="lineNum">    2603</span> <span class="tlaGNC">         748 :       while (__x)</span></span>
-<span id="L2604"><span class="lineNum">    2604</span> <span class="tlaGNC">         475 :         if (!_M_impl._M_key_compare(_S_key(__x), __k))</span></span>
-<span id="L2605"><span class="lineNum">    2605</span> <span class="tlaGNC">         269 :           __y = __x, __x = _S_left(__x);</span></span>
+<span id="L2603"><span class="lineNum">    2603</span> <span class="tlaGNC">       10285 :       while (__x)</span></span>
+<span id="L2604"><span class="lineNum">    2604</span> <span class="tlaGNC">        7552 :         if (!_M_impl._M_key_compare(_S_key(__x), __k))</span></span>
+<span id="L2605"><span class="lineNum">    2605</span> <span class="tlaGNC">        3127 :           __y = __x, __x = _S_left(__x);</span></span>
 <span id="L2606"><span class="lineNum">    2606</span>              :         else</span>
-<span id="L2607"><span class="lineNum">    2607</span> <span class="tlaGNC">         206 :           __x = _S_right(__x);</span></span>
-<span id="L2608"><span class="lineNum">    2608</span> <span class="tlaGNC">         273 :       return __y;</span></span>
+<span id="L2607"><span class="lineNum">    2607</span> <span class="tlaGNC">        4425 :           __x = _S_right(__x);</span></span>
+<span id="L2608"><span class="lineNum">    2608</span> <span class="tlaGNC">        2733 :       return __y;</span></span>
 <span id="L2609"><span class="lineNum">    2609</span>              :     }</span>
 <span id="L2610"><span class="lineNum">    2610</span>              : </span>
 <span id="L2611"><span class="lineNum">    2611</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>
@@ -2789,24 +2789,24 @@
 <span id="L2727"><span class="lineNum">    2727</span>              :                            _Compare, _Alloc&gt;::_Base_ptr,</span>
 <span id="L2728"><span class="lineNum">    2728</span>              :          typename _Rb_tree&lt;_Key, _Val, _KeyOfValue,</span>
 <span id="L2729"><span class="lineNum">    2729</span>              :                            _Compare, _Alloc&gt;::_Base_ptr&gt;</span>
-<span id="L2730"><span class="lineNum">    2730</span> <span class="tlaGNC">          27 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L2730"><span class="lineNum">    2730</span> <span class="tlaGNC">         111 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L2731"><span class="lineNum">    2731</span>              :     _M_get_insert_unique_pos(const key_type&amp; __k)</span>
 <span id="L2732"><span class="lineNum">    2732</span>              :     {</span>
 <span id="L2733"><span class="lineNum">    2733</span>              :       typedef pair&lt;_Base_ptr, _Base_ptr&gt; _Res;</span>
-<span id="L2734"><span class="lineNum">    2734</span> <span class="tlaGNC">          27 :       _Base_ptr __x = _M_begin();</span></span>
-<span id="L2735"><span class="lineNum">    2735</span> <span class="tlaGNC">          27 :       _Base_ptr __y = _M_end();</span></span>
-<span id="L2736"><span class="lineNum">    2736</span> <span class="tlaGNC">          27 :       bool __comp = true;</span></span>
-<span id="L2737"><span class="lineNum">    2737</span> <span class="tlaGNC">          27 :       while (__x)</span></span>
+<span id="L2734"><span class="lineNum">    2734</span> <span class="tlaGNC">         111 :       _Base_ptr __x = _M_begin();</span></span>
+<span id="L2735"><span class="lineNum">    2735</span> <span class="tlaGNC">         111 :       _Base_ptr __y = _M_end();</span></span>
+<span id="L2736"><span class="lineNum">    2736</span> <span class="tlaGNC">         111 :       bool __comp = true;</span></span>
+<span id="L2737"><span class="lineNum">    2737</span> <span class="tlaGNC">         111 :       while (__x)</span></span>
 <span id="L2738"><span class="lineNum">    2738</span>              :         {</span>
 <span id="L2739"><span class="lineNum">    2739</span> <span class="tlaUNC">           0 :           __y = __x;</span></span>
 <span id="L2740"><span class="lineNum">    2740</span> <span class="tlaUNC">           0 :           __comp = _M_impl._M_key_compare(__k, _S_key(__x));</span></span>
 <span id="L2741"><span class="lineNum">    2741</span> <span class="tlaUNC">           0 :           __x = __comp ? _S_left(__x) : _S_right(__x);</span></span>
 <span id="L2742"><span class="lineNum">    2742</span>              :         }</span>
-<span id="L2743"><span class="lineNum">    2743</span> <span class="tlaGNC">          27 :       iterator __j = iterator(__y);</span></span>
-<span id="L2744"><span class="lineNum">    2744</span> <span class="tlaGNC">          27 :       if (__comp)</span></span>
+<span id="L2743"><span class="lineNum">    2743</span> <span class="tlaGNC">         111 :       iterator __j = iterator(__y);</span></span>
+<span id="L2744"><span class="lineNum">    2744</span> <span class="tlaGNC">         111 :       if (__comp)</span></span>
 <span id="L2745"><span class="lineNum">    2745</span>              :         {</span>
-<span id="L2746"><span class="lineNum">    2746</span> <span class="tlaGNC">          27 :           if (__j == begin())</span></span>
-<span id="L2747"><span class="lineNum">    2747</span> <span class="tlaGNC">          27 :             return _Res(__x, __y);</span></span>
+<span id="L2746"><span class="lineNum">    2746</span> <span class="tlaGNC">         111 :           if (__j == begin())</span></span>
+<span id="L2747"><span class="lineNum">    2747</span> <span class="tlaGNC">         111 :             return _Res(__x, __y);</span></span>
 <span id="L2748"><span class="lineNum">    2748</span>              :           else</span>
 <span id="L2749"><span class="lineNum">    2749</span> <span class="tlaUNC">           0 :             --__j;</span></span>
 <span id="L2750"><span class="lineNum">    2750</span>              :         }</span>
@@ -2891,33 +2891,33 @@
 <span id="L2829"><span class="lineNum">    2829</span>              :                            _Compare, _Alloc&gt;::_Base_ptr,</span>
 <span id="L2830"><span class="lineNum">    2830</span>              :          typename _Rb_tree&lt;_Key, _Val, _KeyOfValue,</span>
 <span id="L2831"><span class="lineNum">    2831</span>              :                            _Compare, _Alloc&gt;::_Base_ptr&gt;</span>
-<span id="L2832"><span class="lineNum">    2832</span> <span class="tlaGNC">         104 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L2832"><span class="lineNum">    2832</span> <span class="tlaGNC">         696 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L2833"><span class="lineNum">    2833</span>              :     _M_get_insert_hint_unique_pos(const_iterator __position,</span>
 <span id="L2834"><span class="lineNum">    2834</span>              :                                   const key_type&amp; __k)</span>
 <span id="L2835"><span class="lineNum">    2835</span>              :     {</span>
 <span id="L2836"><span class="lineNum">    2836</span>              :       typedef pair&lt;_Base_ptr, _Base_ptr&gt; _Res;</span>
 <span id="L2837"><span class="lineNum">    2837</span>              : </span>
 <span id="L2838"><span class="lineNum">    2838</span>              :       // end()</span>
-<span id="L2839"><span class="lineNum">    2839</span> <span class="tlaGNC">         104 :       if (__position._M_node == _M_end())</span></span>
+<span id="L2839"><span class="lineNum">    2839</span> <span class="tlaGNC">         696 :       if (__position._M_node == _M_end())</span></span>
 <span id="L2840"><span class="lineNum">    2840</span>              :         {</span>
-<span id="L2841"><span class="lineNum">    2841</span> <span class="tlaGNC">          78 :           if (size() &gt; 0</span></span>
-<span id="L2842"><span class="lineNum">    2842</span> <span class="tlaGNC">          78 :               &amp;&amp; _M_impl._M_key_compare(_S_key(_M_rightmost()), __k))</span></span>
-<span id="L2843"><span class="lineNum">    2843</span> <span class="tlaGNC">          51 :             return _Res(_Base_ptr(), _M_rightmost());</span></span>
+<span id="L2841"><span class="lineNum">    2841</span> <span class="tlaGNC">         604 :           if (size() &gt; 0</span></span>
+<span id="L2842"><span class="lineNum">    2842</span> <span class="tlaGNC">         604 :               &amp;&amp; _M_impl._M_key_compare(_S_key(_M_rightmost()), __k))</span></span>
+<span id="L2843"><span class="lineNum">    2843</span> <span class="tlaGNC">         493 :             return _Res(_Base_ptr(), _M_rightmost());</span></span>
 <span id="L2844"><span class="lineNum">    2844</span>              :           else</span>
-<span id="L2845"><span class="lineNum">    2845</span> <span class="tlaGNC">          27 :             return _M_get_insert_unique_pos(__k);</span></span>
+<span id="L2845"><span class="lineNum">    2845</span> <span class="tlaGNC">         111 :             return _M_get_insert_unique_pos(__k);</span></span>
 <span id="L2846"><span class="lineNum">    2846</span>              :         }</span>
-<span id="L2847"><span class="lineNum">    2847</span> <span class="tlaGNC">          26 :       else if (_M_impl._M_key_compare(__k, _S_key(__position._M_node)))</span></span>
+<span id="L2847"><span class="lineNum">    2847</span> <span class="tlaGNC">          92 :       else if (_M_impl._M_key_compare(__k, _S_key(__position._M_node)))</span></span>
 <span id="L2848"><span class="lineNum">    2848</span>              :         {</span>
 <span id="L2849"><span class="lineNum">    2849</span>              :           // First, try before...</span>
-<span id="L2850"><span class="lineNum">    2850</span> <span class="tlaGNC">          26 :           iterator __before(__position._M_node);</span></span>
-<span id="L2851"><span class="lineNum">    2851</span> <span class="tlaGNC">          26 :           if (__position._M_node == _M_leftmost()) // begin()</span></span>
-<span id="L2852"><span class="lineNum">    2852</span> <span class="tlaGNC">          10 :             return _Res(_M_leftmost(), _M_leftmost());</span></span>
-<span id="L2853"><span class="lineNum">    2853</span> <span class="tlaGNC">          16 :           else if (_M_impl._M_key_compare(_S_key((--__before)._M_node), __k))</span></span>
+<span id="L2850"><span class="lineNum">    2850</span> <span class="tlaGNC">          92 :           iterator __before(__position._M_node);</span></span>
+<span id="L2851"><span class="lineNum">    2851</span> <span class="tlaGNC">          92 :           if (__position._M_node == _M_leftmost()) // begin()</span></span>
+<span id="L2852"><span class="lineNum">    2852</span> <span class="tlaGNC">          20 :             return _Res(_M_leftmost(), _M_leftmost());</span></span>
+<span id="L2853"><span class="lineNum">    2853</span> <span class="tlaGNC">          72 :           else if (_M_impl._M_key_compare(_S_key((--__before)._M_node), __k))</span></span>
 <span id="L2854"><span class="lineNum">    2854</span>              :             {</span>
-<span id="L2855"><span class="lineNum">    2855</span> <span class="tlaGNC">          16 :               if (!_S_right(__before._M_node))</span></span>
-<span id="L2856"><span class="lineNum">    2856</span> <span class="tlaGNC">           8 :                 return _Res(_Base_ptr(), __before._M_node);</span></span>
+<span id="L2855"><span class="lineNum">    2855</span> <span class="tlaGNC">          72 :               if (!_S_right(__before._M_node))</span></span>
+<span id="L2856"><span class="lineNum">    2856</span> <span class="tlaGNC">          16 :                 return _Res(_Base_ptr(), __before._M_node);</span></span>
 <span id="L2857"><span class="lineNum">    2857</span>              :               else</span>
-<span id="L2858"><span class="lineNum">    2858</span> <span class="tlaGNC">           8 :                 return _Res(__position._M_node, __position._M_node);</span></span>
+<span id="L2858"><span class="lineNum">    2858</span> <span class="tlaGNC">          56 :                 return _Res(__position._M_node, __position._M_node);</span></span>
 <span id="L2859"><span class="lineNum">    2859</span>              :             }</span>
 <span id="L2860"><span class="lineNum">    2860</span>              :           else</span>
 <span id="L2861"><span class="lineNum">    2861</span> <span class="tlaUNC">           0 :             return _M_get_insert_unique_pos(__k);</span></span>
@@ -3056,19 +3056,19 @@
 <span id="L2994"><span class="lineNum">    2994</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>
 <span id="L2995"><span class="lineNum">    2995</span>              :            typename _Compare, typename _Alloc&gt;</span>
 <span id="L2996"><span class="lineNum">    2996</span>              :     auto</span>
-<span id="L2997"><span class="lineNum">    2997</span> <span class="tlaGNC">         104 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L2997"><span class="lineNum">    2997</span> <span class="tlaGNC">         696 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L2998"><span class="lineNum">    2998</span>              :     _M_insert_node(_Base_ptr __x, _Base_ptr __p, _Node_ptr __z)</span>
 <span id="L2999"><span class="lineNum">    2999</span>              :     -&gt; iterator</span>
 <span id="L3000"><span class="lineNum">    3000</span>              :     {</span>
-<span id="L3001"><span class="lineNum">    3001</span> <span class="tlaGNC">          86 :       bool __insert_left = (__x || __p == _M_end()</span></span>
-<span id="L3002"><span class="lineNum">    3002</span> <span class="tlaGNC">         190 :                             || _M_impl._M_key_compare(_S_key(__z),</span></span>
+<span id="L3001"><span class="lineNum">    3001</span> <span class="tlaGNC">         620 :       bool __insert_left = (__x || __p == _M_end()</span></span>
+<span id="L3002"><span class="lineNum">    3002</span> <span class="tlaGNC">        1316 :                             || _M_impl._M_key_compare(_S_key(__z),</span></span>
 <span id="L3003"><span class="lineNum">    3003</span>              :                                                       _S_key(__p)));</span>
 <span id="L3004"><span class="lineNum">    3004</span>              : </span>
-<span id="L3005"><span class="lineNum">    3005</span> <span class="tlaGNC">         104 :       _Base_ptr __base_z = __z-&gt;_M_base_ptr();</span></span>
+<span id="L3005"><span class="lineNum">    3005</span> <span class="tlaGNC">         696 :       _Base_ptr __base_z = __z-&gt;_M_base_ptr();</span></span>
 <span id="L3006"><span class="lineNum">    3006</span>              :       _Node_traits::_S_insert_and_rebalance</span>
-<span id="L3007"><span class="lineNum">    3007</span> <span class="tlaGNC">         104 :         (__insert_left, __base_z, __p, this-&gt;_M_impl._M_header);</span></span>
-<span id="L3008"><span class="lineNum">    3008</span> <span class="tlaGNC">         104 :       ++_M_impl._M_node_count;</span></span>
-<span id="L3009"><span class="lineNum">    3009</span> <span class="tlaGNC">         104 :       return iterator(__base_z);</span></span>
+<span id="L3007"><span class="lineNum">    3007</span> <span class="tlaGNC">         696 :         (__insert_left, __base_z, __p, this-&gt;_M_impl._M_header);</span></span>
+<span id="L3008"><span class="lineNum">    3008</span> <span class="tlaGNC">         696 :       ++_M_impl._M_node_count;</span></span>
+<span id="L3009"><span class="lineNum">    3009</span> <span class="tlaGNC">         696 :       return iterator(__base_z);</span></span>
 <span id="L3010"><span class="lineNum">    3010</span>              :     }</span>
 <span id="L3011"><span class="lineNum">    3011</span>              : </span>
 <span id="L3012"><span class="lineNum">    3012</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>
@@ -3139,16 +3139,16 @@
 <span id="L3077"><span class="lineNum">    3077</span>              :            typename _Compare, typename _Alloc&gt;</span>
 <span id="L3078"><span class="lineNum">    3078</span>              :     template&lt;typename... _Args&gt;</span>
 <span id="L3079"><span class="lineNum">    3079</span>              :       auto</span>
-<span id="L3080"><span class="lineNum">    3080</span> <span class="tlaGNC">         104 :       _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L3080"><span class="lineNum">    3080</span> <span class="tlaGNC">         696 :       _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L3081"><span class="lineNum">    3081</span>              :       _M_emplace_hint_unique(const_iterator __pos, _Args&amp;&amp;... __args)</span>
 <span id="L3082"><span class="lineNum">    3082</span>              :       -&gt; iterator</span>
 <span id="L3083"><span class="lineNum">    3083</span>              :       {</span>
-<span id="L3084"><span class="lineNum">    3084</span> <span class="tlaGNC">         312 :         _Auto_node __z(*this, std::forward&lt;_Args&gt;(__args)...);</span></span>
-<span id="L3085"><span class="lineNum">    3085</span> <span class="tlaGNC">         104 :         auto __res = _M_get_insert_hint_unique_pos(__pos, __z._M_key());</span></span>
-<span id="L3086"><span class="lineNum">    3086</span> <span class="tlaGNC">         104 :         if (__res.second)</span></span>
-<span id="L3087"><span class="lineNum">    3087</span> <span class="tlaGNC">         104 :           return __z._M_insert(__res);</span></span>
+<span id="L3084"><span class="lineNum">    3084</span> <span class="tlaGNC">        2088 :         _Auto_node __z(*this, std::forward&lt;_Args&gt;(__args)...);</span></span>
+<span id="L3085"><span class="lineNum">    3085</span> <span class="tlaGNC">         696 :         auto __res = _M_get_insert_hint_unique_pos(__pos, __z._M_key());</span></span>
+<span id="L3086"><span class="lineNum">    3086</span> <span class="tlaGNC">         696 :         if (__res.second)</span></span>
+<span id="L3087"><span class="lineNum">    3087</span> <span class="tlaGNC">         696 :           return __z._M_insert(__res);</span></span>
 <span id="L3088"><span class="lineNum">    3088</span> <span class="tlaUNC">           0 :         return iterator(__res.first);</span></span>
-<span id="L3089"><span class="lineNum">    3089</span> <span class="tlaGNC">         104 :       }</span></span>
+<span id="L3089"><span class="lineNum">    3089</span> <span class="tlaGNC">         696 :       }</span></span>
 <span id="L3090"><span class="lineNum">    3090</span>              : </span>
 <span id="L3091"><span class="lineNum">    3091</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>
 <span id="L3092"><span class="lineNum">    3092</span>              :            typename _Compare, typename _Alloc&gt;</span>
@@ -3208,13 +3208,13 @@
 <span id="L3146"><span class="lineNum">    3146</span>              :            typename _Compare, typename _Alloc&gt;</span>
 <span id="L3147"><span class="lineNum">    3147</span>              :     typename _Rb_tree&lt;_Key, _Val, _KeyOfValue,</span>
 <span id="L3148"><span class="lineNum">    3148</span>              :                       _Compare, _Alloc&gt;::iterator</span>
-<span id="L3149"><span class="lineNum">    3149</span> <span class="tlaGNC">          21 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
+<span id="L3149"><span class="lineNum">    3149</span> <span class="tlaGNC">          81 :     _Rb_tree&lt;_Key, _Val, _KeyOfValue, _Compare, _Alloc&gt;::</span></span>
 <span id="L3150"><span class="lineNum">    3150</span>              :     find(const _Key&amp; __k)</span>
 <span id="L3151"><span class="lineNum">    3151</span>              :     {</span>
-<span id="L3152"><span class="lineNum">    3152</span> <span class="tlaGNC">          21 :       iterator __j(_M_lower_bound(_M_begin(), _M_end(), __k));</span></span>
-<span id="L3153"><span class="lineNum">    3153</span> <span class="tlaGNC">          42 :       return (__j == end()</span></span>
-<span id="L3154"><span class="lineNum">    3154</span> <span class="tlaGNC">          20 :               || _M_impl._M_key_compare(__k,</span></span>
-<span id="L3155"><span class="lineNum">    3155</span> <span class="tlaGNC">          62 :                                         _S_key(__j._M_node))) ? end() : __j;</span></span>
+<span id="L3152"><span class="lineNum">    3152</span> <span class="tlaGNC">          81 :       iterator __j(_M_lower_bound(_M_begin(), _M_end(), __k));</span></span>
+<span id="L3153"><span class="lineNum">    3153</span> <span class="tlaGNC">         162 :       return (__j == end()</span></span>
+<span id="L3154"><span class="lineNum">    3154</span> <span class="tlaGNC">          73 :               || _M_impl._M_key_compare(__k,</span></span>
+<span id="L3155"><span class="lineNum">    3155</span> <span class="tlaGNC">         235 :                                         _S_key(__j._M_node))) ? end() : __j;</span></span>
 <span id="L3156"><span class="lineNum">    3156</span>              :     }</span>
 <span id="L3157"><span class="lineNum">    3157</span>              : </span>
 <span id="L3158"><span class="lineNum">    3158</span>              :   template&lt;typename _Key, typename _Val, typename _KeyOfValue,</span>

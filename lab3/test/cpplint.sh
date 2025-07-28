@@ -1,0 +1,1 @@
+cpplint --recursive ../src 2> cpplint_report.txt

@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">94.7&nbsp;%</td>
-            <td class="headerCovTableEntry">75</td>
-            <td class="headerCovTableEntry">71</td>
+            <td class="headerCovTableEntryHi">96.6&nbsp;%</td>
+            <td class="headerCovTableEntry">146</td>
+            <td class="headerCovTableEntry">141</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-01 02:54:45</td>
+            <td class="headerValue">2025-06-04 08:29:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">48</td>
-            <td class="headerCovTableEntry">48</td>
+            <td class="headerCovTableEntry">66</td>
+            <td class="headerCovTableEntry">66</td>
           </tr>
                   <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -164,9 +164,9 @@
 <span id="L102"><span class="lineNum">     102</span>              :         pointer _M_end_of_storage;</span>
 <span id="L103"><span class="lineNum">     103</span>              : </span>
 <span id="L104"><span class="lineNum">     104</span>              :         _GLIBCXX20_CONSTEXPR</span>
-<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">         113 :         _Vector_impl_data() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">         113 :         : _M_start(), _M_finish(), _M_end_of_storage()</span></span>
-<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">         113 :         { }</span></span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">         468 :         _Vector_impl_data() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">         468 :         : _M_start(), _M_finish(), _M_end_of_storage()</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">         468 :         { }</span></span>
 <span id="L108"><span class="lineNum">     108</span>              : </span>
 <span id="L109"><span class="lineNum">     109</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L110"><span class="lineNum">     110</span>              :         _GLIBCXX20_CONSTEXPR</span>
@@ -178,42 +178,42 @@
 <span id="L116"><span class="lineNum">     116</span>              : </span>
 <span id="L117"><span class="lineNum">     117</span>              :         _GLIBCXX20_CONSTEXPR</span>
 <span id="L118"><span class="lineNum">     118</span>              :         void</span>
-<span id="L119"><span class="lineNum">     119</span>              :         _M_copy_data(_Vector_impl_data const&amp; __x) _GLIBCXX_NOEXCEPT</span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          18 :         _M_copy_data(_Vector_impl_data const&amp; __x) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L120"><span class="lineNum">     120</span>              :         {</span>
-<span id="L121"><span class="lineNum">     121</span>              :           _M_start = __x._M_start;</span>
-<span id="L122"><span class="lineNum">     122</span>              :           _M_finish = __x._M_finish;</span>
-<span id="L123"><span class="lineNum">     123</span>              :           _M_end_of_storage = __x._M_end_of_storage;</span>
-<span id="L124"><span class="lineNum">     124</span>              :         }</span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">          18 :           _M_start = __x._M_start;</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          18 :           _M_finish = __x._M_finish;</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          18 :           _M_end_of_storage = __x._M_end_of_storage;</span></span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">          18 :         }</span></span>
 <span id="L125"><span class="lineNum">     125</span>              : </span>
 <span id="L126"><span class="lineNum">     126</span>              :         _GLIBCXX20_CONSTEXPR</span>
 <span id="L127"><span class="lineNum">     127</span>              :         void</span>
-<span id="L128"><span class="lineNum">     128</span>              :         _M_swap_data(_Vector_impl_data&amp; __x) _GLIBCXX_NOEXCEPT</span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">           6 :         _M_swap_data(_Vector_impl_data&amp; __x) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L129"><span class="lineNum">     129</span>              :         {</span>
 <span id="L130"><span class="lineNum">     130</span>              :           // Do not use std::swap(_M_start, __x._M_start), etc as it loses</span>
 <span id="L131"><span class="lineNum">     131</span>              :           // information used by TBAA.</span>
-<span id="L132"><span class="lineNum">     132</span>              :           _Vector_impl_data __tmp;</span>
-<span id="L133"><span class="lineNum">     133</span>              :           __tmp._M_copy_data(*this);</span>
-<span id="L134"><span class="lineNum">     134</span>              :           _M_copy_data(__x);</span>
-<span id="L135"><span class="lineNum">     135</span>              :           __x._M_copy_data(__tmp);</span>
-<span id="L136"><span class="lineNum">     136</span>              :         }</span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">           6 :           _Vector_impl_data __tmp;</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           6 :           __tmp._M_copy_data(*this);</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">           6 :           _M_copy_data(__x);</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">           6 :           __x._M_copy_data(__tmp);</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">           6 :         }</span></span>
 <span id="L137"><span class="lineNum">     137</span>              :       };</span>
 <span id="L138"><span class="lineNum">     138</span>              : </span>
 <span id="L139"><span class="lineNum">     139</span>              :       struct _Vector_impl</span>
 <span id="L140"><span class="lineNum">     140</span>              :         : public _Tp_alloc_type, public _Vector_impl_data</span>
 <span id="L141"><span class="lineNum">     141</span>              :       {</span>
 <span id="L142"><span class="lineNum">     142</span>              :         _GLIBCXX20_CONSTEXPR</span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">         113 :         _Vector_impl() _GLIBCXX_NOEXCEPT_IF(</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">         441 :         _Vector_impl() _GLIBCXX_NOEXCEPT_IF(</span></span>
 <span id="L144"><span class="lineNum">     144</span>              :             is_nothrow_default_constructible&lt;_Tp_alloc_type&gt;::value)</span>
 <span id="L145"><span class="lineNum">     145</span>              : #if __cpp_lib_concepts</span>
 <span id="L146"><span class="lineNum">     146</span>              :         requires is_default_constructible_v&lt;_Tp_alloc_type&gt;</span>
 <span id="L147"><span class="lineNum">     147</span>              : #endif</span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         113 :         : _Tp_alloc_type()</span></span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         113 :         { }</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         441 :         : _Tp_alloc_type()</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         441 :         { }</span></span>
 <span id="L150"><span class="lineNum">     150</span>              : </span>
 <span id="L151"><span class="lineNum">     151</span>              :         _GLIBCXX20_CONSTEXPR</span>
-<span id="L152"><span class="lineNum">     152</span>              :         _Vector_impl(_Tp_alloc_type const&amp; __a) _GLIBCXX_NOEXCEPT</span>
-<span id="L153"><span class="lineNum">     153</span>              :         : _Tp_alloc_type(__a)</span>
-<span id="L154"><span class="lineNum">     154</span>              :         { }</span>
+<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          21 :         _Vector_impl(_Tp_alloc_type const&amp; __a) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">          21 :         : _Tp_alloc_type(__a)</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">          21 :         { }</span></span>
 <span id="L155"><span class="lineNum">     155</span>              : </span>
 <span id="L156"><span class="lineNum">     156</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L157"><span class="lineNum">     157</span>              :         // Not defaulted, to enforce noexcept(true) even when</span>
@@ -366,28 +366,28 @@
 <span id="L304"><span class="lineNum">     304</span>              : </span>
 <span id="L305"><span class="lineNum">     305</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L306"><span class="lineNum">     306</span>              :       _Tp_alloc_type&amp;</span>
-<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">         236 :       _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">         236 :       { return this-&gt;_M_impl; }</span></span>
+<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">         942 :       _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">         942 :       { return this-&gt;_M_impl; }</span></span>
 <span id="L309"><span class="lineNum">     309</span>              : </span>
 <span id="L310"><span class="lineNum">     310</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L311"><span class="lineNum">     311</span>              :       const _Tp_alloc_type&amp;</span>
-<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         246 :       _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">         246 :       { return this-&gt;_M_impl; }</span></span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         915 :       _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">         915 :       { return this-&gt;_M_impl; }</span></span>
 <span id="L314"><span class="lineNum">     314</span>              : </span>
 <span id="L315"><span class="lineNum">     315</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L316"><span class="lineNum">     316</span>              :       allocator_type</span>
-<span id="L317"><span class="lineNum">     317</span>              :       get_allocator() const _GLIBCXX_NOEXCEPT</span>
-<span id="L318"><span class="lineNum">     318</span>              :       { return allocator_type(_M_get_Tp_allocator()); }</span>
+<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">           3 :       get_allocator() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">           6 :       { return allocator_type(_M_get_Tp_allocator()); }</span></span>
 <span id="L319"><span class="lineNum">     319</span>              : </span>
 <span id="L320"><span class="lineNum">     320</span>              : #if __cplusplus &gt;= 201103L</span>
-<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">         113 :       _Vector_base() = default;</span></span>
+<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">         441 :       _Vector_base() = default;</span></span>
 <span id="L322"><span class="lineNum">     322</span>              : #else</span>
 <span id="L323"><span class="lineNum">     323</span>              :       _Vector_base() { }</span>
 <span id="L324"><span class="lineNum">     324</span>              : #endif</span>
 <span id="L325"><span class="lineNum">     325</span>              : </span>
 <span id="L326"><span class="lineNum">     326</span>              :       _GLIBCXX20_CONSTEXPR</span>
-<span id="L327"><span class="lineNum">     327</span>              :       _Vector_base(const allocator_type&amp; __a) _GLIBCXX_NOEXCEPT</span>
-<span id="L328"><span class="lineNum">     328</span>              :       : _M_impl(__a) { }</span>
+<span id="L327"><span class="lineNum">     327</span> <span class="tlaGNC">           9 :       _Vector_base(const allocator_type&amp; __a) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L328"><span class="lineNum">     328</span> <span class="tlaGNC">           9 :       : _M_impl(__a) { }</span></span>
 <span id="L329"><span class="lineNum">     329</span>              : </span>
 <span id="L330"><span class="lineNum">     330</span>              :       // Kept for ABI compatibility.</span>
 <span id="L331"><span class="lineNum">     331</span>              : #if !_GLIBCXX_INLINE_VERSION</span>
@@ -398,9 +398,9 @@
 <span id="L336"><span class="lineNum">     336</span>              : #endif</span>
 <span id="L337"><span class="lineNum">     337</span>              : </span>
 <span id="L338"><span class="lineNum">     338</span>              :       _GLIBCXX20_CONSTEXPR</span>
-<span id="L339"><span class="lineNum">     339</span>              :       _Vector_base(size_t __n, const allocator_type&amp; __a)</span>
-<span id="L340"><span class="lineNum">     340</span>              :       : _M_impl(__a)</span>
-<span id="L341"><span class="lineNum">     341</span>              :       { _M_create_storage(__n); }</span>
+<span id="L339"><span class="lineNum">     339</span> <span class="tlaGNC">          12 :       _Vector_base(size_t __n, const allocator_type&amp; __a)</span></span>
+<span id="L340"><span class="lineNum">     340</span> <span class="tlaGNC">          12 :       : _M_impl(__a)</span></span>
+<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">          12 :       { _M_create_storage(__n); }</span></span>
 <span id="L342"><span class="lineNum">     342</span>              : </span>
 <span id="L343"><span class="lineNum">     343</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L344"><span class="lineNum">     344</span>              :       _Vector_base(_Vector_base&amp;&amp;) = default;</span>
@@ -432,42 +432,42 @@
 <span id="L370"><span class="lineNum">     370</span>              : #endif</span>
 <span id="L371"><span class="lineNum">     371</span>              : </span>
 <span id="L372"><span class="lineNum">     372</span>              :       _GLIBCXX20_CONSTEXPR</span>
-<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">         113 :       ~_Vector_base() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">         462 :       ~_Vector_base() _GLIBCXX_NOEXCEPT</span></span>
 <span id="L374"><span class="lineNum">     374</span>              :       {</span>
-<span id="L375"><span class="lineNum">     375</span> <span class="tlaGNC">         113 :         _M_deallocate(_M_impl._M_start,</span></span>
-<span id="L376"><span class="lineNum">     376</span> <span class="tlaGNC">         113 :                       _M_impl._M_end_of_storage - _M_impl._M_start);</span></span>
-<span id="L377"><span class="lineNum">     377</span> <span class="tlaGNC">         113 :       }</span></span>
+<span id="L375"><span class="lineNum">     375</span> <span class="tlaGNC">         462 :         _M_deallocate(_M_impl._M_start,</span></span>
+<span id="L376"><span class="lineNum">     376</span> <span class="tlaGNC">         462 :                       _M_impl._M_end_of_storage - _M_impl._M_start);</span></span>
+<span id="L377"><span class="lineNum">     377</span> <span class="tlaGNC">         462 :       }</span></span>
 <span id="L378"><span class="lineNum">     378</span>              : </span>
 <span id="L379"><span class="lineNum">     379</span>              :     public:</span>
 <span id="L380"><span class="lineNum">     380</span>              :       _Vector_impl _M_impl;</span>
 <span id="L381"><span class="lineNum">     381</span>              : </span>
 <span id="L382"><span class="lineNum">     382</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L383"><span class="lineNum">     383</span>              :       pointer</span>
-<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">         123 :       _M_allocate(size_t __n)</span></span>
+<span id="L384"><span class="lineNum">     384</span> <span class="tlaGNC">         468 :       _M_allocate(size_t __n)</span></span>
 <span id="L385"><span class="lineNum">     385</span>              :       {</span>
 <span id="L386"><span class="lineNum">     386</span>              :         typedef __gnu_cxx::__alloc_traits&lt;_Tp_alloc_type&gt; _Tr;</span>
-<span id="L387"><span class="lineNum">     387</span> <span class="tlaGNC">         246 :         return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();</span></span>
+<span id="L387"><span class="lineNum">     387</span> <span class="tlaGNC">         936 :         return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();</span></span>
 <span id="L388"><span class="lineNum">     388</span>              :       }</span>
 <span id="L389"><span class="lineNum">     389</span>              : </span>
 <span id="L390"><span class="lineNum">     390</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L391"><span class="lineNum">     391</span>              :       void</span>
-<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">         129 :       _M_deallocate(pointer __p, size_t __n)</span></span>
+<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">         566 :       _M_deallocate(pointer __p, size_t __n)</span></span>
 <span id="L393"><span class="lineNum">     393</span>              :       {</span>
 <span id="L394"><span class="lineNum">     394</span>              :         typedef __gnu_cxx::__alloc_traits&lt;_Tp_alloc_type&gt; _Tr;</span>
-<span id="L395"><span class="lineNum">     395</span> <span class="tlaGNC">         129 :         if (__p)</span></span>
-<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">         123 :           _Tr::deallocate(_M_impl, __p, __n);</span></span>
-<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">         129 :       }</span></span>
+<span id="L395"><span class="lineNum">     395</span> <span class="tlaGNC">         566 :         if (__p)</span></span>
+<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">         468 :           _Tr::deallocate(_M_impl, __p, __n);</span></span>
+<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">         566 :       }</span></span>
 <span id="L398"><span class="lineNum">     398</span>              : </span>
 <span id="L399"><span class="lineNum">     399</span>              :     protected:</span>
 <span id="L400"><span class="lineNum">     400</span>              : </span>
 <span id="L401"><span class="lineNum">     401</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L402"><span class="lineNum">     402</span>              :       void</span>
-<span id="L403"><span class="lineNum">     403</span>              :       _M_create_storage(size_t __n)</span>
+<span id="L403"><span class="lineNum">     403</span> <span class="tlaGNC">          12 :       _M_create_storage(size_t __n)</span></span>
 <span id="L404"><span class="lineNum">     404</span>              :       {</span>
-<span id="L405"><span class="lineNum">     405</span>              :         this-&gt;_M_impl._M_start = this-&gt;_M_allocate(__n);</span>
-<span id="L406"><span class="lineNum">     406</span>              :         this-&gt;_M_impl._M_finish = this-&gt;_M_impl._M_start;</span>
-<span id="L407"><span class="lineNum">     407</span>              :         this-&gt;_M_impl._M_end_of_storage = this-&gt;_M_impl._M_start + __n;</span>
-<span id="L408"><span class="lineNum">     408</span>              :       }</span>
+<span id="L405"><span class="lineNum">     405</span> <span class="tlaGNC">          12 :         this-&gt;_M_impl._M_start = this-&gt;_M_allocate(__n);</span></span>
+<span id="L406"><span class="lineNum">     406</span> <span class="tlaGNC">          12 :         this-&gt;_M_impl._M_finish = this-&gt;_M_impl._M_start;</span></span>
+<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">          12 :         this-&gt;_M_impl._M_end_of_storage = this-&gt;_M_impl._M_start + __n;</span></span>
+<span id="L408"><span class="lineNum">     408</span> <span class="tlaGNC">          12 :       }</span></span>
 <span id="L409"><span class="lineNum">     409</span>              : </span>
 <span id="L410"><span class="lineNum">     410</span>              : #if __glibcxx_containers_ranges // C++ &gt;= 23</span>
 <span id="L411"><span class="lineNum">     411</span>              :       // Called by insert_range, and indirectly by assign_range, append_range.</span>
@@ -593,12 +593,12 @@
 <span id="L531"><span class="lineNum">     531</span>              :       { return __result; }</span>
 <span id="L532"><span class="lineNum">     532</span>              : </span>
 <span id="L533"><span class="lineNum">     533</span>              :       static _GLIBCXX20_CONSTEXPR pointer</span>
-<span id="L534"><span class="lineNum">     534</span> <span class="tlaGNC">         123 :       _S_relocate(pointer __first, pointer __last, pointer __result,</span></span>
+<span id="L534"><span class="lineNum">     534</span> <span class="tlaGNC">         450 :       _S_relocate(pointer __first, pointer __last, pointer __result,</span></span>
 <span id="L535"><span class="lineNum">     535</span>              :                   _Tp_alloc_type&amp; __alloc) noexcept</span>
 <span id="L536"><span class="lineNum">     536</span>              :       {</span>
 <span id="L537"><span class="lineNum">     537</span>              : #if __cpp_if_constexpr</span>
 <span id="L538"><span class="lineNum">     538</span>              :         // All callers have already checked _S_use_relocate() so just do it.</span>
-<span id="L539"><span class="lineNum">     539</span> <span class="tlaGNC">         123 :         return std::__relocate_a(__first, __last, __result, __alloc);</span></span>
+<span id="L539"><span class="lineNum">     539</span> <span class="tlaGNC">         450 :         return std::__relocate_a(__first, __last, __result, __alloc);</span></span>
 <span id="L540"><span class="lineNum">     540</span>              : #else</span>
 <span id="L541"><span class="lineNum">     541</span>              :         using __do_it = __bool_constant&lt;_S_use_relocate()&gt;;</span>
 <span id="L542"><span class="lineNum">     542</span>              :         return _S_do_relocate(__first, __last, __result, __alloc, __do_it{});</span>
@@ -620,7 +620,7 @@
 <span id="L558"><span class="lineNum">     558</span>              :        *  @brief  Creates a %vector with no elements.</span>
 <span id="L559"><span class="lineNum">     559</span>              :        */</span>
 <span id="L560"><span class="lineNum">     560</span>              : #if __cplusplus &gt;= 201103L</span>
-<span id="L561"><span class="lineNum">     561</span> <span class="tlaGNC">         113 :       vector() = default;</span></span>
+<span id="L561"><span class="lineNum">     561</span> <span class="tlaGNC">         441 :       vector() = default;</span></span>
 <span id="L562"><span class="lineNum">     562</span>              : #else</span>
 <span id="L563"><span class="lineNum">     563</span>              :       vector() { }</span>
 <span id="L564"><span class="lineNum">     564</span>              : #endif</span>
@@ -631,8 +631,8 @@
 <span id="L569"><span class="lineNum">     569</span>              :        */</span>
 <span id="L570"><span class="lineNum">     570</span>              :       explicit</span>
 <span id="L571"><span class="lineNum">     571</span>              :       _GLIBCXX20_CONSTEXPR</span>
-<span id="L572"><span class="lineNum">     572</span>              :       vector(const allocator_type&amp; __a) _GLIBCXX_NOEXCEPT</span>
-<span id="L573"><span class="lineNum">     573</span>              :       : _Base(__a) { }</span>
+<span id="L572"><span class="lineNum">     572</span> <span class="tlaGNC">           3 :       vector(const allocator_type&amp; __a) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L573"><span class="lineNum">     573</span> <span class="tlaGNC">           3 :       : _Base(__a) { }</span></span>
 <span id="L574"><span class="lineNum">     574</span>              : </span>
 <span id="L575"><span class="lineNum">     575</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L576"><span class="lineNum">     576</span>              :       /**</span>
@@ -690,15 +690,15 @@
 <span id="L628"><span class="lineNum">     628</span>              :        *  by @a __x (unless the allocator traits dictate a different object).</span>
 <span id="L629"><span class="lineNum">     629</span>              :        */</span>
 <span id="L630"><span class="lineNum">     630</span>              :       _GLIBCXX20_CONSTEXPR</span>
-<span id="L631"><span class="lineNum">     631</span>              :       vector(const vector&amp; __x)</span>
+<span id="L631"><span class="lineNum">     631</span> <span class="tlaGNC">          12 :       vector(const vector&amp; __x)</span></span>
 <span id="L632"><span class="lineNum">     632</span>              :       : _Base(__x.size(),</span>
-<span id="L633"><span class="lineNum">     633</span>              :         _Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))</span>
+<span id="L633"><span class="lineNum">     633</span> <span class="tlaGNC">          24 :         _Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))</span></span>
 <span id="L634"><span class="lineNum">     634</span>              :       {</span>
-<span id="L635"><span class="lineNum">     635</span>              :         this-&gt;_M_impl._M_finish =</span>
-<span id="L636"><span class="lineNum">     636</span>              :           std::__uninitialized_copy_a(__x.begin(), __x.end(),</span>
-<span id="L637"><span class="lineNum">     637</span>              :                                       this-&gt;_M_impl._M_start,</span>
-<span id="L638"><span class="lineNum">     638</span>              :                                       _M_get_Tp_allocator());</span>
-<span id="L639"><span class="lineNum">     639</span>              :       }</span>
+<span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">          12 :         this-&gt;_M_impl._M_finish =</span></span>
+<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">          12 :           std::__uninitialized_copy_a(__x.begin(), __x.end(),</span></span>
+<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">          12 :                                       this-&gt;_M_impl._M_start,</span></span>
+<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">          12 :                                       _M_get_Tp_allocator());</span></span>
+<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">          12 :       }</span></span>
 <span id="L640"><span class="lineNum">     640</span>              : </span>
 <span id="L641"><span class="lineNum">     641</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L642"><span class="lineNum">     642</span>              :       /**</span>
@@ -795,9 +795,9 @@
 <span id="L733"><span class="lineNum">     733</span>              :       template&lt;typename _InputIterator,</span>
 <span id="L734"><span class="lineNum">     734</span>              :                typename = std::_RequireInputIter&lt;_InputIterator&gt;&gt;</span>
 <span id="L735"><span class="lineNum">     735</span>              :         _GLIBCXX20_CONSTEXPR</span>
-<span id="L736"><span class="lineNum">     736</span>              :         vector(_InputIterator __first, _InputIterator __last,</span>
+<span id="L736"><span class="lineNum">     736</span> <span class="tlaGNC">           6 :         vector(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L737"><span class="lineNum">     737</span>              :                const allocator_type&amp; __a = allocator_type())</span>
-<span id="L738"><span class="lineNum">     738</span>              :         : _Base(__a)</span>
+<span id="L738"><span class="lineNum">     738</span> <span class="tlaGNC">           6 :         : _Base(__a)</span></span>
 <span id="L739"><span class="lineNum">     739</span>              :         {</span>
 <span id="L740"><span class="lineNum">     740</span>              : #if __glibcxx_concepts // C++ &gt;= C++20</span>
 <span id="L741"><span class="lineNum">     741</span>              :           if constexpr (sized_sentinel_for&lt;_InputIterator, _InputIterator&gt;</span>
@@ -810,9 +810,9 @@
 <span id="L748"><span class="lineNum">     748</span>              :             }</span>
 <span id="L749"><span class="lineNum">     749</span>              :           else</span>
 <span id="L750"><span class="lineNum">     750</span>              : #endif</span>
-<span id="L751"><span class="lineNum">     751</span>              :           _M_range_initialize(__first, __last,</span>
-<span id="L752"><span class="lineNum">     752</span>              :                               std::__iterator_category(__first));</span>
-<span id="L753"><span class="lineNum">     753</span>              :         }</span>
+<span id="L751"><span class="lineNum">     751</span> <span class="tlaGNC">           6 :           _M_range_initialize(__first, __last,</span></span>
+<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">           6 :                               std::__iterator_category(__first));</span></span>
+<span id="L753"><span class="lineNum">     753</span> <span class="tlaGNC">           6 :         }</span></span>
 <span id="L754"><span class="lineNum">     754</span>              : #else</span>
 <span id="L755"><span class="lineNum">     755</span>              :       template&lt;typename _InputIterator&gt;</span>
 <span id="L756"><span class="lineNum">     756</span>              :         vector(_InputIterator __first, _InputIterator __last,</span>
@@ -859,12 +859,12 @@
 <span id="L797"><span class="lineNum">     797</span>              :        *  responsibility.</span>
 <span id="L798"><span class="lineNum">     798</span>              :        */</span>
 <span id="L799"><span class="lineNum">     799</span>              :       _GLIBCXX20_CONSTEXPR</span>
-<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">         113 :       ~vector() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">         462 :       ~vector() _GLIBCXX_NOEXCEPT</span></span>
 <span id="L801"><span class="lineNum">     801</span>              :       {</span>
-<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         113 :         std::_Destroy(this-&gt;_M_impl._M_start, this-&gt;_M_impl._M_finish,</span></span>
-<span id="L803"><span class="lineNum">     803</span> <span class="tlaGNC">         113 :                       _M_get_Tp_allocator());</span></span>
+<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         462 :         std::_Destroy(this-&gt;_M_impl._M_start, this-&gt;_M_impl._M_finish,</span></span>
+<span id="L803"><span class="lineNum">     803</span> <span class="tlaGNC">         462 :                       _M_get_Tp_allocator());</span></span>
 <span id="L804"><span class="lineNum">     804</span>              :         _GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;</span>
-<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">         113 :       }</span></span>
+<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">         462 :       }</span></span>
 <span id="L806"><span class="lineNum">     806</span>              : </span>
 <span id="L807"><span class="lineNum">     807</span>              :       /**</span>
 <span id="L808"><span class="lineNum">     808</span>              :        *  @brief  %Vector assignment operator.</span>
@@ -892,13 +892,13 @@
 <span id="L830"><span class="lineNum">     830</span>              :        */</span>
 <span id="L831"><span class="lineNum">     831</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L832"><span class="lineNum">     832</span>              :       vector&amp;</span>
-<span id="L833"><span class="lineNum">     833</span>              :       operator=(vector&amp;&amp; __x) noexcept(_Alloc_traits::_S_nothrow_move())</span>
+<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">           3 :       operator=(vector&amp;&amp; __x) noexcept(_Alloc_traits::_S_nothrow_move())</span></span>
 <span id="L834"><span class="lineNum">     834</span>              :       {</span>
-<span id="L835"><span class="lineNum">     835</span>              :         constexpr bool __move_storage =</span>
+<span id="L835"><span class="lineNum">     835</span> <span class="tlaGNC">           3 :         constexpr bool __move_storage =</span></span>
 <span id="L836"><span class="lineNum">     836</span>              :           _Alloc_traits::_S_propagate_on_move_assign()</span>
 <span id="L837"><span class="lineNum">     837</span>              :           || _Alloc_traits::_S_always_equal();</span>
-<span id="L838"><span class="lineNum">     838</span>              :         _M_move_assign(std::move(__x), __bool_constant&lt;__move_storage&gt;());</span>
-<span id="L839"><span class="lineNum">     839</span>              :         return *this;</span>
+<span id="L838"><span class="lineNum">     838</span> <span class="tlaGNC">           3 :         _M_move_assign(std::move(__x), __bool_constant&lt;__move_storage&gt;());</span></span>
+<span id="L839"><span class="lineNum">     839</span> <span class="tlaGNC">           3 :         return *this;</span></span>
 <span id="L840"><span class="lineNum">     840</span>              :       }</span>
 <span id="L841"><span class="lineNum">     841</span>              : </span>
 <span id="L842"><span class="lineNum">     842</span>              :       /**</span>
@@ -1057,8 +1057,8 @@
 <span id="L995"><span class="lineNum">     995</span>              :        */</span>
 <span id="L996"><span class="lineNum">     996</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L997"><span class="lineNum">     997</span>              :       iterator</span>
-<span id="L998"><span class="lineNum">     998</span> <span class="tlaGNC">         255 :       begin() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L999"><span class="lineNum">     999</span> <span class="tlaGNC">         255 :       { return iterator(this-&gt;_M_impl._M_start); }</span></span>
+<span id="L998"><span class="lineNum">     998</span> <span class="tlaGNC">        1023 :       begin() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L999"><span class="lineNum">     999</span> <span class="tlaGNC">        1023 :       { return iterator(this-&gt;_M_impl._M_start); }</span></span>
 <span id="L1000"><span class="lineNum">    1000</span>              : </span>
 <span id="L1001"><span class="lineNum">    1001</span>              :       /**</span>
 <span id="L1002"><span class="lineNum">    1002</span>              :        *  Returns a read-only (constant) iterator that points to the</span>
@@ -1067,8 +1067,8 @@
 <span id="L1005"><span class="lineNum">    1005</span>              :        */</span>
 <span id="L1006"><span class="lineNum">    1006</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1007"><span class="lineNum">    1007</span>              :       const_iterator</span>
-<span id="L1008"><span class="lineNum">    1008</span> <span class="tlaGNC">         129 :       begin() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1009"><span class="lineNum">    1009</span> <span class="tlaGNC">         129 :       { return const_iterator(this-&gt;_M_impl._M_start); }</span></span>
+<span id="L1008"><span class="lineNum">    1008</span> <span class="tlaGNC">         513 :       begin() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1009"><span class="lineNum">    1009</span> <span class="tlaGNC">         513 :       { return const_iterator(this-&gt;_M_impl._M_start); }</span></span>
 <span id="L1010"><span class="lineNum">    1010</span>              : </span>
 <span id="L1011"><span class="lineNum">    1011</span>              :       /**</span>
 <span id="L1012"><span class="lineNum">    1012</span>              :        *  Returns a read/write iterator that points one past the last</span>
@@ -1077,8 +1077,8 @@
 <span id="L1015"><span class="lineNum">    1015</span>              :        */</span>
 <span id="L1016"><span class="lineNum">    1016</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1017"><span class="lineNum">    1017</span>              :       iterator</span>
-<span id="L1018"><span class="lineNum">    1018</span> <span class="tlaGNC">         375 :       end() _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1019"><span class="lineNum">    1019</span> <span class="tlaGNC">         375 :       { return iterator(this-&gt;_M_impl._M_finish); }</span></span>
+<span id="L1018"><span class="lineNum">    1018</span> <span class="tlaGNC">        1437 :       end() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1019"><span class="lineNum">    1019</span> <span class="tlaGNC">        1437 :       { return iterator(this-&gt;_M_impl._M_finish); }</span></span>
 <span id="L1020"><span class="lineNum">    1020</span>              : </span>
 <span id="L1021"><span class="lineNum">    1021</span>              :       /**</span>
 <span id="L1022"><span class="lineNum">    1022</span>              :        *  Returns a read-only (constant) iterator that points one past</span>
@@ -1087,8 +1087,8 @@
 <span id="L1025"><span class="lineNum">    1025</span>              :        */</span>
 <span id="L1026"><span class="lineNum">    1026</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1027"><span class="lineNum">    1027</span>              :       const_iterator</span>
-<span id="L1028"><span class="lineNum">    1028</span> <span class="tlaGNC">         129 :       end() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1029"><span class="lineNum">    1029</span> <span class="tlaGNC">         129 :       { return const_iterator(this-&gt;_M_impl._M_finish); }</span></span>
+<span id="L1028"><span class="lineNum">    1028</span> <span class="tlaGNC">         507 :       end() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1029"><span class="lineNum">    1029</span> <span class="tlaGNC">         507 :       { return const_iterator(this-&gt;_M_impl._M_finish); }</span></span>
 <span id="L1030"><span class="lineNum">    1030</span>              : </span>
 <span id="L1031"><span class="lineNum">    1031</span>              :       /**</span>
 <span id="L1032"><span class="lineNum">    1032</span>              :        *  Returns a read/write reverse iterator that points to the</span>
@@ -1176,19 +1176,19 @@
 <span id="L1114"><span class="lineNum">    1114</span>              :       /**  Returns the number of elements in the %vector.  */</span>
 <span id="L1115"><span class="lineNum">    1115</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1116"><span class="lineNum">    1116</span>              :       size_type</span>
-<span id="L1117"><span class="lineNum">    1117</span> <span class="tlaGNC">         498 :       size() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1117"><span class="lineNum">    1117</span> <span class="tlaGNC">        1845 :       size() const _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1118"><span class="lineNum">    1118</span>              :       {</span>
-<span id="L1119"><span class="lineNum">    1119</span> <span class="tlaGNC">         498 :         ptrdiff_t __dif = this-&gt;_M_impl._M_finish - this-&gt;_M_impl._M_start;</span></span>
-<span id="L1120"><span class="lineNum">    1120</span> <span class="tlaGNC">         498 :         if (__dif &lt; 0)</span></span>
+<span id="L1119"><span class="lineNum">    1119</span> <span class="tlaGNC">        1845 :         ptrdiff_t __dif = this-&gt;_M_impl._M_finish - this-&gt;_M_impl._M_start;</span></span>
+<span id="L1120"><span class="lineNum">    1120</span> <span class="tlaGNC">        1845 :         if (__dif &lt; 0)</span></span>
 <span id="L1121"><span class="lineNum">    1121</span> <span class="tlaUNC">           0 :            __builtin_unreachable ();</span></span>
-<span id="L1122"><span class="lineNum">    1122</span> <span class="tlaGNC">         498 :         return size_type(__dif);</span></span>
+<span id="L1122"><span class="lineNum">    1122</span> <span class="tlaGNC">        1845 :         return size_type(__dif);</span></span>
 <span id="L1123"><span class="lineNum">    1123</span>              :       }</span>
 <span id="L1124"><span class="lineNum">    1124</span>              : </span>
 <span id="L1125"><span class="lineNum">    1125</span>              :       /**  Returns the size() of the largest possible %vector.  */</span>
 <span id="L1126"><span class="lineNum">    1126</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1127"><span class="lineNum">    1127</span>              :       size_type</span>
-<span id="L1128"><span class="lineNum">    1128</span> <span class="tlaGNC">         246 :       max_size() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1129"><span class="lineNum">    1129</span> <span class="tlaGNC">         246 :       { return _S_max_size(_M_get_Tp_allocator()); }</span></span>
+<span id="L1128"><span class="lineNum">    1128</span> <span class="tlaGNC">         900 :       max_size() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1129"><span class="lineNum">    1129</span> <span class="tlaGNC">         900 :       { return _S_max_size(_M_get_Tp_allocator()); }</span></span>
 <span id="L1130"><span class="lineNum">    1130</span>              : </span>
 <span id="L1131"><span class="lineNum">    1131</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L1132"><span class="lineNum">    1132</span>              :       /**</span>
@@ -1282,8 +1282,8 @@
 <span id="L1220"><span class="lineNum">    1220</span>              :        */</span>
 <span id="L1221"><span class="lineNum">    1221</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1222"><span class="lineNum">    1222</span>              :       bool</span>
-<span id="L1223"><span class="lineNum">    1223</span> <span class="tlaGNC">         129 :       empty() const _GLIBCXX_NOEXCEPT</span></span>
-<span id="L1224"><span class="lineNum">    1224</span> <span class="tlaGNC">         258 :       { return begin() == end(); }</span></span>
+<span id="L1223"><span class="lineNum">    1223</span> <span class="tlaGNC">         471 :       empty() const _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1224"><span class="lineNum">    1224</span> <span class="tlaGNC">         942 :       { return begin() == end(); }</span></span>
 <span id="L1225"><span class="lineNum">    1225</span>              : </span>
 <span id="L1226"><span class="lineNum">    1226</span>              :       /**</span>
 <span id="L1227"><span class="lineNum">    1227</span>              :        *  @brief  Attempt to preallocate enough memory for specified number of</span>
@@ -1320,10 +1320,10 @@
 <span id="L1258"><span class="lineNum">    1258</span>              :        */</span>
 <span id="L1259"><span class="lineNum">    1259</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1260"><span class="lineNum">    1260</span>              :       reference</span>
-<span id="L1261"><span class="lineNum">    1261</span> <span class="tlaGNC">           3 :       operator[](size_type __n) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1261"><span class="lineNum">    1261</span> <span class="tlaGNC">           9 :       operator[](size_type __n) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1262"><span class="lineNum">    1262</span>              :       {</span>
-<span id="L1263"><span class="lineNum">    1263</span> <span class="tlaGNC">           3 :         __glibcxx_requires_subscript(__n);</span></span>
-<span id="L1264"><span class="lineNum">    1264</span> <span class="tlaGNC">           3 :         return *(this-&gt;_M_impl._M_start + __n);</span></span>
+<span id="L1263"><span class="lineNum">    1263</span> <span class="tlaGNC">           9 :         __glibcxx_requires_subscript(__n);</span></span>
+<span id="L1264"><span class="lineNum">    1264</span> <span class="tlaGNC">           9 :         return *(this-&gt;_M_impl._M_start + __n);</span></span>
 <span id="L1265"><span class="lineNum">    1265</span>              :       }</span>
 <span id="L1266"><span class="lineNum">    1266</span>              : </span>
 <span id="L1267"><span class="lineNum">    1267</span>              :       /**</span>
@@ -1403,10 +1403,10 @@
 <span id="L1341"><span class="lineNum">    1341</span>              :        */</span>
 <span id="L1342"><span class="lineNum">    1342</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1343"><span class="lineNum">    1343</span>              :       reference</span>
-<span id="L1344"><span class="lineNum">    1344</span>              :       front() _GLIBCXX_NOEXCEPT</span>
+<span id="L1344"><span class="lineNum">    1344</span> <span class="tlaGNC">           3 :       front() _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1345"><span class="lineNum">    1345</span>              :       {</span>
-<span id="L1346"><span class="lineNum">    1346</span>              :         __glibcxx_requires_nonempty();</span>
-<span id="L1347"><span class="lineNum">    1347</span>              :         return *begin();</span>
+<span id="L1346"><span class="lineNum">    1346</span> <span class="tlaGNC">           3 :         __glibcxx_requires_nonempty();</span></span>
+<span id="L1347"><span class="lineNum">    1347</span> <span class="tlaGNC">           6 :         return *begin();</span></span>
 <span id="L1348"><span class="lineNum">    1348</span>              :       }</span>
 <span id="L1349"><span class="lineNum">    1349</span>              : </span>
 <span id="L1350"><span class="lineNum">    1350</span>              :       /**</span>
@@ -1427,10 +1427,10 @@
 <span id="L1365"><span class="lineNum">    1365</span>              :        */</span>
 <span id="L1366"><span class="lineNum">    1366</span>              :       _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L1367"><span class="lineNum">    1367</span>              :       reference</span>
-<span id="L1368"><span class="lineNum">    1368</span> <span class="tlaGNC">         120 :       back() _GLIBCXX_NOEXCEPT</span></span>
+<span id="L1368"><span class="lineNum">    1368</span> <span class="tlaGNC">         417 :       back() _GLIBCXX_NOEXCEPT</span></span>
 <span id="L1369"><span class="lineNum">    1369</span>              :       {</span>
-<span id="L1370"><span class="lineNum">    1370</span> <span class="tlaGNC">         120 :         __glibcxx_requires_nonempty();</span></span>
-<span id="L1371"><span class="lineNum">    1371</span> <span class="tlaGNC">         360 :         return *(end() - 1);</span></span>
+<span id="L1370"><span class="lineNum">    1370</span> <span class="tlaGNC">         417 :         __glibcxx_requires_nonempty();</span></span>
+<span id="L1371"><span class="lineNum">    1371</span> <span class="tlaGNC">        1251 :         return *(end() - 1);</span></span>
 <span id="L1372"><span class="lineNum">    1372</span>              :       }</span>
 <span id="L1373"><span class="lineNum">    1373</span>              : </span>
 <span id="L1374"><span class="lineNum">    1374</span>              :       /**</span>
@@ -1475,9 +1475,9 @@
 <span id="L1413"><span class="lineNum">    1413</span>              :        */</span>
 <span id="L1414"><span class="lineNum">    1414</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L1415"><span class="lineNum">    1415</span>              :       void</span>
-<span id="L1416"><span class="lineNum">    1416</span> <span class="tlaGNC">           3 :       push_back(const value_type&amp; __x)</span></span>
+<span id="L1416"><span class="lineNum">    1416</span> <span class="tlaGNC">          36 :       push_back(const value_type&amp; __x)</span></span>
 <span id="L1417"><span class="lineNum">    1417</span>              :       {</span>
-<span id="L1418"><span class="lineNum">    1418</span> <span class="tlaGNC">           3 :         if (this-&gt;_M_impl._M_finish != this-&gt;_M_impl._M_end_of_storage)</span></span>
+<span id="L1418"><span class="lineNum">    1418</span> <span class="tlaGNC">          36 :         if (this-&gt;_M_impl._M_finish != this-&gt;_M_impl._M_end_of_storage)</span></span>
 <span id="L1419"><span class="lineNum">    1419</span>              :           {</span>
 <span id="L1420"><span class="lineNum">    1420</span>              :             _GLIBCXX_ASAN_ANNOTATE_GROW(1);</span>
 <span id="L1421"><span class="lineNum">    1421</span> <span class="tlaUNC">           0 :             _Alloc_traits::construct(this-&gt;_M_impl, this-&gt;_M_impl._M_finish,</span></span>
@@ -1486,14 +1486,14 @@
 <span id="L1424"><span class="lineNum">    1424</span>              :             _GLIBCXX_ASAN_ANNOTATE_GREW(1);</span>
 <span id="L1425"><span class="lineNum">    1425</span>              :           }</span>
 <span id="L1426"><span class="lineNum">    1426</span>              :         else</span>
-<span id="L1427"><span class="lineNum">    1427</span> <span class="tlaGNC">           3 :           _M_realloc_append(__x);</span></span>
-<span id="L1428"><span class="lineNum">    1428</span> <span class="tlaGNC">           3 :       }</span></span>
+<span id="L1427"><span class="lineNum">    1427</span> <span class="tlaGNC">          36 :           _M_realloc_append(__x);</span></span>
+<span id="L1428"><span class="lineNum">    1428</span> <span class="tlaGNC">          36 :       }</span></span>
 <span id="L1429"><span class="lineNum">    1429</span>              : </span>
 <span id="L1430"><span class="lineNum">    1430</span>              : #if __cplusplus &gt;= 201103L</span>
 <span id="L1431"><span class="lineNum">    1431</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L1432"><span class="lineNum">    1432</span>              :       void</span>
-<span id="L1433"><span class="lineNum">    1433</span> <span class="tlaGNC">         120 :       push_back(value_type&amp;&amp; __x)</span></span>
-<span id="L1434"><span class="lineNum">    1434</span> <span class="tlaGNC">         120 :       { emplace_back(std::move(__x)); }</span></span>
+<span id="L1433"><span class="lineNum">    1433</span> <span class="tlaGNC">         414 :       push_back(value_type&amp;&amp; __x)</span></span>
+<span id="L1434"><span class="lineNum">    1434</span> <span class="tlaGNC">         414 :       { emplace_back(std::move(__x)); }</span></span>
 <span id="L1435"><span class="lineNum">    1435</span>              : </span>
 <span id="L1436"><span class="lineNum">    1436</span>              :       template&lt;typename... _Args&gt;</span>
 <span id="L1437"><span class="lineNum">    1437</span>              : #if __cplusplus &gt; 201402L</span>
@@ -1934,16 +1934,16 @@
 <span id="L1872"><span class="lineNum">    1872</span>              :         _Base&amp; _M_vect;</span>
 <span id="L1873"><span class="lineNum">    1873</span>              : </span>
 <span id="L1874"><span class="lineNum">    1874</span>              :         _GLIBCXX20_CONSTEXPR</span>
-<span id="L1875"><span class="lineNum">    1875</span> <span class="tlaGNC">         123 :         _Guard_alloc(pointer __s, size_type __l, _Base&amp; __vect)</span></span>
-<span id="L1876"><span class="lineNum">    1876</span> <span class="tlaGNC">         123 :         : _M_storage(__s), _M_len(__l), _M_vect(__vect)</span></span>
-<span id="L1877"><span class="lineNum">    1877</span> <span class="tlaGNC">         123 :         { }</span></span>
+<span id="L1875"><span class="lineNum">    1875</span> <span class="tlaGNC">         450 :         _Guard_alloc(pointer __s, size_type __l, _Base&amp; __vect)</span></span>
+<span id="L1876"><span class="lineNum">    1876</span> <span class="tlaGNC">         450 :         : _M_storage(__s), _M_len(__l), _M_vect(__vect)</span></span>
+<span id="L1877"><span class="lineNum">    1877</span> <span class="tlaGNC">         450 :         { }</span></span>
 <span id="L1878"><span class="lineNum">    1878</span>              : </span>
 <span id="L1879"><span class="lineNum">    1879</span>              :         _GLIBCXX20_CONSTEXPR</span>
-<span id="L1880"><span class="lineNum">    1880</span> <span class="tlaGNC">         123 :         ~_Guard_alloc()</span></span>
+<span id="L1880"><span class="lineNum">    1880</span> <span class="tlaGNC">         450 :         ~_Guard_alloc()</span></span>
 <span id="L1881"><span class="lineNum">    1881</span>              :         {</span>
-<span id="L1882"><span class="lineNum">    1882</span> <span class="tlaGNC">         123 :           if (_M_storage)</span></span>
-<span id="L1883"><span class="lineNum">    1883</span> <span class="tlaGNC">          16 :             _M_vect._M_deallocate(_M_storage, _M_len);</span></span>
-<span id="L1884"><span class="lineNum">    1884</span> <span class="tlaGNC">         123 :         }</span></span>
+<span id="L1882"><span class="lineNum">    1882</span> <span class="tlaGNC">         450 :           if (_M_storage)</span></span>
+<span id="L1883"><span class="lineNum">    1883</span> <span class="tlaGNC">         104 :             _M_vect._M_deallocate(_M_storage, _M_len);</span></span>
+<span id="L1884"><span class="lineNum">    1884</span> <span class="tlaGNC">         450 :         }</span></span>
 <span id="L1885"><span class="lineNum">    1885</span>              : </span>
 <span id="L1886"><span class="lineNum">    1886</span>              :         _GLIBCXX20_CONSTEXPR</span>
 <span id="L1887"><span class="lineNum">    1887</span>              :         pointer</span>
@@ -2030,26 +2030,26 @@
 <span id="L1968"><span class="lineNum">    1968</span>              :       template&lt;typename _ForwardIterator&gt;</span>
 <span id="L1969"><span class="lineNum">    1969</span>              :         _GLIBCXX20_CONSTEXPR</span>
 <span id="L1970"><span class="lineNum">    1970</span>              :         void</span>
-<span id="L1971"><span class="lineNum">    1971</span>              :         _M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,</span>
+<span id="L1971"><span class="lineNum">    1971</span> <span class="tlaGNC">           6 :         _M_range_initialize(_ForwardIterator __first, _ForwardIterator __last,</span></span>
 <span id="L1972"><span class="lineNum">    1972</span>              :                             std::forward_iterator_tag)</span>
 <span id="L1973"><span class="lineNum">    1973</span>              :         {</span>
-<span id="L1974"><span class="lineNum">    1974</span>              :           _M_range_initialize_n(__first, __last,</span>
-<span id="L1975"><span class="lineNum">    1975</span>              :                                 std::distance(__first, __last));</span>
-<span id="L1976"><span class="lineNum">    1976</span>              :         }</span>
+<span id="L1974"><span class="lineNum">    1974</span> <span class="tlaGNC">           6 :           _M_range_initialize_n(__first, __last,</span></span>
+<span id="L1975"><span class="lineNum">    1975</span> <span class="tlaGNC">           6 :                                 std::distance(__first, __last));</span></span>
+<span id="L1976"><span class="lineNum">    1976</span> <span class="tlaGNC">           6 :         }</span></span>
 <span id="L1977"><span class="lineNum">    1977</span>              : </span>
 <span id="L1978"><span class="lineNum">    1978</span>              :       template&lt;typename _Iterator, typename _Sentinel&gt;</span>
 <span id="L1979"><span class="lineNum">    1979</span>              :         _GLIBCXX20_CONSTEXPR</span>
 <span id="L1980"><span class="lineNum">    1980</span>              :         void</span>
-<span id="L1981"><span class="lineNum">    1981</span>              :         _M_range_initialize_n(_Iterator __first, _Sentinel __last,</span>
+<span id="L1981"><span class="lineNum">    1981</span> <span class="tlaGNC">           6 :         _M_range_initialize_n(_Iterator __first, _Sentinel __last,</span></span>
 <span id="L1982"><span class="lineNum">    1982</span>              :                               size_type __n)</span>
 <span id="L1983"><span class="lineNum">    1983</span>              :         {</span>
-<span id="L1984"><span class="lineNum">    1984</span>              :           pointer __start = this-&gt;_M_impl._M_start =</span>
-<span id="L1985"><span class="lineNum">    1985</span>              :             this-&gt;_M_allocate(_S_check_init_len(__n, _M_get_Tp_allocator()));</span>
-<span id="L1986"><span class="lineNum">    1986</span>              :           this-&gt;_M_impl._M_end_of_storage = __start + __n;</span>
+<span id="L1984"><span class="lineNum">    1984</span> <span class="tlaGNC">           6 :           pointer __start = this-&gt;_M_impl._M_start =</span></span>
+<span id="L1985"><span class="lineNum">    1985</span> <span class="tlaGNC">           6 :             this-&gt;_M_allocate(_S_check_init_len(__n, _M_get_Tp_allocator()));</span></span>
+<span id="L1986"><span class="lineNum">    1986</span> <span class="tlaGNC">           6 :           this-&gt;_M_impl._M_end_of_storage = __start + __n;</span></span>
 <span id="L1987"><span class="lineNum">    1987</span>              :           this-&gt;_M_impl._M_finish</span>
-<span id="L1988"><span class="lineNum">    1988</span>              :               = std::__uninitialized_copy_a(_GLIBCXX_MOVE(__first), __last,</span>
-<span id="L1989"><span class="lineNum">    1989</span>              :                                             __start, _M_get_Tp_allocator());</span>
-<span id="L1990"><span class="lineNum">    1990</span>              :         }</span>
+<span id="L1988"><span class="lineNum">    1988</span> <span class="tlaGNC">           6 :               = std::__uninitialized_copy_a(_GLIBCXX_MOVE(__first), __last,</span></span>
+<span id="L1989"><span class="lineNum">    1989</span> <span class="tlaGNC">           6 :                                             __start, _M_get_Tp_allocator());</span></span>
+<span id="L1990"><span class="lineNum">    1990</span> <span class="tlaGNC">           6 :         }</span></span>
 <span id="L1991"><span class="lineNum">    1991</span>              : </span>
 <span id="L1992"><span class="lineNum">    1992</span>              :       // Called by the first initialize_dispatch above and by the</span>
 <span id="L1993"><span class="lineNum">    1993</span>              :       // vector(n,value,a) constructor.</span>
@@ -2255,35 +2255,35 @@
 <span id="L2193"><span class="lineNum">    2193</span>              :       // Called by _M_fill_insert, _M_insert_aux etc.</span>
 <span id="L2194"><span class="lineNum">    2194</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L2195"><span class="lineNum">    2195</span>              :       size_type</span>
-<span id="L2196"><span class="lineNum">    2196</span> <span class="tlaGNC">         123 :       _M_check_len(size_type __n, const char* __s) const</span></span>
+<span id="L2196"><span class="lineNum">    2196</span> <span class="tlaGNC">         450 :       _M_check_len(size_type __n, const char* __s) const</span></span>
 <span id="L2197"><span class="lineNum">    2197</span>              :       {</span>
-<span id="L2198"><span class="lineNum">    2198</span> <span class="tlaGNC">         123 :         if (max_size() - size() &lt; __n)</span></span>
+<span id="L2198"><span class="lineNum">    2198</span> <span class="tlaGNC">         450 :         if (max_size() - size() &lt; __n)</span></span>
 <span id="L2199"><span class="lineNum">    2199</span> <span class="tlaUNC">           0 :           __throw_length_error(__N(__s));</span></span>
 <span id="L2200"><span class="lineNum">    2200</span>              : </span>
-<span id="L2201"><span class="lineNum">    2201</span> <span class="tlaGNC">         123 :         const size_type __len = size() + (std::max)(size(), __n);</span></span>
-<span id="L2202"><span class="lineNum">    2202</span> <span class="tlaGNC">         123 :         return (__len &lt; size() || __len &gt; max_size()) ? max_size() : __len;</span></span>
+<span id="L2201"><span class="lineNum">    2201</span> <span class="tlaGNC">         450 :         const size_type __len = size() + (std::max)(size(), __n);</span></span>
+<span id="L2202"><span class="lineNum">    2202</span> <span class="tlaGNC">         450 :         return (__len &lt; size() || __len &gt; max_size()) ? max_size() : __len;</span></span>
 <span id="L2203"><span class="lineNum">    2203</span>              :       }</span>
 <span id="L2204"><span class="lineNum">    2204</span>              : </span>
 <span id="L2205"><span class="lineNum">    2205</span>              :       // Called by constructors to check initial size.</span>
 <span id="L2206"><span class="lineNum">    2206</span>              :       static _GLIBCXX20_CONSTEXPR size_type</span>
-<span id="L2207"><span class="lineNum">    2207</span>              :       _S_check_init_len(size_type __n, const allocator_type&amp; __a)</span>
+<span id="L2207"><span class="lineNum">    2207</span> <span class="tlaGNC">           6 :       _S_check_init_len(size_type __n, const allocator_type&amp; __a)</span></span>
 <span id="L2208"><span class="lineNum">    2208</span>              :       {</span>
-<span id="L2209"><span class="lineNum">    2209</span>              :         if (__n &gt; _S_max_size(_Tp_alloc_type(__a)))</span>
-<span id="L2210"><span class="lineNum">    2210</span>              :           __throw_length_error(</span>
+<span id="L2209"><span class="lineNum">    2209</span> <span class="tlaGNC">           6 :         if (__n &gt; _S_max_size(_Tp_alloc_type(__a)))</span></span>
+<span id="L2210"><span class="lineNum">    2210</span> <span class="tlaUNC">           0 :           __throw_length_error(</span></span>
 <span id="L2211"><span class="lineNum">    2211</span>              :               __N(&quot;cannot create std::vector larger than max_size()&quot;));</span>
-<span id="L2212"><span class="lineNum">    2212</span>              :         return __n;</span>
+<span id="L2212"><span class="lineNum">    2212</span> <span class="tlaGNC">           6 :         return __n;</span></span>
 <span id="L2213"><span class="lineNum">    2213</span>              :       }</span>
 <span id="L2214"><span class="lineNum">    2214</span>              : </span>
 <span id="L2215"><span class="lineNum">    2215</span>              :       static _GLIBCXX20_CONSTEXPR size_type</span>
-<span id="L2216"><span class="lineNum">    2216</span> <span class="tlaGNC">         246 :       _S_max_size(const _Tp_alloc_type&amp; __a) _GLIBCXX_NOEXCEPT</span></span>
+<span id="L2216"><span class="lineNum">    2216</span> <span class="tlaGNC">         906 :       _S_max_size(const _Tp_alloc_type&amp; __a) _GLIBCXX_NOEXCEPT</span></span>
 <span id="L2217"><span class="lineNum">    2217</span>              :       {</span>
 <span id="L2218"><span class="lineNum">    2218</span>              :         // std::distance(begin(), end()) cannot be greater than PTRDIFF_MAX,</span>
 <span id="L2219"><span class="lineNum">    2219</span>              :         // and realistically we can't store more than PTRDIFF_MAX/sizeof(T)</span>
 <span id="L2220"><span class="lineNum">    2220</span>              :         // (even if std::allocator_traits::max_size says we can).</span>
-<span id="L2221"><span class="lineNum">    2221</span> <span class="tlaGNC">         246 :         const size_t __diffmax</span></span>
+<span id="L2221"><span class="lineNum">    2221</span> <span class="tlaGNC">         906 :         const size_t __diffmax</span></span>
 <span id="L2222"><span class="lineNum">    2222</span>              :           = __gnu_cxx::__numeric_traits&lt;ptrdiff_t&gt;::__max / sizeof(_Tp);</span>
-<span id="L2223"><span class="lineNum">    2223</span> <span class="tlaGNC">         246 :         const size_t __allocmax = _Alloc_traits::max_size(__a);</span></span>
-<span id="L2224"><span class="lineNum">    2224</span> <span class="tlaGNC">         246 :         return (std::min)(__diffmax, __allocmax);</span></span>
+<span id="L2223"><span class="lineNum">    2223</span> <span class="tlaGNC">         906 :         const size_t __allocmax = _Alloc_traits::max_size(__a);</span></span>
+<span id="L2224"><span class="lineNum">    2224</span> <span class="tlaGNC">         906 :         return (std::min)(__diffmax, __allocmax);</span></span>
 <span id="L2225"><span class="lineNum">    2225</span>              :       }</span>
 <span id="L2226"><span class="lineNum">    2226</span>              : </span>
 <span id="L2227"><span class="lineNum">    2227</span>              :       // Internal erase functions follow.</span>
@@ -2318,13 +2318,13 @@
 <span id="L2256"><span class="lineNum">    2256</span>              :       // or because the allocators are equal.</span>
 <span id="L2257"><span class="lineNum">    2257</span>              :       _GLIBCXX20_CONSTEXPR</span>
 <span id="L2258"><span class="lineNum">    2258</span>              :       void</span>
-<span id="L2259"><span class="lineNum">    2259</span>              :       _M_move_assign(vector&amp;&amp; __x, true_type) noexcept</span>
+<span id="L2259"><span class="lineNum">    2259</span> <span class="tlaGNC">           3 :       _M_move_assign(vector&amp;&amp; __x, true_type) noexcept</span></span>
 <span id="L2260"><span class="lineNum">    2260</span>              :       {</span>
-<span id="L2261"><span class="lineNum">    2261</span>              :         vector __tmp(get_allocator());</span>
-<span id="L2262"><span class="lineNum">    2262</span>              :         this-&gt;_M_impl._M_swap_data(__x._M_impl);</span>
-<span id="L2263"><span class="lineNum">    2263</span>              :         __tmp._M_impl._M_swap_data(__x._M_impl);</span>
-<span id="L2264"><span class="lineNum">    2264</span>              :         std::__alloc_on_move(_M_get_Tp_allocator(), __x._M_get_Tp_allocator());</span>
-<span id="L2265"><span class="lineNum">    2265</span>              :       }</span>
+<span id="L2261"><span class="lineNum">    2261</span> <span class="tlaGNC">           3 :         vector __tmp(get_allocator());</span></span>
+<span id="L2262"><span class="lineNum">    2262</span> <span class="tlaGNC">           3 :         this-&gt;_M_impl._M_swap_data(__x._M_impl);</span></span>
+<span id="L2263"><span class="lineNum">    2263</span> <span class="tlaGNC">           3 :         __tmp._M_impl._M_swap_data(__x._M_impl);</span></span>
+<span id="L2264"><span class="lineNum">    2264</span> <span class="tlaGNC">           3 :         std::__alloc_on_move(_M_get_Tp_allocator(), __x._M_get_Tp_allocator());</span></span>
+<span id="L2265"><span class="lineNum">    2265</span> <span class="tlaGNC">           3 :       }</span></span>
 <span id="L2266"><span class="lineNum">    2266</span>              : </span>
 <span id="L2267"><span class="lineNum">    2267</span>              :       // Do move assignment when it might not be possible to move source</span>
 <span id="L2268"><span class="lineNum">    2268</span>              :       // object's memory, resulting in a linear-time operation.</span>
@@ -2396,9 +2396,9 @@
 <span id="L2334"><span class="lineNum">    2334</span>              :   template&lt;typename _Tp, typename _Alloc&gt;</span>
 <span id="L2335"><span class="lineNum">    2335</span>              :     _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR</span>
 <span id="L2336"><span class="lineNum">    2336</span>              :     inline bool</span>
-<span id="L2337"><span class="lineNum">    2337</span>              :     operator==(const vector&lt;_Tp, _Alloc&gt;&amp; __x, const vector&lt;_Tp, _Alloc&gt;&amp; __y)</span>
-<span id="L2338"><span class="lineNum">    2338</span>              :     { return (__x.size() == __y.size()</span>
-<span id="L2339"><span class="lineNum">    2339</span>              :               &amp;&amp; std::equal(__x.begin(), __x.end(), __y.begin())); }</span>
+<span id="L2337"><span class="lineNum">    2337</span> <span class="tlaGNC">           6 :     operator==(const vector&lt;_Tp, _Alloc&gt;&amp; __x, const vector&lt;_Tp, _Alloc&gt;&amp; __y)</span></span>
+<span id="L2338"><span class="lineNum">    2338</span> <span class="tlaGNC">           6 :     { return (__x.size() == __y.size()</span></span>
+<span id="L2339"><span class="lineNum">    2339</span> <span class="tlaGNC">           6 :               &amp;&amp; std::equal(__x.begin(), __x.end(), __y.begin())); }</span></span>
 <span id="L2340"><span class="lineNum">    2340</span>              : </span>
 <span id="L2341"><span class="lineNum">    2341</span>              : #if __cpp_lib_three_way_comparison // &gt;= C++20</span>
 <span id="L2342"><span class="lineNum">    2342</span>              :   /**</span>

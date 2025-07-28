@@ -1,0 +1,134 @@
+../src/lab1.cpp:1:0: information: Include file: <iostream> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <iostream>
+^
+../src/lab1.cpp:2:0: information: Include file: <fstream> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <fstream>
+^
+../src/lab1.cpp:3:0: information: Include file: <string> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string>
+^
+../src/lab1.cpp:4:0: information: Include file: <cctype> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <cctype>
+^
+../src/lab1.cpp:5:0: information: Include file: <map> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <map>
+^
+../src/lab1.cpp:6:0: information: Include file: <vector> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <vector>
+^
+../src/lab1.cpp:7:0: information: Include file: <algorithm> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <algorithm>
+^
+../src/lab1.cpp:8:0: information: Include file: <iomanip> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <iomanip>
+^
+../src/lab1.cpp:9:0: information: Include file: <cstdlib> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <cstdlib>
+^
+../src/lab1.cpp:10:0: information: Include file: <limits> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <limits>  // 添加到其他头文件后面
+^
+../src/lab1.cpp:11:0: information: Include file: <ctime> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <ctime>  // 添加到其他头文件后面
+^
+../src/lab1.cpp:12:0: information: Include file: <queue> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <queue>  // 添加到其他头文件后面
+^
+../src/lab1.cpp:13:0: information: Include file: <climits> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <climits>  // 添加到其他头文件后面，用于INT_MAX
+^
+../src/lab1.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+../src/lab1.cpp:59:10: style: inconclusive: Technically the member function 'DirectedGraph::printGraph' can be const. [functionConst]
+    void printGraph() {
+         ^
+../src/lab1.cpp:88:10: style: inconclusive: Technically the member function 'DirectedGraph::exportToDOT' can be const. [functionConst]
+    bool exportToDOT(const std::string& filename) {
+         ^
+../src/lab1.cpp:121:10: performance: inconclusive: Technically the member function 'DirectedGraph::generateImage' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+    bool generateImage(const std::string& dotFilename, const std::string& outputFilename) {
+         ^
+../src/lab1.cpp:322:10: style: inconclusive: Technically the member function 'DirectedGraph::exportToDOTWithPath' can be const. [functionConst]
+    bool exportToDOTWithPath(const std::string& filename, const std::vector<std::string>& path) {
+         ^
+../src/lab1.cpp:462:35: style: inconclusive: Technically the member function 'DirectedGraph::calculatePageRank' can be const. [functionConst]
+    std::map<std::string, double> calculatePageRank(double dampingFactor = 0.85, int iterations = 100, double tolerance = 1e-6) {
+                                  ^
+../src/lab1.cpp:528:35: style: inconclusive: Technically the member function 'DirectedGraph::calculatePageRankWithTFIDF' can be const. [functionConst]
+    std::map<std::string, double> calculatePageRankWithTFIDF(double dampingFactor = 0.85, int iterations = 100, double tolerance = 1e-6) {
+                                  ^
+../src/lab1.cpp:701:25: style: Local variable 'input' shadows outer variable [shadowVariable]
+            std::string input;
+                        ^
+../src/lab1.cpp:660:21: note: Shadowed declaration
+        std::string input;
+                    ^
+../src/lab1.cpp:701:25: note: Shadow variable
+            std::string input;
+                        ^
+../src/lab1.cpp:47:32: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+            if (edge.to == to) {
+                               ^
+../src/lab1.cpp:153:47: style: Consider using std::any_of algorithm instead of a raw loop. [useStlAlgorithm]
+                    if (nextEdge.to == word2) {
+                                              ^
+../src/lab1.cpp:497:37: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+                        totalWeight += edge.weight;
+                                    ^
+../src/lab1.cpp:511:22: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+                diff += std::abs(newPageRank[node.first] - pageRank[node.first]);
+                     ^
+../src/lab1.cpp:548:27: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+            totalInDegree += degree.second;
+                          ^
+../src/lab1.cpp:571:23: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+                sumPR += pr.second;
+                      ^
+../src/lab1.cpp:604:37: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+                        totalWeight += edge.weight;
+                                    ^
+../src/lab1.cpp:618:22: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+                diff += std::abs(newPageRank[node.first] - pageRank[node.first]);
+                     ^
+../src/lab1.cpp:534:35: style: Variable 'outDegree[node.first]' is assigned a value that is never used. [unreadVariable]
+            outDegree[node.first] = node.second.size();
+                                  ^
+../src/lab1.cpp:44:0: style: The function 'addEdge' is never used. [unusedFunction]
+    void addEdge(const std::string& from, const std::string& to) {
+^
+../src/lab1.cpp:59:0: style: The function 'printGraph' is never used. [unusedFunction]
+    void printGraph() {
+^
+../src/lab1.cpp:88:0: style: The function 'exportToDOT' is never used. [unusedFunction]
+    bool exportToDOT(const std::string& filename) {
+^
+../src/lab1.cpp:121:0: style: The function 'generateImage' is never used. [unusedFunction]
+    bool generateImage(const std::string& dotFilename, const std::string& outputFilename) {
+^
+../src/lab1.cpp:195:0: style: The function 'containsWord' is never used. [unusedFunction]
+    bool containsWord(const std::string& word) {
+^
+../src/lab1.cpp:201:0: style: The function 'generateNewText' is never used. [unusedFunction]
+    std::string generateNewText(const std::string& inputText) {
+^
+../src/lab1.cpp:252:0: style: The function 'findShortestPath' is never used. [unusedFunction]
+    PathInfo findShortestPath(const std::string& start, const std::string& end) {
+^
+../src/lab1.cpp:322:0: style: The function 'exportToDOTWithPath' is never used. [unusedFunction]
+    bool exportToDOTWithPath(const std::string& filename, const std::vector<std::string>& path) {
+^
+../src/lab1.cpp:390:0: style: The function 'findAllShortestPaths' is never used. [unusedFunction]
+    std::map<std::string, PathInfo> findAllShortestPaths(const std::string& start) {
+^
+../src/lab1.cpp:462:0: style: The function 'calculatePageRank' is never used. [unusedFunction]
+    std::map<std::string, double> calculatePageRank(double dampingFactor = 0.85, int iterations = 100, double tolerance = 1e-6) {
+^
+../src/lab1.cpp:528:0: style: The function 'calculatePageRankWithTFIDF' is never used. [unusedFunction]
+    std::map<std::string, double> calculatePageRankWithTFIDF(double dampingFactor = 0.85, int iterations = 100, double tolerance = 1e-6) {
+^
+../src/lab1.cpp:636:0: style: The function 'randomWalk' is never used. [unusedFunction]
+    std::vector<std::string> randomWalk() {
+^
+nofile:0:0: information: Active checkers: 179/856 (use --checkers-report=<filename> to see details) [checkersReport]
+
